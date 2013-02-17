@@ -19,7 +19,7 @@
     </list>
     <ignored path="railwayproject.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361142279525" ignored="false" />
+    <file path="/Dummy.txt" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361142304840" ignored="false" />
     <file path="/App.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361120801177" ignored="false" />
     <file path="/fragment.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361118166394" ignored="false" />
     <file path="/FXLoginView.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361120642750" ignored="false" />
@@ -741,7 +741,11 @@
       <created>1361122268690</created>
       <updated>1361122268690</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Protocol examples added">
+      <created>1361142310123</created>
+      <updated>1361142310123</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
