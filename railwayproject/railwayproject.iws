@@ -15,16 +15,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/t-systems/javaschool/railway/App.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/t-systems/javaschool/railway/AppTest.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/App.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/railwayproject.ipr" afterPath="$PROJECT_DIR$/railwayproject.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/railwayproject.iws" afterPath="$PROJECT_DIR$/railwayproject.iws" />
     </list>
     <ignored path="railwayproject.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361122159363" ignored="false" />
+    <file path="/Dummy.txt" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361122250560" ignored="false" />
     <file path="/App.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361120801177" ignored="false" />
     <file path="/fragment.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361118166394" ignored="false" />
     <file path="/FXLoginView.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361120642750" ignored="false" />
@@ -676,6 +671,11 @@
       <created>1360877054077</created>
       <updated>1360877054077</updated>
     </task>
+    <task id="LOCAL-00001" summary="Idea git test">
+      <created>1361122254286</created>
+      <updated>1361122254286</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
