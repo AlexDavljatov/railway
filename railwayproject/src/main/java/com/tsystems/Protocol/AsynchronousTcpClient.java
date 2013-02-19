@@ -17,7 +17,7 @@ public class AsynchronousTcpClient {
         final String SERVER_IP = "127.0.0.1";
 
         ByteBuffer receivingBuffer = ByteBuffer.allocateDirect(1024);
-        ByteBuffer sendingBuffer = ByteBuffer.wrap("Hello".getBytes());
+        ByteBuffer sendingBuffer = ByteBuffer.wrap("Hi".getBytes());
 
         //create asynchronous socket channel
         //try (final AsynchronousSocketChannel asynchronousSocketChannel = AsynchronousSocketChannel.open())

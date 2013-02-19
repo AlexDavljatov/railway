@@ -12,10 +12,14 @@ import java.util.concurrent.ExecutionException;
  * Time: 10:37 PM
  * To change this template use File | Settings | File Templates.
  */
-public class MyClient implements Runnable{
+public class MyClient implements Runnable {
     AsynchronousSocketChannel client;
 
-    MyClient() {};
+    MyClient() {
+    }
+
+    ;
+
     MyClient(AsynchronousServerSocketChannel server) {
         try {
             client = AsynchronousSocketChannel.open();
@@ -36,12 +40,15 @@ public class MyClient implements Runnable{
 
     }
 
+    //TODO: connect to a Server
     void connectToServer() throws IOException {
         client = AsynchronousSocketChannel.open();
+
         //client.connect(server.getLocalAddress()).get();
 
     }
 
+    //TODO: send a message to a Server
     void sendMessageToServer() throws ExecutionException, InterruptedException {
         ByteBuffer message = ByteBuffer.wrap("ping".getBytes());
         client.write(message).get();

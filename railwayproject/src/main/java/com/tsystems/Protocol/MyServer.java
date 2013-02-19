@@ -1,6 +1,7 @@
 package com.tsystems.Protocol;
 
 import java.io.IOException;
+import java.net.InetSocketAddress;
 import java.nio.channels.*;
 import java.util.concurrent.Future;
 
@@ -12,9 +13,16 @@ import java.util.concurrent.Future;
  * To change this template use File | Settings | File Templates.
  */
 public class MyServer {
+    final int SERVER_PORT = 9090;
+    final String SERVER_IP = "localhost";
+
     public static void main(String[] args) {
+
+    }
+
+    void runServer() {
         try {
-            AsynchronousServerSocketChannel server = AsynchronousServerSocketChannel.open().bind(9090);
+            AsynchronousServerSocketChannel server = AsynchronousServerSocketChannel.open().bind(new InetSocketAddress(SERVER_IP, SERVER_PORT));
             Future<AsynchronousSocketChannel> acceptFuture = server.accept();
             //Block and wait for the result
             //AsynchronousSocketChannel worker = future.get();/future.get(10, TimeUnit.SECONDS);
