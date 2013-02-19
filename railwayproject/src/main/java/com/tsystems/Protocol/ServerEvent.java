@@ -9,7 +9,7 @@ public class ServerEvent {
 
     private final Server server;
     private final SocketChannel channel;
-    private final byte [] data;
+    private final byte[] data;
 
     public ServerEvent(Server server, SocketChannel channel, byte[] data) {
         this.server = server;

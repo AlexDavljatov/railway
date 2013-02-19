@@ -15,14 +15,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/DB/ClassesJDBC.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/AsynchronousTcpClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/AsynchronousTcpClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/AsynchronousTcpServer.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/AsynchronousTcpServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/ChangeRequest.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/ChangeRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/Client.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/Client.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/NonBlockingTcpClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/NonBlockingTcpClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/NonBlockingTcpServer.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/NonBlockingTcpServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/Server.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/Server.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/ServerEvent.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/ServerEvent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/Worker.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/Worker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/railwayproject.ipr" afterPath="$PROJECT_DIR$/railwayproject.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/railwayproject.iws" afterPath="$PROJECT_DIR$/railwayproject.iws" />
     </list>
     <ignored path="railwayproject.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361142304840" ignored="false" />
-    <file path="/App.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361120801177" ignored="false" />
-    <file path="/fragment.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361118166394" ignored="false" />
     <file path="/FXLoginView.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361120642750" ignored="false" />
+    <file path="/fragment.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361118166394" ignored="false" />
+    <file path="/App.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361120801177" ignored="false" />
+    <file path="/Dummy.txt" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361305277771" ignored="false" />
+    <file path="/MyServer.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361302955104" ignored="false" />
+    <file path="/MyClient.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361304554494" ignored="false" />
+    <file path="/AsynchronousTcpServer.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361305653311" ignored="false" />
+    <file path="/AsynchronousTcpClient.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361305701677" ignored="false" />
+    <file path="/NonBlockingTcpClient.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361305746365" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +126,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -144,7 +161,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -211,7 +227,70 @@
     <favorites_list name="railwayproject" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="MyServer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/MyServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="101" selection-start="462" selection-end="462" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyClient.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/MyClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="30" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AsynchronousTcpClient.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/AsynchronousTcpClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="99" selection-start="963" selection-end="963" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NonBlockingTcpClient.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/NonBlockingTcpClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="91" selection-start="2354" selection-end="2354" vertical-scroll-proportion="1.3301886">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NonBlockingTcpServer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/NonBlockingTcpServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="11" selection-start="968" selection-end="968" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AsynchronousTcpServer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/AsynchronousTcpServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="69" column="44" selection-start="3452" selection-end="3452" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -224,15 +303,15 @@
         <option value="Davljatov Alexander" />
       </list>
     </option>
-    <option name="PUSH_AUTO_UPDATE" value="true" />
-    <option name="SYNC_SETTING" value="DONT" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-    <option name="AUTO_COMMIT_ON_CHERRY_PICK" value="true" />
   </component>
   <component name="GitLogSettings">
     <option name="myStructureFilterPaths" />
     <option name="myDateState">
-      <MyDateState />
+      <MyDateState>
+        <option name="myTimeAfter" value="1361131200000" />
+        <option name="myPresetFilter" value="Today" />
+      </MyDateState>
     </option>
   </component>
   <component name="HierarchyBrowserManager">
@@ -251,6 +330,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/tsystems/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/ChangeRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/Client.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/DB/ClassesJDBC.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/MyServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/MyClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/NonBlockingTcpServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/AsynchronousTcpServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/AsynchronousTcpClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/NonBlockingTcpClient.java" />
       </list>
     </option>
   </component>
@@ -368,7 +454,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="2" />
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -383,7 +469,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -475,6 +560,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Favorites" />
     </panes>
   </component>
@@ -489,6 +575,7 @@
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Project" />
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="OverrideImplement.combined" value="false" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
@@ -564,7 +651,7 @@
       <module name="railwayproject" />
       <envs />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
+        <option name="DEBUG_PORT" value="50696" />
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
@@ -681,13 +768,6 @@
       <item index="1" class="java.lang.String" itemvalue="Application.Server" />
       <item index="2" class="java.lang.String" itemvalue="Application.Client" />
     </list>
-    <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.Client" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Server" />
-        <item index="2" class="java.lang.String" itemvalue="Application.App" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SliceManager">
@@ -708,7 +788,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="" />
     <option name="CHECKIN_DIALOG_SPLITTER_PROPORTION" value="0.8" />
   </component>
-  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+  <component name="SvnConfiguration" maxAnnotateRevisions="500">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
     <option name="mySSHConnectionTimeout" value="30000" />
@@ -723,7 +803,6 @@
     <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
     <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
     <option name="FORCE_UPDATE" value="false" />
-    <option name="IGNORE_EXTERNALS" value="false" />
     <configuration useDefault="true">$USER_HOME$/.subversion_IDEA</configuration>
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
@@ -745,39 +824,60 @@
       <created>1361142310123</created>
       <updated>1361142310123</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Protocol examples added">
+      <created>1361142319370</created>
+      <updated>1361142319370</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Different protocol examples are added and considered.&#10;Asynch implementaton is chose.">
+      <created>1361305224597</created>
+      <updated>1361305224597</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Different protocol examples are added and considered.&#10;Asynch implementaton is chose.">
+      <created>1361305288589</created>
+      <updated>1361305288589</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
       <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
       <flatten-packages value="false" />
       <is-autoscroll-to-source value="true" />
     </todo-panel>
     <todo-panel id="all">
       <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
       <flatten-packages value="false" />
       <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1288" height="724" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8440208" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24939074" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3986135" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32469776" sideWeight="0.49756888" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32409012" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298791" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20340356" sideWeight="0.67417675" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39951378" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21799028" sideWeight="0.6759099" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25769854" sideWeight="0.1559792" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32582322" sideWeight="0.49675852" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Aspects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -786,7 +886,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="CVS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -824,7 +923,7 @@
     <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
     <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
-    <option name="INCLUDE_TEXT_INTO_SHELF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
@@ -832,7 +931,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Protocol examples added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Different protocol examples are added and considered.&#10;Asynch implementaton is chose." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -847,6 +946,7 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="Idea git test" />
     <MESSAGE value="Protocol examples added" />
+    <MESSAGE value="Different protocol examples are added and considered.&#10;Asynch implementaton is chose." />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -893,114 +993,110 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Ticket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="1" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Passenger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="22" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Train.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="18" selection-start="191" selection-end="191" vertical-scroll-proportion="0.24500908">
-          <folding />
-        </state>
+        <state line="9" column="18" selection-start="191" selection-end="191" vertical-scroll-proportion="0.24500908" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Ticket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="14" selection-start="206" selection-end="206" vertical-scroll-proportion="0.2722323">
-          <folding />
-        </state>
+        <state line="10" column="14" selection-start="206" selection-end="206" vertical-scroll-proportion="0.2722323" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Station.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="20" selection-start="193" selection-end="193" vertical-scroll-proportion="0.24500908">
-          <folding />
-        </state>
+        <state line="9" column="20" selection-start="193" selection-end="193" vertical-scroll-proportion="0.24500908" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/SwingLoginView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="21" selection-start="44" selection-end="44" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="2" column="21" selection-start="44" selection-end="44" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/FXLoginView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="8" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="17" column="8" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="42" selection-start="153" selection-end="153" vertical-scroll-proportion="0.19056262">
-          <folding />
-        </state>
+        <state line="7" column="42" selection-start="153" selection-end="153" vertical-scroll-proportion="0.19056262" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/NIOServer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/MyServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="51" selection-start="212" selection-end="212" vertical-scroll-proportion="0.29945552">
-          <folding />
+        <state line="16" column="101" selection-start="462" selection-end="462" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/NIOClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="41" selection-start="208" selection-end="208" vertical-scroll-proportion="0.2722323">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/ChangeRequest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/ServerEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="13" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="134" selection-end="134" vertical-scroll-proportion="0.18987341">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="32" selection-start="2897" selection-end="2897" vertical-scroll-proportion="-0.08892922">
+        <state line="14" column="13" selection-start="353" selection-end="353" vertical-scroll-proportion="0.18987341">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/ChangeRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="122" selection-end="122" vertical-scroll-proportion="0.18987341">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/MyClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="30" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#453#468#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/NonBlockingTcpServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="58" selection-start="324" selection-end="324" vertical-scroll-proportion="0.29945552">
+        <state line="25" column="11" selection-start="968" selection-end="968" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/ServerEvent.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/AsynchronousTcpServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="31" selection-start="135" selection-end="135" vertical-scroll-proportion="0.19056262">
-          <folding />
+        <state line="69" column="44" selection-start="3452" selection-end="3452" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/Worker.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/AsynchronousTcpClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="29" selection-start="751" selection-end="751" vertical-scroll-proportion="0.59891105">
+        <state line="26" column="99" selection-start="963" selection-end="963" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Protocol/NonBlockingTcpClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="91" selection-start="2354" selection-end="2354" vertical-scroll-proportion="1.3301886">
           <folding />
         </state>
       </provider>
@@ -1075,7 +1171,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.20000002" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
