@@ -11,7 +11,7 @@
 <?import javafx.scene.text.*?>
 
 <StackPane id="Login" styleClass="login" xmlns:fx="http://javafx.com/fxml"
-           fx:controller="com.tsystems.UI.controller.LoginController">
+           fx:controller="com.tsystems.client.UI.controller.LoginController">
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity">
         <!-- Prevent AnchorPane so that it's max = pref. This causes it to center in StackPane -->
         <TextField fx:id="userId" layoutX="68.0" layoutY="58.0" onAction="#processLogin" prefWidth="126.0"/>
