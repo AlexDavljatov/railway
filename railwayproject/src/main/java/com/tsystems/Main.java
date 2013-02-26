@@ -21,7 +21,9 @@ public class Main {
         EntityManager em = factory.createEntityManager();
         EntityTransaction trx = em.getTransaction();
         trx.begin();
-        Passenger passenger = new Passenger("Vasya", "Ivanov", false, new Date("02.02.1992"), null);
+        //Passenger passenger = new Passenger("Vasya", "Ivanov", false, new Date("02.02.1992"), null);
+        Passenger passenger = new Passenger("Vasya", "Ivanov", false, "password", null);
+        em.persist(passenger);
         trx.commit();
         em.close();
     }

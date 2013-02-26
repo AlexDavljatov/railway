@@ -1,5 +1,7 @@
 package com.tsystems.Protocol;
 
+import com.tsystems.Protocol.Message.RequestMessage;
+
 /**
  * Created with IntelliJ IDEA.
  * User: alex
@@ -8,6 +10,7 @@ package com.tsystems.Protocol;
  * To change this template use File | Settings | File Templates.
  */
 public interface MyClient extends Runnable {
-    public void send();
-    public void receive();
+    public void sendRequest(RequestMessage requestMessage);
+
+    public void receiveResponse();
 }

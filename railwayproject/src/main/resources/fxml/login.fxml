@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane id="Login" styleClass="login" xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.tsystems.UI.controller.LoginController">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity">
+        <!-- Prevent AnchorPane so that it's max = pref. This causes it to center in StackPane -->
+        <TextField fx:id="userId" layoutX="68.0" layoutY="58.0" onAction="#processLogin" prefWidth="126.0"/>
+        <PasswordField fx:id="password" layoutX="327.0" layoutY="58.0" onAction="#processLogin" prefWidth="126.0"/>
+        <Label layoutX="229.0" layoutY="61.0" text="Password:"/>
+        <Label layoutX="16.0" layoutY="61.0" text="User:"/>
+        <Button fx:id="login" defaultButton="true" layoutX="200.0" layoutY="125.0" onAction="#processLogin"
+                text="login"/>
+        <Label fx:id="errorMessage" layoutX="80.0" layoutY="200.0" textFill="RED"/>
+    </AnchorPane>
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+</StackPane>

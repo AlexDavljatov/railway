@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
+import javax.persistence.Table;
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,21 +16,32 @@ import java.util.UUID;
  * To change this template use File | Settings | File Templates.
  */
 @Entity
+//@Table(name = "Passenger", schema = "", catalog = "railwaydb")
 public class Passenger implements Serializable {
 
     public Passenger() {
     }
 
-    public Passenger(String name, String surname, boolean administrator, Date birthday_date, List<Ticket> tickets) {
+    public Passenger(String name, String surname, boolean administrator, String password, List<Ticket> tickets) {
         this.name = name;
         this.surname = surname;
         this.administrator = administrator;
-        this.birthday_date = birthday_date;
+        this.password = password;
         this.tickets = tickets;
     }
 
+    /*
+        public Passenger(String name, String surname, boolean administrator, Date birthday_date, List<Ticket> tickets) {
+            this.name = name;
+            this.surname = surname;
+            this.administrator = administrator;
+            this.birthday_date = birthday_date;
+            this.tickets = tickets;
+        }
+        */
     @Id
-    @GeneratedValue
+//    @GeneratedValue
+    //@Column(name = "id", nullable = false, insertable = true, updatable = true, length = 10, precision = 0)
     private String id;
 
     public String getId() {
@@ -69,6 +81,16 @@ public class Passenger implements Serializable {
 
     public void setAdministrator(boolean administrator) {
         this.administrator = administrator;
+    }
+
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     private Date birthday_date;
