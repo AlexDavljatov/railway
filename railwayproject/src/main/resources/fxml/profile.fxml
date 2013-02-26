@@ -8,7 +8,7 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane id="Profile" styleClass="profile" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.tsystems.UI.controller.ProfileController">
+            fx:controller="com.tsystems.client.UI.controller.ProfileController">
     <Button fx:id="update" maxHeight="2.0" onAction="#processUpdate" text="Update" AnchorPane.bottomAnchor="15.0"
             AnchorPane.rightAnchor="168.0"/>
     <Label fx:id="message" layoutX="56.0" layoutY="77.0" text="Please review your profile data."/>
