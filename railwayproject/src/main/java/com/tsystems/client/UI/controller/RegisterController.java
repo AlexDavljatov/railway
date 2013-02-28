@@ -8,15 +8,13 @@ package com.tsystems.client.UI.controller;
  * To change this template use File | Settings | File Templates.
  */
 
+import com.tsystems.client.MyClientImpl;
 import com.tsystems.client.UI.App;
-import com.tsystems.client.UI.model.User;
+import com.tsystems.common.User;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.util.Duration;
 
 import java.net.URL;
@@ -25,15 +23,15 @@ import java.util.ResourceBundle;
 /**
  * Java FX FXML Controller.
  */
-public class ProfileController implements Initializable {
+public class RegisterController implements Initializable {
     @FXML
-    private TextField user;
+    private TextField name;
     @FXML
-    private TextField phone;
+    private TextField surname;
     @FXML
     private TextField email;
     @FXML
-    private TextArea address;
+    private PasswordField password;
     @FXML
     private CheckBox subscribed;
     @FXML
@@ -42,15 +40,16 @@ public class ProfileController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         User loggedUser = App.getInstance().getLoggedUser();
-        user.setText(loggedUser.getId());
+        name.setText(loggedUser.getId());
+        if (loggedUser.getName() != null) {
+            name.setText(loggedUser.getName());
+        }
+
+        if (loggedUser.getSurName() != null) {
+            surname.setText(loggedUser.getSurName());
+        }
         if (loggedUser.getEmail() != null) {
             email.setText(loggedUser.getEmail());
-        }
-        if (loggedUser.getPhone() != null) {
-            phone.setText(loggedUser.getPhone());
-        }
-        if (loggedUser.getAddress() != null) {
-            address.setText(loggedUser.getAddress());
         }
         subscribed.setSelected(loggedUser.isSubscribed());
         success.setOpacity(0);
@@ -62,13 +61,14 @@ public class ProfileController implements Initializable {
     }
 
     @FXML
-    protected void processUpdate() {
+    protected void processUpdate() throws Exception {
         User loggedUser = App.getInstance().getLoggedUser();
         loggedUser.setEmail(email.getText());
-        loggedUser.setPhone(phone.getText());
+        loggedUser.setName(name.getText());
         loggedUser.setSubscribed(subscribed.isSelected());
-        loggedUser.setAddress(address.getText());
+        loggedUser.setSurName(surname.getText());
         animateMessage();
+        new MyClientImpl().doRegister();
     }
 
     private void animateMessage() {

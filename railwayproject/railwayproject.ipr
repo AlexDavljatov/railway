@@ -165,7 +165,7 @@
   <component name="CopyrightManager" default="">
     <module2copyright />
   </component>
-  <component name="DataSourceManagerImpl" compressed="false" hash="810876232" />
+  <component name="DataSourceManagerImpl" compressed="false" hash="3518311732" />
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
@@ -181,7 +181,7 @@
     <option name="OUTPUT_DIRECTORY" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="jpa" url="file://$PROJECT_DIR$/src/main/java/com/tsystems/Domain/Entity" />
+    <file type="jpa" url="file://$PROJECT_DIR$/src/main/java/com/tsystems/server/DAO/Entity" />
   </component>
   <component name="IdProvider" IDEtalkID="3AADEC4092D0C1654F7B3EC8F418497C" />
   <component name="ImportConfiguration">
@@ -243,12 +243,6 @@
       <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
         <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
       </item>
-      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
-        <initial-values>
-          <property name="text" value="Button" />
-        </initial-values>
-      </item>
       <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
         <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
         <initial-values>
@@ -265,6 +259,12 @@
         <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
         <initial-values>
           <property name="text" value="Label" />
+        </initial-values>
+      </item>
+      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
+        <initial-values>
+          <property name="text" value="Button" />
         </initial-values>
       </item>
       <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.png" removable="false" auto-create-binding="true" can-attach-label="true">

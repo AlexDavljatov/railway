@@ -1,4 +1,4 @@
-package com.tsystems;
+package com.tsystems.server.Protocol.Command;
 
 import com.tsystems.server.domain.entity.Passenger;
 
@@ -8,16 +8,19 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 /**
- * Hello world!
+ * Created with IntelliJ IDEA.
+ * User: alex
+ * Date: 2/28/13
+ * Time: 2:46 AM
+ * To change this template use File | Settings | File Templates.
  */
-public class Main {
+public class CommandImpl {
+
     public static final EntityManagerFactory factory =
             Persistence.createEntityManagerFactory("myapp");
 
-    public static void main(String[] args) {
-    }
 
-    public void addPAssenger(Passenger passenger) {
+    public boolean registerUser(Passenger passenger) {
         EntityManager em = factory.createEntityManager();
         EntityTransaction trx = em.getTransaction();
         trx.begin();
@@ -26,5 +29,6 @@ public class Main {
         em.persist(passenger);
         trx.commit();
         em.close();
+        return true;
     }
 }

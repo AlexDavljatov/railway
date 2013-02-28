@@ -1,4 +1,6 @@
-package com.tsystems.server.DAO.Entity;
+package com.tsystems.server.domain.entity;
+
+import com.tsystems.server.domain.BaseEntity;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,41 +17,32 @@ import java.util.UUID;
  */
 @Entity
 //@Table(name = "Passenger", schema = "", catalog = "railwaydb")
-public class Passenger implements Serializable {
+public class Passenger extends BaseEntity {
 
     public Passenger() {
     }
 
-    public Passenger(String name, String surname, boolean administrator, String password, List<Ticket> tickets) {
+    public Passenger(String name, String surname, String email, String password, boolean administrator) {
         this.name = name;
         this.surname = surname;
-        this.administrator = administrator;
+        this.email = email;
         this.password = password;
-        this.tickets = tickets;
+        this.administrator = administrator;
     }
 
-    /*
-        public Passenger(String name, String surname, boolean administrator, Date birthday_date, List<Ticket> tickets) {
-            this.name = name;
-            this.surname = surname;
-            this.administrator = administrator;
-            this.birthday_date = birthday_date;
-            this.tickets = tickets;
-        }
-        */
-    @Id
-//    @GeneratedValue
-    //@Column(name = "id", nullable = false, insertable = true, updatable = true, length = 10, precision = 0)
-    private String id;
+    /*    @Id
+        private String id;
 
+    */
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
+    /*
+       public void setId(String id) {
+           this.id = id;
+       }
+    */
     private String name;
 
 
@@ -79,6 +72,16 @@ public class Passenger implements Serializable {
 
     public void setAdministrator(boolean administrator) {
         this.administrator = administrator;
+    }
+
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     private String password;

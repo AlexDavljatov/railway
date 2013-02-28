@@ -1,6 +1,8 @@
-package com.tsystems.server.DAO.Entity;
+package com.tsystems.server.domain.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -11,7 +13,11 @@ import java.util.UUID;
  * To change this template use File | Settings | File Templates.
  */
 @Entity
-public class Shedule {
+public class Shedule implements Serializable {
+
+    @Version
+    protected int version;
+
     public Shedule() {
     }
 
@@ -46,6 +52,16 @@ public class Shedule {
 
     public void setStation_id(String station_id) {
         this.station_id = station_id;
+    }
+
+    private Date time;
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
     }
 
     @PrePersist

@@ -1,4 +1,4 @@
-package com.tsystems.server.DAO.Entity;
+package com.tsystems.server.domain.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,6 +15,9 @@ import java.util.UUID;
 public class Ticket implements Serializable {
     public Ticket() {
     }
+
+    @Version
+    protected int version;
 
     @Id
     private String id;
@@ -37,7 +40,7 @@ public class Ticket implements Serializable {
         this.number = number;
     }
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Passenger passenger;
 
     public Passenger getPassenger() {
@@ -49,7 +52,7 @@ public class Ticket implements Serializable {
     }
 
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Train train;
 
 

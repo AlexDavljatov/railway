@@ -8,7 +8,7 @@ package com.tsystems.client.UI;
  * To change this template use File | Settings | File Templates.
  */
 
-import com.tsystems.client.UI.model.User;
+import com.tsystems.common.User;
 import com.tsystems.client.UI.security.Authenticator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -60,7 +60,6 @@ public class App extends Application {
             stage = primaryStage;
             gotoLogin();
             primaryStage.show();
-
         } catch (Exception ex) {
             //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
             log.error("start exception\n" + ex.getMessage());
@@ -75,7 +74,7 @@ public class App extends Application {
     public boolean userLogging(String userId, String password) {
         if (Authenticator.validate(userId, password)) {
             loggedUser = User.of(userId);
-            gotoProfile();
+            doRegister();
             return true;
         } else {
             return false;
@@ -87,9 +86,9 @@ public class App extends Application {
         gotoLogin();
     }
 
-    private void gotoProfile() {
+    private void doRegister() {
         try {
-            replaceSceneContent("/fxml/profile.fxml");
+            replaceSceneContent("/fxml/register.fxml");
             //debug("User profile success");
         } catch (Exception ex) {
             //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);

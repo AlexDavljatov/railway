@@ -1,8 +1,11 @@
-package com.tsystems.server.DAO.Entity;
+package com.tsystems.server.domain.entity;
+
+import com.tsystems.server.domain.BaseEntity;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,22 +15,30 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 @Entity
-public class Train implements Serializable {
+public class Train extends BaseEntity {
+
+//    @Version
+//    protected int version;
+
+    public int getVersion() {
+        return version;
+    }
+
     public Train() {
     }
 
-    @Id
-    @GeneratedValue
-    private String id;
-
+    /*   @Id
+       private String id;
+    */
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
+    /*
+        public void setId(String id) {
+            this.id = id;
+        }
+      */
     private int sits_number;
 
     public int getSits_number() {
@@ -60,5 +71,10 @@ public class Train implements Serializable {
         this.stations = stations;
     }
 
-
+    @PrePersist
+    public void prepareId() {
+        if (id == null) {
+            id = UUID.randomUUID().toString();
+        }
+    }
 }

@@ -1,4 +1,4 @@
-package com.tsystems.server.DAO.Entity;
+package com.tsystems.server.domain.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,6 +14,9 @@ import java.util.UUID;
  */
 @Entity
 public class Station implements Serializable {
+
+    @Version
+    protected int version;
 
     public Station() {
     }
@@ -41,7 +44,7 @@ public class Station implements Serializable {
 
 
     @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(name = "shedule",
+    @JoinTable(name = "Shedule",
             joinColumns = {@JoinColumn(name = "station_id")},
             inverseJoinColumns = {@JoinColumn(name = "train_id")})
     private List<Train> trains;

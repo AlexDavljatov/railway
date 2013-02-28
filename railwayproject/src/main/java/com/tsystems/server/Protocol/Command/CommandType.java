@@ -8,6 +8,8 @@ package com.tsystems.server.Protocol.Command;
  * To change this template use File | Settings | File Templates.
  */
 public enum CommandType {
+    OK,
+    FAIL,
     LOGIN,
     REGISTER,
     BUY_TICKET,

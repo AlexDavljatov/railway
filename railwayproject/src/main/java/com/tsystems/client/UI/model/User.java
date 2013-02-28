@@ -19,9 +19,12 @@ public class User {
 
     private String id;
     private String email;
-    private String phone;
+    private String name;
+    private String surName;
+
+    //private String phone;
     private boolean subscribed;
-    private String address;
+    //private String address;
 
     private User(String id) {
         this.id = id;
@@ -55,20 +58,6 @@ public class User {
     }
 
     /**
-     * @return the phone
-     */
-    public String getPhone() {
-        return phone;
-    }
-
-    /**
-     * @param phone the phone to set
-     */
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    /**
      * @return the subscribed
      */
     public boolean isSubscribed() {
@@ -82,17 +71,4 @@ public class User {
         this.subscribed = subscribed;
     }
 
-    /**
-     * @return the address
-     */
-    public String getAddress() {
-        return address;
-    }
-
-    /**
-     * @param address the address to set
-     */
-    public void setAddress(String address) {
-        this.address = address;
-    }
 }
