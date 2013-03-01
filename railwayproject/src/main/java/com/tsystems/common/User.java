@@ -8,7 +8,10 @@ package com.tsystems.common;
  * To change this template use File | Settings | File Templates.
  */
 
+import com.tsystems.server.domain.entity.Passenger;
+
 import java.io.Serializable;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,9 +24,9 @@ public class User implements Serializable {
     private String id;
     private String email;
     private String name;
-    private String surName;
+    private String surname;
     private String password;
-
+    private Date birthdayDate;
     //private String phone;
     private boolean subscribed;
     //private String address;
@@ -41,12 +44,13 @@ public class User implements Serializable {
         return user;
     }
 
-    public User(String email, String name, String surName, String password) {
+    public User(String name, String surname, String email, String password, Date birthdayDate) {
 //        this.id = id;
         this.email = email;
         this.name = name;
-        this.surName = surName;
+        this.surname = surname;
         this.password = password;
+        this.birthdayDate = birthdayDate;
     }
 
     public String getId() {
@@ -90,11 +94,11 @@ public class User implements Serializable {
     }
 
     public String getSurName() {
-        return surName;
+        return surname;
     }
 
-    public void setSurName(String surName) {
-        this.surName = surName;
+    public void setSurName(String surname) {
+        this.surname = surname;
     }
 
     public String getPassword() {
@@ -103,5 +107,13 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Date getBirthdayDate() {
+        return birthdayDate;
+    }
+
+    public void setBirthdayDate(Date birthdayDate) {
+        this.birthdayDate = birthdayDate;
     }
 }

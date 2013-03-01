@@ -1,5 +1,7 @@
 package com.tsystems.common;
 
+import java.io.Serializable;
+
 /**
  * Created with IntelliJ IDEA.
  * User: alex
@@ -7,7 +9,7 @@ package com.tsystems.common;
  * Time: 6:45 PM
  * To change this template use File | Settings | File Templates.
  */
-public class LoginPassword {
+public class LoginPassword implements Serializable {
 
     public LoginPassword() {
     }
@@ -35,4 +37,5 @@ public class LoginPassword {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

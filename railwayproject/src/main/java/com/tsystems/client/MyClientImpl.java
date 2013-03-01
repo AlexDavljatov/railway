@@ -1,15 +1,11 @@
 package com.tsystems.client;
 
 import com.tsystems.common.DataTransferObject;
+import com.tsystems.common.LoginPassword;
 import com.tsystems.common.User;
-import com.tsystems.server.Protocol.Command.CommandType;
-import com.tsystems.server.Protocol.MyProtocol;
-
-import java.net.InetSocketAddress;
-import java.nio.ByteBuffer;
-import java.nio.channels.*;
-import java.nio.charset.Charset;
-import java.util.concurrent.ExecutionException;
+import com.tsystems.server.protocol.Command.CommandType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -17,6 +13,7 @@ import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,6 +25,8 @@ import java.net.UnknownHostException;
 //public class MyClientImpl implements Runnable {
 public class MyClientImpl {
 
+    private static final Logger log = LoggerFactory.getLogger(MyClientImpl.class);
+
     final int SERVER_PORT = 9090;
     final String SERVER_IP = "localhost";
     //static boolean completed = false;
@@ -37,7 +36,19 @@ public class MyClientImpl {
     ObjectInputStream in;
     ObjectOutputStream out;
 
-    public MyClientImpl() throws UnknownHostException {
+    private LoginPassword lp = null;
+
+    private static MyClientImpl instance;
+
+    public static synchronized MyClientImpl getInstance() {
+        if (instance == null) instance = new MyClientImpl();
+        return instance;
+    }
+
+    public MyClientImpl() {
+
+    }
+/*    public MyClientImpl() throws UnknownHostException {
         System.err.println("MyClient started");
         InetAddress address = InetAddress.getByName(SERVER_IP);
         try {
@@ -52,13 +63,30 @@ public class MyClientImpl {
             System.exit(1);
         }
     }
-    //String s = null;
+ */   //String s = null;
 
-    public boolean doRegister() throws IOException, ClassNotFoundException {
-        System.err.println("doRegister");
-        out.writeObject(new DataTransferObject(CommandType.REGISTER, new User("Vasya", "Sidorov", "bbb@bbb.bbb", "password")));
+    private void init() throws UnknownHostException {
+        InetAddress address = InetAddress.getByName(SERVER_IP);
+        try {
+            socket = new Socket(address, SERVER_PORT);
+            out = new ObjectOutputStream(socket.getOutputStream());
+            in = new ObjectInputStream(socket.getInputStream());
+            log.debug("MyClient.init() success");
+        } catch (java.rmi.UnknownHostException e) {
+            log.error("MyClient.init() host exception" + e.getMessage());
+            System.exit(1);
+        } catch (IOException e) {
+            log.error("MyClient.init() I/O exception" + e.getMessage());
+            System.exit(1);
+        }
+    }
+
+    public boolean doRegister(User user) throws IOException, ClassNotFoundException {
+        init();
+        this.lp = new LoginPassword(user.getEmail(), user.getPassword());
+        out.writeObject(new DataTransferObject(CommandType.REGISTER, user));
         DataTransferObject input = (DataTransferObject) in.readObject();
-        System.err.println(input.getCmd());
+        //System.err.println(input.getCmd());
         /**     System.err.println("Try to register: " + user);
          out.writeObject(new DataTransferObject(MyProtocol.Command.REGISTER, user));
          DataTransferObject input = (DataTransferObject) in.readObject();
@@ -67,112 +95,37 @@ public class MyClientImpl {
          */
         out.close();
         in.close();
+        log.debug("\nMyClient.doRegister() success"); //+ getLp().getLogin());
+        log.debug("\nMyClient.doRegister() success" + MyClientImpl.getInstance().getLp().getLogin());
+        log.debug("\nMyClient.doRegister() Received CommandType" + input.getCmd());
         return input.getCmd() == CommandType.OK;
 
-        //    return false;
     }
 
-/*    public static void main(String[] args) throws Exception {
-        new MyClientImpl();
+    public boolean doLogin(LoginPassword lp) throws IOException, ClassNotFoundException {
+        init();
+        this.lp = lp;
+        out.writeObject(new DataTransferObject(CommandType.LOGIN, lp));
+        DataTransferObject input = (DataTransferObject) in.readObject();
+        out.close();
+        in.close();
+        //    return ()input.getData();
+        log.debug("\nReceived CommandType" + input.getCmd());
+        log.debug("\nMyClient.doLogin()" + getLp().getLogin());
+        return input.getCmd() == CommandType.OK;
     }
-*/
-    /**
-     * MyClientImpl(String s) {
-     * this.s = s;
-     * }
-     * /
-     * <p/>
-     * /**
-     * MyClientImpl(AsynchronousServerSocketChannel server) {
-     * try {
-     * client = AsynchronousSocketChannel.open();
-     * client.connect(server.getLocalAddress()).get();
-     * } catch (IOException e) {
-     * System.out.println("Connection exception");
-     * e.printStackTrace();
-     * } catch (InterruptedException e) {
-     * System.out.println("You were interrupted.. Oooops!");
-     * e.printStackTrace();
-     * } catch (ExecutionException e) {
-     * System.out.println("Error while thread executing");
-     * e.printStackTrace();
-     * }
-     * }
-     */
-/***
- public static void main(String[] args) {
- ///    for (int i = 0; i < 5; i++)
- new Thread(new MyClientImpl(String.valueOf(i))).start();
- }
 
- //TODO: connect to the Server
- void connectToServer() throws IOException {
- //    client = AsynchronousSocketChannel.open();
- //client.connect(server.getLocalAddress()).get();
- }
+    public List<User> getUsers(LoginPassword lp) throws IOException, ClassNotFoundException {
+        init();
+        out.writeObject(new DataTransferObject(CommandType.ADMIN_USERS_WATCH_EDIT, lp));
+        DataTransferObject input = (DataTransferObject) in.readObject();
+        out.close();
+        in.close();
+        log.debug("\nMyClient.getUsers() success");
+        return (List<User>) input.getData();
+    }
 
- //TODO: send a message to the Server
- void sendMessageToServer() throws ExecutionException, InterruptedException {
- ByteBuffer message = ByteBuffer.wrap("ping".getBytes());
- client.write(message).get();
- }
-
- //TODO: get message from the server
-
-
- @Override public void run() {
- //To change body of implemented methods use File | Settings | File Templates.
- }
- */
-    /**
-     *
-     @Override public void run() {
-     ByteBuffer receivingBuffer = ByteBuffer.allocateDirect(1024);
-     ByteBuffer sendingBuffer = ByteBuffer.wrap(s.getBytes());//s = "Hi"
-
-     try {
-     AsynchronousSocketChannel asynchronousSocketChannel = AsynchronousSocketChannel.open();
-     if (asynchronousSocketChannel.isOpen()) {
-
-     Void connect = asynchronousSocketChannel.connect(new InetSocketAddress(SERVER_IP, SERVER_PORT)).get();
-     if (connect == null) {
-     System.out.println(s + " Local address: " + asynchronousSocketChannel.getLocalAddress());
-
-     //sending data
-     asynchronousSocketChannel.write(sendingBuffer).get();
-     asynchronousSocketChannel.read(receivingBuffer, receivingBuffer, new CompletionHandler<Integer, ByteBuffer>() {
-     public void completed(Integer result, ByteBuffer buffer) {
-     buffer.flip();
-     String msgReceived = Charset.defaultCharset().decode(buffer).toString();
-     System.out.println(s + " Msg received from server : " + msgReceived);
-     completed = true;
-     }
-
-     public void failed(Throwable exc, ByteBuffer buffer) {
-     completed = false;
-     throw new UnsupportedOperationException("read failed!");
-     }
-     });
-
-     while (!completed) {
-     try {
-     Thread.sleep(100);
-     } catch (Exception e) {
-     }
-     System.out.println("Waiting for response from the server");
-     }
-
-     } else {
-     System.out.println("The connection cannot be established!");
-     }
-     } else {
-     System.out.println("The asynchronous socket channel cannot be opened!");
-     }
-     } catch (Exception ex) {
-     System.err.println(ex);
-     }
-
-
-     }
-     */
+    public LoginPassword getLp() {
+        return lp;
+    }
 }

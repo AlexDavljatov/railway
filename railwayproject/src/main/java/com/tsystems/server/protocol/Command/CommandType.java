@@ -1,4 +1,6 @@
-package com.tsystems.server.Protocol.Command;
+package com.tsystems.server.protocol.Command;
+
+import java.io.Serializable;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,5 +20,6 @@ public enum CommandType {
     ADMIN_ADD_TRAIN,
     ADMIN_ADD_STATION,
     ADMIN_TRAINS,
-    ADMIN_USERS_WATCH_EDIT;
+    ADMIN_USERS_WATCH_EDIT,
+    UPDATE_DATA
 }

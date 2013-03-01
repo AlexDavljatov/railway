@@ -9,19 +9,20 @@ package com.tsystems.client.UI;
  */
 
 import com.tsystems.common.User;
-import com.tsystems.client.UI.security.Authenticator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.util.Arrays;
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Arrays;
+import java.util.List;
+
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 
 /**
  * Main Application. This class handles navigation and user session.
@@ -60,10 +61,11 @@ public class App extends Application {
             stage = primaryStage;
             gotoLogin();
             primaryStage.show();
+            log.debug("App.start() success\n");
         } catch (Exception ex) {
             //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
-            log.error("start exception\n" + ex.getMessage());
-            debug(ex.getMessage());
+            log.error("App.start() exception\n" + ex.getMessage());
+//            debug(ex.getMessage());
         }
     }
 
@@ -71,14 +73,22 @@ public class App extends Application {
         return loggedUser;
     }
 
-    public boolean userLogging(String userId, String password) {
-        if (Authenticator.validate(userId, password)) {
+    public boolean userLogging(String email, String password) {
+
+        /*if (Authenticator.validate(userId, password)) {
             loggedUser = User.of(userId);
-            doRegister();
+            gotoRegister();
             return true;
         } else {
             return false;
-        }
+        } */
+        //
+        return false;
+    }
+
+    public void userRegister() {
+        loggedUser = User.of("");
+        gotoRegister();
     }
 
     public void userLogout() {
@@ -86,13 +96,17 @@ public class App extends Application {
         gotoLogin();
     }
 
-    private void doRegister() {
+    public void userLogin() {
+        gotoProfile();
+    }
+
+    private void gotoRegister() {
         try {
             replaceSceneContent("/fxml/register.fxml");
-            //debug("User profile success");
+            log.debug("App.gotoRegister() success\n");
         } catch (Exception ex) {
             //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
-            log.error("profile exception\n" + ex.getMessage());
+            log.error("App.gotoRegister() exception\n" + ex.getMessage());
             debug(ex.getMessage());
         }
     }
@@ -100,13 +114,36 @@ public class App extends Application {
     private void gotoLogin() {
         try {
             replaceSceneContent("/fxml/login.fxml");
-            //    debug("User login success");
-            //    log.error("User login success");
-            log.debug("User login success");
+            log.debug("App.gotoLogin success\n");
         } catch (Exception ex) {
-            log.error("login exception\n" + ex.getMessage());
-            debug(ex.getMessage());
+            log.error("App.gotoLogin() exception\n" + ex.getMessage());
             //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void gotoProfile() {
+        try {
+            replaceSceneContent("/fxml/viewProfile.fxml");
+            log.debug("App.gotoProfile success\n");
+        } catch (Exception ex) {
+            //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            log.error("App.gotoProfile() exception\n" + ex.getMessage());
+            debug(ex.getMessage());
+        }
+    }
+
+    public void adminViewPassengers() {
+        gotoViewPassengers();
+    }
+
+    private void gotoViewPassengers() {
+        try {
+            replaceSceneContent("/fxml/admin/viewPassengers.fxml");
+            log.debug("App.gotoViewPassenger() success\n");
+        } catch (Exception ex) {
+            //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            log.error("App.gotoViewPassenger() exception\n" + ex.getMessage());
+            debug(ex.getMessage());
         }
     }
 
@@ -114,7 +151,9 @@ public class App extends Application {
         Parent page = (Parent) FXMLLoader.load(App.class.getResource(fxml), null, new JavaFXBuilderFactory());
         Scene scene = stage.getScene();
         if (scene == null) {
+//            scene = new Scene(page, 700, 550);
             scene = new Scene(page, 700, 550);
+            scene.getStylesheets().addAll(App.class.getResource("/styles/simple_calendar.css").toExternalForm());
             scene.getStylesheets().add(App.class.getResource("/styles/style.css").toExternalForm());
             stage.setScene(scene);
         } else {

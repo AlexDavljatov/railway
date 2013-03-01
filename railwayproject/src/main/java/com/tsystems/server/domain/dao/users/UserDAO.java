@@ -1,7 +1,7 @@
-package com.tsystems.common.domain.dao;
+package com.tsystems.server.domain.dao.users;
 
-import com.tsystems.common.domain.BaseDAO;
 import com.tsystems.server.domain.entity.Passenger;
+import com.tsystems.server.domain.dao.*;
 
 import java.util.List;
 
@@ -13,10 +13,11 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface UserDAO extends BaseDAO<Passenger> {
-    public List<Passenger> getAllUsers();
+//    public List<Passenger> getAllUsers();
 
 //    public void addPAssanger(Passenger passenger) {
 //    }
 
-    public Passenger getUser(String email);
+    //public Passenger getElement(String s);
+
 }

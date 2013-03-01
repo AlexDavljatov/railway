@@ -1,7 +1,7 @@
 package com.tsystems.server;
 
-import com.tsystems.server.Protocol.Message.RequestMessage;
-import com.tsystems.server.Protocol.Message.ResponseMessage;
+import com.tsystems.server.protocol.Message.RequestMessage;
+import com.tsystems.server.protocol.Message.ResponseMessage;
 
 /**
  * Created with IntelliJ IDEA.

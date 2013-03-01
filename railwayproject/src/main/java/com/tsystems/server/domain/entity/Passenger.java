@@ -22,11 +22,12 @@ public class Passenger extends BaseEntity {
     public Passenger() {
     }
 
-    public Passenger(String name, String surname, String email, String password, boolean administrator) {
+    public Passenger(String name, String surname, String email, String password, Date birthdayDate, boolean administrator) {
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.password = password;
+        this.birthdayDate = birthdayDate;
         this.administrator = administrator;
     }
 
@@ -94,14 +95,14 @@ public class Passenger extends BaseEntity {
         this.password = password;
     }
 
-    private Date birthday_date;
+    private Date birthdayDate;
 
-    public Date getBirthday_date() {
-        return birthday_date;
+    public Date getBirthdayDate() {
+        return birthdayDate;
     }
 
-    public void setBirthday_date(Date birthday_date) {
-        this.birthday_date = birthday_date;
+    public void setBirthdayDate(Date birthdayDate) {
+        this.birthdayDate = birthdayDate;
     }
 
     @OneToMany(mappedBy = "passenger")

@@ -154,13 +154,6 @@
         <module name="railwayproject" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="edu-app" target="1.5" />
-      <module name="edu-domain" target="1.5" />
-      <module name="edu-project" target="1.5" />
-      <module name="edu-service" target="1.5" />
-      <module name="edu-taglibs" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
   <component name="CopyrightManager" default="">
     <module2copyright />

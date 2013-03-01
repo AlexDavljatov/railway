@@ -1,4 +1,4 @@
-package com.tsystems.server.Protocol.Message;
+package com.tsystems.server.protocol.Message;
 
 import java.io.Serializable;
 

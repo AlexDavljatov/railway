@@ -1,13 +1,6 @@
 package com.tsystems.client;
 
-import com.tsystems.server.Protocol.Message.RequestMessage;
-
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.net.InetAddress;
-import java.net.Socket;
-import java.rmi.UnknownHostException;
+import com.tsystems.server.protocol.Message.RequestMessage;
 
 /**
  * Created with IntelliJ IDEA.

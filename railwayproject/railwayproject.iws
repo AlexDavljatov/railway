@@ -14,53 +14,51 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" name="Default" comment="Too many changes to tell them about :)">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/common/domain/BaseDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/domain/BaseEntity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/Command/CommandImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/common/LoginPassword.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/MultiServerThread.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/MyServerImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/common/domain/dao/UserDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/common/domain/dao/impl/UserDAOImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/register.fxml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/DAO/Entities/PassengerEntity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/DAO/Entities/SheduleEntity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/DAO/Entities/StationEntity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/DAO/Entities/TicketEntity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/DAO/Entities/TrainEntity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/DAO/Entity/Test.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/MyServerImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/profile.fxml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/ProfileController.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/RegisterController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/DAO/Entity/Passenger.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/domain/entity/Passenger.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/DAO/Entity/Shedule.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/domain/entity/Shedule.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/DAO/Entity/Station.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/domain/entity/Station.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/DAO/Entity/Ticket.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/domain/entity/Ticket.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/DAO/Entity/Train.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/domain/entity/Train.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/MyServer.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/MyServer.java" />
+    <list default="true" id="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" name="Default" comment="Some files are added(e.g. Controllers + fxmls +style + ..)&#10;Some files are changer(e.g. Controllers + fxmls +style + ..)&#10;ViewPassengersAbility is added&#10;(=&gt; register + login + viewPassengers is done)">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/domain/dao/users/impl/UserDAOImpl.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/model/User.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/common/domain/dao/impl/UserDAOImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/DB/ClassesJDBC.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/common/domain/BaseDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/domain/dao/BaseDAO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/common/domain/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/domain/dao/users/UserDAO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/Command/Command.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/protocol/Command/Command.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/Command/CommandImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/protocol/Command/CommandImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/Command/CommandType.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/protocol/Command/CommandType.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/Message/RequestMessage.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/protocol/Message/RequestMessage.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/Message/ResponseMessage.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/protocol/Message/ResponseMessage.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/Message/State.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/protocol/Message/State.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/MyProtocol.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/protocol/MyProtocol.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/App.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/Command/CommandType.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/Command/CommandType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/common/DataTransferObject.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/common/DataTransferObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/FXMLTableView.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/FXMLTableView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/FXMLTableViewController.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/FXMLTableViewController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/LoginController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/common/LoginPassword.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/common/LoginPassword.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/MultiServerThread.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/MultiServerThread.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/client/MyClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/client/MyClient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/client/MyClientImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/client/MyClientImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/MyProtocol.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/MyProtocol.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/model/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/MyServer.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/MyServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/MyServerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/MyServerImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/server/domain/entity/Passenger.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/server/domain/entity/Passenger.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/model/Person.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/model/Person.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/RegisterController.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/RegisterController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/common/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/common/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/admin/ViewPassengersController.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/admin/ViewPassengersController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/fxml_tableview.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/fxml_tableview.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/railwayproject.ipr" afterPath="$PROJECT_DIR$/railwayproject.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/railwayproject.iws" afterPath="$PROJECT_DIR$/railwayproject.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/register.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/register.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/admin/viewPassengers.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/admin/viewPassengers.fxml" />
     </list>
     <list id="c38271e1-1a3d-4a4e-9c3f-b7ac84215f0b" name="Rejected commit: Default" comment="Too many changes to tell them about :)" />
     <ignored path="railwayproject.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/FXLoginView.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361120642750" ignored="false" />
-    <file path="/fragment.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362004798374" ignored="false" />
-    <file path="/App.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361978634161" ignored="false" />
-    <file path="/Dummy.txt" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362009726685" ignored="false" />
+    <file path="/fragment.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362156191870" ignored="false" />
+    <file path="/App.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362174086098" ignored="false" />
+    <file path="/Dummy.txt" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362178391744" ignored="false" />
     <file path="/MyServer.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361877556099" ignored="false" />
     <file path="/MyClient.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361975464086" ignored="false" />
     <file path="/AsynchronousTcpServer.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361305653311" ignored="false" />
@@ -71,50 +69,63 @@
     <file path="/Server.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361377124411" ignored="false" />
     <file path="/ChangeRequest.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361366708053" ignored="false" />
     <file path="/BlockingTCPServer.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361373622641" ignored="false" />
-    <file path="/a.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361530176265" ignored="false" />
-    <file path="/MyServerImpl.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362005534862" ignored="false" />
-    <file path="/persistence.xml" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361965412294" ignored="false" />
+    <file path="/a.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362154848924" ignored="false" />
+    <file path="/MyServerImpl.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362097527472" ignored="false" />
+    <file path="/persistence.xml" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362054247192" ignored="false" />
     <file path="/dummy.sql" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361870563782" ignored="false" />
     <file path="/a.sql" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361870563781" ignored="false" />
-    <file path="/Passenger.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362003969249" ignored="false" />
+    <file path="/Passenger.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362170096115" ignored="false" />
     <file path="/Station.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362000081582" ignored="false" />
     <file path="/Ticket.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362000168050" ignored="false" />
     <file path="/Train.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362004345268" ignored="false" />
     <file path="$PROJECT_DIR$/../../../JavaSchool7/Exigen/JPA/task-jpa-template/task-jpa-template/src/java/org/task/domain/Manager.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361658999287" ignored="false" />
     <file path="/Shedule.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362001197350" ignored="false" />
     <file path="/profile.fxml" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361784883689" ignored="false" />
-    <file path="/login.fxml" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361975027839" ignored="false" />
-    <file path="/LoginController.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361974598825" ignored="false" />
+    <file path="/login.fxml" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362152819466" ignored="false" />
+    <file path="/LoginController.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362163266943" ignored="false" />
     <file path="$PROJECT_DIR$/../javafxtest/src/main/java/com/HelloController.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361785049799" ignored="false" />
     <file path="$PROJECT_DIR$/../javafxtest/src/main/java/com/MainApp.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361740790833" ignored="false" />
     <file path="/pom.xml" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361743402746" ignored="false" />
-    <file path="/Main.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362005422052" ignored="false" />
+    <file path="/Main.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362074695023" ignored="false" />
     <file path="$PROJECT_DIR$/../javafxtest/src/main/java/com/Main.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361743074525" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/com/tsystems/UI/UITest.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361827145648" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/com/tsystems/UI/loginFormTest.form" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361827145959" ignored="false" />
-    <file path="/fxml_tableview.fxml" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361836389183" ignored="false" />
+    <file path="/fxml_tableview.fxml" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362158102072" ignored="false" />
     <file path="/FXMLTableView.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361835863117" ignored="false" />
     <file path="/viewTrains.fxml" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361876776650" ignored="false" />
     <file path="/ResponseMessage.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361877333760" ignored="false" />
     <file path="$PROJECT_DIR$/../../mailproject/mail-demidov-read-only/src/server/DataAccessObject.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361902950035" ignored="false" />
-    <file path="/MyClientImpl.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362008333566" ignored="false" />
+    <file path="/MyClientImpl.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362176428795" ignored="false" />
     <file path="/Command.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361963949040" ignored="false" />
-    <file path="/DataTransferObject.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362005838944" ignored="false" />
+    <file path="/DataTransferObject.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362176934592" ignored="false" />
     <file path="$PROJECT_DIR$/../../../JavaSchool7/JPA/lection/jpa/src/main/resources/META-INF/persistence.xml" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361964167751" ignored="false" />
     <file path="/Test.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361964807105" ignored="false" />
     <file path="/myapp" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361967036937" ignored="false" />
-    <file path="/LoginPassword.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361976383496" ignored="false" />
-    <file path="/User.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362007505947" ignored="false" />
-    <file path="/register.fxml" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362003649196" ignored="false" />
-    <file path="/RegisterController.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362006891863" ignored="false" />
+    <file path="/LoginPassword.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362096013683" ignored="false" />
+    <file path="/User.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362176916862" ignored="false" />
+    <file path="/register.fxml" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362168012984" ignored="false" />
+    <file path="/RegisterController.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362169722849" ignored="false" />
     <file path="/BaseEntity.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1361999707065" ignored="false" />
-    <file path="/BaseDAO.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362002941255" ignored="false" />
-    <file path="/UserDAO.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362005333542" ignored="false" />
-    <file path="/UserDAOImpl.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362003121700" ignored="false" />
-    <file path="/MultiServerThread.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362008622393" ignored="false" />
-    <file path="/MyProtocol.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362007620681" ignored="false" />
-    <file path="/CommandImpl.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362005627015" ignored="false" />
-    <file path="/CommandType.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362005699875" ignored="false" />
+    <file path="/BaseDAO.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362149939494" ignored="false" />
+    <file path="/UserDAO.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362150026558" ignored="false" />
+    <file path="/UserDAOImpl.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362150226612" ignored="false" />
+    <file path="/MultiServerThread.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362091468061" ignored="false" />
+    <file path="/MyProtocol.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362177410310" ignored="false" />
+    <file path="/CommandImpl.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362177522771" ignored="false" />
+    <file path="/CommandType.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362091424949" ignored="false" />
+    <file path="/MyAsynchServer.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362084450861" ignored="false" />
+    <file path="/MyAsynchClient.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362082577484" ignored="false" />
+    <file path="/UserSer.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362082549235" ignored="false" />
+    <file path="/viewProfile.fxml" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362173056484" ignored="false" />
+    <file path="/ViewProfileController.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362174098831" ignored="false" />
+    <file path="/FXMLTableViewController.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362158896940" ignored="false" />
+    <file path="/TrainDAO.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362150310648" ignored="false" />
+    <file path="/TrainDAOImpl.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362150341464" ignored="false" />
+    <file path="/SimpleCalendarDemo.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362166073914" ignored="false" />
+    <file path="/simple_calendar.css" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362166959091" ignored="false" />
+    <file path="/viewPassengers.fxml" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362175756171" ignored="false" />
+    <file path="/ViewPassengersController.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362177945906" ignored="false" />
+    <file path="/Person.java" changelist="09eb9a5b-e5b3-46c1-9b62-9865ddda22eb" time="1362175938357" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -309,75 +320,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MultiServerThread.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/server/MultiServerThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="32" selection-start="1233" selection-end="1233" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyClientImpl.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MyClientImpl.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/client/MyClientImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="73" selection-start="1078" selection-end="1078" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.fxml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/login.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="26" selection-start="635" selection-end="635" vertical-scroll-proportion="0.44198895">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyServerImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/server/MyServerImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="13" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegisterController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/RegisterController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="51" selection-start="1619" selection-end="1619" vertical-scroll-proportion="0.0">
+            <state line="70" column="24" selection-start="2174" selection-end="2174" vertical-scroll-proportion="0.41436464">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="MyProtocol.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/MyProtocol.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/server/protocol/MyProtocol.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="23" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="48" column="12" selection-start="2031" selection-end="2031" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#MyProtocol#0" expanded="true" />
+                <element signature="e#1909#1915#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.fxml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/register.fxml">
+      <file leaf-file-name="ViewPassengersController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/admin/ViewPassengersController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommandImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/Command/CommandImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="36" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0">
+            <state line="75" column="12" selection-start="2323" selection-end="2323" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -385,10 +353,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataTransferObject.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/common/DataTransferObject.java">
+      <file leaf-file-name="MultiServerThread.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/server/MultiServerThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="23" selection-start="682" selection-end="682" vertical-scroll-proportion="0.0">
+            <state line="42" column="0" selection-start="1206" selection-end="1206" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/common/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="54" column="0" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="docComment;method#getEmail#0;class#User#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommandImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/server/protocol/Command/CommandImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="63" column="58" selection-start="2458" selection-end="2458" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -426,22 +414,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/src/main/resources/styles/simple_calendar.css" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/register.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/tsystems/server/domain/entity/Passenger.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/server/domain/BaseEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/server/domain/entity/Train.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/common/domain/dao/UserDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/Command/CommandImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/Command/CommandType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/common/DataTransferObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/RegisterController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/server/MyServerImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/common/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/MyProtocol.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/server/MultiServerThread.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/viewProfile.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/ViewProfileController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/FXMLTableViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/admin/viewPassengers.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/model/Person.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tsystems/client/MyClientImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/server/protocol/MyProtocol.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/server/protocol/Command/CommandImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/common/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/common/DataTransferObject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/admin/ViewPassengersController.java" />
       </list>
     </option>
   </component>
@@ -538,19 +526,217 @@
             <id />
           </State>
           <State>
+            <id>Abstraction issues</id>
+          </State>
+          <State>
+            <id>Android Lint</id>
+          </State>
+          <State>
+            <id>Bitwise operation issues</id>
+          </State>
+          <State>
+            <id>Bitwise operation issuesJavaScript</id>
+          </State>
+          <State>
+            <id>CDI(Contexts and Dependency Injection) issues</id>
+          </State>
+          <State>
+            <id>Class metrics</id>
+          </State>
+          <State>
+            <id>Class structure</id>
+          </State>
+          <State>
+            <id>Code maturity issues</id>
+          </State>
+          <State>
+            <id>Code style issues</id>
+          </State>
+          <State>
+            <id>Code style issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Control flow issues</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>DOM issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Data flow issues</id>
+          </State>
+          <State>
+            <id>Data flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Declaration redundancy</id>
+          </State>
+          <State>
+            <id>Encapsulation issues</id>
+          </State>
+          <State>
+            <id>Error handling</id>
+          </State>
+          <State>
+            <id>Error handlingGroovy</id>
+          </State>
+          <State>
+            <id>Error handlingJavaScript</id>
+          </State>
+          <State>
+            <id>Finalization issues</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
             <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>Google Web Toolkit issues</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>Guice Inspections</id>
+          </State>
+          <State>
+            <id>HTML</id>
+          </State>
+          <State>
+            <id>IDEA Platform Inspections</id>
+          </State>
+          <State>
+            <id>Imports</id>
+          </State>
+          <State>
+            <id>Inheritance issues</id>
+          </State>
+          <State>
+            <id>Internationalization issues</id>
+          </State>
+          <State>
+            <id>J2ME issues</id>
+          </State>
+          <State>
+            <id>JBoss Seam issues</id>
+          </State>
+          <State>
+            <id>JSP Inspections</id>
+          </State>
+          <State>
+            <id>JUnit issues</id>
+          </State>
+          <State>
+            <id>Java EE issues</id>
+          </State>
+          <State>
+            <id>Java language level migration aids</id>
+          </State>
+          <State>
+            <id>JavaBeans issues</id>
           </State>
           <State>
             <id>JavaScript</id>
           </State>
           <State>
-            <id>Struts</id>
+            <id>JavaScript function metricsJavaScript</id>
           </State>
           <State>
-            <id>Struts 1Struts</id>
+            <id>Javadoc issues</id>
+          </State>
+          <State>
+            <id>Logging issues</id>
+          </State>
+          <State>
+            <id>Method MetricsGroovy</id>
+          </State>
+          <State>
+            <id>Method metrics</id>
+          </State>
+          <State>
+            <id>Naming conventions</id>
+          </State>
+          <State>
+            <id>Numeric issues</id>
+          </State>
+          <State>
+            <id>Performance issues</id>
+          </State>
+          <State>
+            <id>Plugin DevKit</id>
+          </State>
+          <State>
+            <id>Portability issues</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsGroovy</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsJavaScript</id>
+          </State>
+          <State>
+            <id>Probable bugs</id>
+          </State>
+          <State>
+            <id>Probable bugsGroovy</id>
+          </State>
+          <State>
+            <id>Probable bugsJavaScript</id>
+          </State>
+          <State>
+            <id>RELAX NG</id>
+          </State>
+          <State>
+            <id>SQL</id>
+          </State>
+          <State>
+            <id>Security issues</id>
+          </State>
+          <State>
+            <id>Serialization issues</id>
+          </State>
+          <State>
+            <id>Spelling</id>
+          </State>
+          <State>
+            <id>Spring Model</id>
+          </State>
+          <State>
+            <id>Spring OSGiSpring Model</id>
+          </State>
+          <State>
+            <id>Threading issues</id>
+          </State>
+          <State>
+            <id>Threading issuesGroovy</id>
+          </State>
+          <State>
+            <id>UI Form Problems</id>
+          </State>
+          <State>
+            <id>Verbose or redundant code constructs</id>
+          </State>
+          <State>
+            <id>Visibility issues</id>
+          </State>
+          <State>
+            <id>WSDL issues</id>
+          </State>
+          <State>
+            <id>Web Services</id>
+          </State>
+          <State>
+            <id>XML</id>
           </State>
           <State>
             <id>XPath</id>
+          </State>
+          <State>
+            <id>XSLT</id>
           </State>
         </expanded-state>
       </profile-state>
@@ -655,32 +841,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="railwayproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="railwayproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="META-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -822,7 +982,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protocol" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -852,7 +1016,45 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protocol" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Command" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="railwayproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="railwayproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tsystems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -886,7 +1088,45 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="railwayproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="railwayproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tsystems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -924,7 +1164,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
+              <option name="myItemId" value="server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -933,10 +1173,86 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="railwayproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="railwayproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tsystems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="users" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="railwayproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="railwayproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tsystems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1004,6 +1320,200 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="railwayproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="railwayproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tsystems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="security" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="railwayproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="railwayproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tsystems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="railwayproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="railwayproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tsystems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="railwayproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="railwayproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tsystems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="railwayproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="railwayproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tsystems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Calendar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Favorites" />
@@ -1029,39 +1539,30 @@
     <property name="Persistence.ERD.SimpleMode" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="preferences.fileTypes" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../mailproject/mail-demidov-read-only" />
     <property name="project.structure.side.proportion" value="0.15268065" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="Persistence.ERD.MergeInherited" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2738255" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/resources/images" />
       <recent name="$PROJECT_DIR$/src/main/resources/styles" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/Calendar" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources/fxml" />
-      <recent name="$PROJECT_DIR$/src/main/java" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.tsystems.server" />
       <recent name="" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.tsystems.common.domain" />
-      <recent name="com.tsystems.server.domain" />
-      <recent name="com.tsystems.server.domain.entity" />
-    </key>
-    <key name="ImportMappingsDialog.RecentPackages">
-      <recent name="com.tsystems.Domain.Entities" />
-      <recent name="com.tsystems.Domain.Entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/styles" />
@@ -1069,47 +1570,18 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/tsystems/UI/view" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="com.tsystems.Domain.Entities" />
+      <recent name="com.tsystems.Domain.Entity" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.tsystems.server.domain.dao.tickets" />
+      <recent name="com.tsystems.common.domain" />
+      <recent name="com.tsystems.server.domain" />
+      <recent name="com.tsystems.server.domain.entity" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.App">
-    <configuration default="false" name="AsynchronousTcpClient" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="com.tsystems.client.others.AsynchronousTcpClient" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="railwayproject" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.tsystems.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.tsystems.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="railwayproject" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="false" name="App" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" runner="idea">
         <pattern>
@@ -1118,6 +1590,50 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="com.tsystems.client.UI.App" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="railwayproject" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MyServerImpl" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.tsystems.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.tsystems.server.MyServerImpl" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="railwayproject" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MyAsynchClient" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.tsystems.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.tsystems.client.others.MyAsynchClient" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -1154,14 +1670,14 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="MyServerImpl" type="Application" factoryName="Application" temporary="true">
+    <configuration default="false" name="SimpleCalendarDemo" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.tsystems.server.*" />
+          <option name="PATTERN" value="com.tsystems.client.UI.Calendar.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="com.tsystems.server.MyServerImpl" />
+      <option name="MAIN_CLASS_NAME" value="com.tsystems.client.UI.Calendar.SimpleCalendarDemo" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -1286,19 +1802,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.AsynchronousTcpClient" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="2" class="java.lang.String" itemvalue="Application.App" />
+      <item index="0" class="java.lang.String" itemvalue="Application.App" />
+      <item index="1" class="java.lang.String" itemvalue="Application.MyServerImpl" />
+      <item index="2" class="java.lang.String" itemvalue="Application.MyAsynchClient" />
       <item index="3" class="java.lang.String" itemvalue="Application.FXMLTableView" />
-      <item index="4" class="java.lang.String" itemvalue="Application.MyServerImpl" />
+      <item index="4" class="java.lang.String" itemvalue="Application.SimpleCalendarDemo" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.App" />
         <item index="1" class="java.lang.String" itemvalue="Application.MyServerImpl" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="2" class="java.lang.String" itemvalue="Application.SimpleCalendarDemo" />
         <item index="3" class="java.lang.String" itemvalue="Application.FXMLTableView" />
-        <item index="4" class="java.lang.String" itemvalue="Application.AsynchronousTcpClient" />
+        <item index="4" class="java.lang.String" itemvalue="Application.MyAsynchClient" />
       </list>
     </recent_temporary>
   </component>
@@ -1419,7 +1935,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="720" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8429054" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1433,21 +1949,21 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277027" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6081081" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293919" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6047297" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277027" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.49324325" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21732026" sideWeight="0.38513514" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21732026" sideWeight="0.61279464" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39951378" sideWeight="0.8284229" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2369281" sideWeight="0.1570946" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6131757" sideWeight="0.47058824" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29003268" sideWeight="0.1570946" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38513514" sideWeight="0.47058824" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.11764706" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Aspects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293919" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JPA Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293919" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5996622" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1495,7 +2011,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Too many changes to tell them about :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some files are added(e.g. Controllers + fxmls +style + ..)&#10;Some files are changer(e.g. Controllers + fxmls +style + ..)&#10;ViewPassengersAbility is added&#10;(=&gt; register + login + viewPassengers is done)" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1520,6 +2036,7 @@
     <MESSAGE value="Some more test changes added" />
     <MESSAGE value="Some JPA refactoring was done.&#10;Client/server connection was successfully made.&#10;JPA usage was successful.&#10;&#10;Not bad, you really can do it!" />
     <MESSAGE value="Too many changes to tell them about :)" />
+    <MESSAGE value="Some files are added(e.g. Controllers + fxmls +style + ..)&#10;Some files are changer(e.g. Controllers + fxmls +style + ..)&#10;ViewPassengersAbility is added&#10;(=&gt; register + login + viewPassengers is done)" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -1622,120 +2139,132 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/common/domain/dao/impl/UserDAOImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/ViewProfileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="4" selection-start="532" selection-end="532" vertical-scroll-proportion="0.5524862">
+        <state line="43" column="48" selection-start="807" selection-end="807" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="docComment;class#ViewProfileController#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/model/FormattedTableCellFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="13" selection-start="435" selection-end="435" vertical-scroll-proportion="0.3314917">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/FXMLTableView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="13" selection-start="357" selection-end="357" vertical-scroll-proportion="0.3314917">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/admin/viewPassengers.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="52" selection-start="1995" selection-end="1995" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/model/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="41" selection-start="1254" selection-end="1254" vertical-scroll-proportion="0.55801105">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="100" selection-start="688" selection-end="742" vertical-scroll-proportion="0.0">
+        <state line="140" column="64" selection-start="3640" selection-end="3640" vertical-scroll-proportion="1.5044248">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#App#0" expanded="true" />
+            <element signature="docComment;method#main#0;class#App#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/server/protocol/Command/CommandType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="12" selection-start="241" selection-end="241" vertical-scroll-proportion="0.14395393">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/server/MyServer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/common/LoginPassword.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="3" selection-start="352" selection-end="352" vertical-scroll-proportion="0.0">
+        <state line="11" column="13" selection-start="225" selection-end="225" vertical-scroll-proportion="0.13812155">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/Command/CommandType.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/server/protocol/Command/CommandImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="9" selection-start="242" selection-end="242" vertical-scroll-proportion="0.3038674">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/server/domain/entity/Passenger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="76" selection-start="594" selection-end="594" vertical-scroll-proportion="0.30570903">
+        <state line="63" column="58" selection-start="2458" selection-end="2458" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/common/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="2" selection-start="989" selection-end="989" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/register.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/Command/CommandImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="36" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0">
+        <state line="54" column="0" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#getEmail#0;class#User#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/common/DataTransferObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="23" selection-start="682" selection-end="682" vertical-scroll-proportion="0.0">
+        <state line="38" column="0" selection-start="783" selection-end="783" vertical-scroll-proportion="0.44198895">
+          <folding>
+            <element signature="docComment;class#DataTransferObject#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/server/protocol/MyProtocol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="12" selection-start="2031" selection-end="2031" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#MyProtocol#0" expanded="true" />
+            <element signature="e#1909#1915#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/FXMLTableViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="4" selection-start="1615" selection-end="1615" vertical-scroll-proportion="1.1132076">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/RegisterController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/client/UI/controller/admin/ViewPassengersController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="51" selection-start="1619" selection-end="1619" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/server/MyServerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="13" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/server/Protocol/MyProtocol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="23" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/server/MultiServerThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="32" selection-start="1233" selection-end="1233" vertical-scroll-proportion="0.0">
+        <state line="75" column="12" selection-start="2323" selection-end="2323" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/server/MultiServerThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="0" selection-start="1206" selection-end="1206" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tsystems/client/MyClientImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="73" selection-start="1078" selection-end="1078" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/findTrains.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/login.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="26" selection-start="635" selection-end="635" vertical-scroll-proportion="0.44198895">
+        <state line="70" column="24" selection-start="2174" selection-end="2174" vertical-scroll-proportion="0.41436464">
           <folding />
         </state>
       </provider>

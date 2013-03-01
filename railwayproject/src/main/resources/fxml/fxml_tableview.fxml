@@ -41,11 +41,12 @@
         </columns>
         <items>
             <FXCollections fx:factory="observableArrayList">
-                <Person email="jacob.smith@example.com" firstName="Jacob" lastName="Smith"/>
-                <Person email="isabella.johnson@example.com" firstName="Isabella" lastName="Johnson"/>
-                <Person email="ethan.williams@example.com" firstName="Ethan" lastName="Williams"/>
-                <Person email="emma.jones@example.com" firstName="Emma" lastName="Jones"/>
-                <Person email="michael.brown@example.com" firstName="Michael" lastName="Brown"/>
+                <!--                <Person email="jacob.smith@example.com" firstName="Jacob" lastName="Smith"/>
+                                <Person email="isabella.johnson@example.com" firstName="Isabella" lastName="Johnson"/>
+                                <Person email="ethan.williams@example.com" firstName="Ethan" lastName="Williams"/>
+                                <Person email="emma.jones@example.com" firstName="Emma" lastName="Jones"/>
+                                <Person email="michael.brown@example.com" firstName="Michael" lastName="Brown"/>
+                 -->
             </FXCollections>
         </items>
         <sortOrder>
@@ -56,6 +57,6 @@
         <TextField fx:id="firstNameField" prefWidth="90.0" promptText="First Name"/>
         <TextField fx:id="lastNameField" prefWidth="90.0" promptText="Last Name"/>
         <TextField fx:id="emailField" prefWidth="150.0" promptText="Email"/>
-        <Button onAction="#addPerson" text="Add"/>
+        <Button fx:id="button" onAction="#addPerson" text="Add"/>
     </HBox>
 </GridPane>

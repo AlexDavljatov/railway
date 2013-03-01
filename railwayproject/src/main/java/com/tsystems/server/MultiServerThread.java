@@ -1,13 +1,13 @@
 package com.tsystems.server;
 
 import com.tsystems.common.DataTransferObject;
-import com.tsystems.server.Protocol.MyProtocol;
+import com.tsystems.server.protocol.MyProtocol;
 
+import javax.persistence.EntityManager;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.sql.SQLException;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,10 +19,17 @@ import java.sql.SQLException;
 
 public class MultiServerThread extends Thread {
     private Socket socket = null;
+    private EntityManager em;
 
     public MultiServerThread(Socket socket) {
         super("MultiServerThread");
         this.socket = socket;
+    }
+
+    public MultiServerThread(Socket socket, EntityManager em) {
+        super("MultiServerThread");
+        this.socket = socket;
+        this.em = em;
     }
 
     public void run() {
@@ -30,7 +37,7 @@ public class MultiServerThread extends Thread {
         try {
             ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
             ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
-            MyProtocol protocol = new MyProtocol();
+            MyProtocol protocol = new MyProtocol(em);
             boolean working = true;
             while (working) {
                 DataTransferObject input = (DataTransferObject) in.readObject();

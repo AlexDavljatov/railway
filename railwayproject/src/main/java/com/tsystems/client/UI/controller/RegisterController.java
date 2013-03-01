@@ -10,20 +10,35 @@ package com.tsystems.client.UI.controller;
 
 import com.tsystems.client.MyClientImpl;
 import com.tsystems.client.UI.App;
+import com.tsystems.client.UI.Calendar.SimpleCalendar;
 import com.tsystems.common.User;
 import javafx.animation.FadeTransition;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.util.Duration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 /**
  * Java FX FXML Controller.
  */
 public class RegisterController implements Initializable {
+
+    private static final Logger log = LoggerFactory.getLogger(MyClientImpl.class);
+
     @FXML
     private TextField name;
     @FXML
@@ -31,14 +46,19 @@ public class RegisterController implements Initializable {
     @FXML
     private TextField email;
     @FXML
+    private TextField dateField;
+    @FXML
     private PasswordField password;
     @FXML
     private CheckBox subscribed;
     @FXML
     private Label success;
+    @FXML
+    private HBox hBox = new HBox(150);
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         User loggedUser = App.getInstance().getLoggedUser();
         name.setText(loggedUser.getId());
         if (loggedUser.getName() != null) {
@@ -51,24 +71,53 @@ public class RegisterController implements Initializable {
         if (loggedUser.getEmail() != null) {
             email.setText(loggedUser.getEmail());
         }
+        /*if (loggedUser.getBirthdayDate() != null) {
+            dateField.setText(loggedUser.getBirthdayDate().toString());
+        }
+        */
         subscribed.setSelected(loggedUser.isSubscribed());
         success.setOpacity(0);
+//////////////////////////////
+        dateField.setEditable(false);
+        dateField.setDisable(true);
+        SimpleCalendar simpleCalender = new SimpleCalendar();
+        simpleCalender.dateProperty().addListener(new ChangeListener<Date>() {
+            @Override
+            public void changed(ObservableValue<? extends Date> ov,
+                                Date oldDate, Date newDate) {
+                dateField.setText((new SimpleDateFormat("dd/MM/yyyy")).format(newDate));
+
+            }
+        });
+        hBox.getChildren().addAll(dateField, simpleCalender);
+
+
     }
 
     @FXML
     protected void processLogout() {
         App.getInstance().userLogout();
+        log.debug("RegisterController.processLogin success");
     }
 
     @FXML
-    protected void processUpdate() throws Exception {
-        User loggedUser = App.getInstance().getLoggedUser();
-        loggedUser.setEmail(email.getText());
-        loggedUser.setName(name.getText());
-        loggedUser.setSubscribed(subscribed.isSelected());
-        loggedUser.setSurName(surname.getText());
+    protected void processUpdate() {
+
+        User registeredUser = App.getInstance().getLoggedUser();
+        registeredUser.setName(name.getText());
+        registeredUser.setSurName(surname.getText());
+        registeredUser.setEmail(email.getText());
+        registeredUser.setPassword(password.getText());
+        registeredUser.setBirthdayDate(new Date(dateField.getText()));
+        try {
+            MyClientImpl.getInstance().doRegister(registeredUser);
+        } catch (IOException e) {
+            log.debug("RegisterController.processUpdate() i/o exception" + e.getMessage());
+        } catch (ClassNotFoundException e) {
+            log.debug("RegisterController.processUpdate() ClassNotFound exception" + e.getMessage());
+        }
         animateMessage();
-        new MyClientImpl().doRegister();
+        App.getInstance().userLogout();
     }
 
     private void animateMessage() {

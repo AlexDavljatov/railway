@@ -10,6 +10,7 @@ import javax.persistence.Persistence;
 /**
  * Hello world!
  */
+
 public class Main {
     public static final EntityManagerFactory factory =
             Persistence.createEntityManagerFactory("myapp");
@@ -17,7 +18,7 @@ public class Main {
     public static void main(String[] args) {
     }
 
-    public void addPAssenger(Passenger passenger) {
+    public void addPassenger(Passenger passenger) {
         EntityManager em = factory.createEntityManager();
         EntityTransaction trx = em.getTransaction();
         trx.begin();

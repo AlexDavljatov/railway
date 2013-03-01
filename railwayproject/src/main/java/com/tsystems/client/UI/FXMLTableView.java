@@ -21,7 +21,6 @@ public class FXMLTableView extends Application {
         primaryStage.setTitle("FXML TableView Example");
         //Pane myPane = (Pane)FXMLLoader.load(getClass().getResource("/fxml/fxml_tableview.fxml"));
         Pane myPane = (Pane) FXMLLoader.load(FXMLTableView.class.getResource("/fxml/fxml_tableview.fxml"));
-
         Scene myScene = new Scene(myPane);
         primaryStage.setScene(myScene);
         primaryStage.show();
