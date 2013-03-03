@@ -11,7 +11,7 @@ package com.tsystems.client.UI.controller;
 import com.tsystems.client.MyClientImpl;
 import com.tsystems.client.UI.App;
 import com.tsystems.client.UI.Calendar.SimpleCalendar;
-import com.tsystems.common.User;
+import com.tsystems.common.model.User;
 import javafx.animation.FadeTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;

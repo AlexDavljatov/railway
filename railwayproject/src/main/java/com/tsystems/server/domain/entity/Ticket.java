@@ -12,6 +12,12 @@ import java.util.UUID;
  * To change this template use File | Settings | File Templates.
  */
 @Entity
+
+@NamedQueries({
+        @NamedQuery(name = "getAllTickets", query = "SELECT ticket FROM Ticket ticket"),
+        @NamedQuery(name = "getPassengerTickets",
+                query = "SELECT ticket FROM Ticket ticket WHERE ticket.passenger = :passenger")
+})
 public class Ticket implements Serializable {
     public Ticket() {
     }

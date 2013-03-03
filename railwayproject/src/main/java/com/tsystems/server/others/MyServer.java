@@ -1,4 +1,4 @@
-package com.tsystems.server;
+package com.tsystems.server.others;
 
 import com.tsystems.server.protocol.Message.RequestMessage;
 import com.tsystems.server.protocol.Message.ResponseMessage;

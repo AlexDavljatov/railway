@@ -1,4 +1,4 @@
-package com.tsystems.common;
+package com.tsystems.common.model;
 
 /**
  * Created with IntelliJ IDEA.
@@ -8,9 +8,6 @@ package com.tsystems.common;
  * To change this template use File | Settings | File Templates.
  */
 
-import com.tsystems.server.domain.entity.Passenger;
-
-import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,7 +15,8 @@ import java.util.Map;
 /**
  * Data object for a User
  */
-public class User implements Serializable {
+public class User implements CommonModel {
+
     private static final Map<String, User> USERS = new HashMap<String, User>();
 
     private String id;
@@ -27,6 +25,8 @@ public class User implements Serializable {
     private String surname;
     private String password;
     private Date birthdayDate;
+    private boolean isAdministrator;
+
     //private String phone;
     private boolean subscribed;
     //private String address;
@@ -44,13 +44,14 @@ public class User implements Serializable {
         return user;
     }
 
-    public User(String name, String surname, String email, String password, Date birthdayDate) {
+    public User(String name, String surname, String email, String password, Date birthdayDate, boolean administrator) {
 //        this.id = id;
         this.email = email;
         this.name = name;
         this.surname = surname;
         this.password = password;
         this.birthdayDate = birthdayDate;
+        this.isAdministrator = administrator;
     }
 
     public String getId() {
@@ -115,5 +116,21 @@ public class User implements Serializable {
 
     public void setBirthdayDate(Date birthdayDate) {
         this.birthdayDate = birthdayDate;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public boolean isAdministrator() {
+        return isAdministrator;
+    }
+
+    public void setAdministrator(boolean administrator) {
+        isAdministrator = administrator;
     }
 }

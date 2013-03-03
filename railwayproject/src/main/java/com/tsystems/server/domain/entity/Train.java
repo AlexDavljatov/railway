@@ -27,9 +27,16 @@ public class Train extends BaseEntity {
     public Train() {
     }
 
+    public Train(int number, int sits_number, List<Ticket> tickets, List<Station> stations) {
+        this.number = number;
+        this.sits_number = sits_number;
+        this.tickets = tickets;
+        this.stations = stations;
+    }
+
     /*   @Id
-       private String id;
-    */
+           private String id;
+        */
     public String getId() {
         return id;
     }
@@ -39,6 +46,16 @@ public class Train extends BaseEntity {
             this.id = id;
         }
       */
+    private int number;
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
     private int sits_number;
 
     public int getSits_number() {

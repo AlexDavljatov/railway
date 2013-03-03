@@ -1,4 +1,4 @@
-package com.tsystems.server.protocol.Command;
+package com.tsystems.common.command;
 
 import java.io.Serializable;
 
@@ -14,6 +14,7 @@ public enum CommandType {
     FAIL,
     LOGIN,
     REGISTER,
+    GET_SHEDULE_BY_STATION,
     BUY_TICKET,
     FIND_TRAIN,
     ADMIN_WATCH_USERS_TICKETS,
@@ -21,5 +22,6 @@ public enum CommandType {
     ADMIN_ADD_STATION,
     ADMIN_TRAINS,
     ADMIN_USERS_WATCH_EDIT,
-    UPDATE_DATA
+    UPDATE_DATA,
+    IS_ADMIN
 }

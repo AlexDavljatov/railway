@@ -8,7 +8,7 @@ package com.tsystems.client.UI.model;
  * To change this template use File | Settings | File Templates.
  */
 
-import com.tsystems.common.User;
+import com.tsystems.common.model.User;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Person {
@@ -18,18 +18,20 @@ public class Person {
     private final SimpleStringProperty email = new SimpleStringProperty("");
     private final SimpleStringProperty password = new SimpleStringProperty("");
     private final SimpleStringProperty birthdayDate = new SimpleStringProperty("");
+    private final SimpleStringProperty administrator = new SimpleStringProperty("");
 
 
     public Person() {
-        this("", "", "", "", "");
+        this("", "", "", "", "", false);
     }
 
-    public Person(String name, String surname, String email, String password, String birthdayDate) {
+    public Person(String name, String surname, String email, String password, String birthdayDate, boolean administrator) {
         setName(name);
         setSurname(surname);
         setEmail(email);
         setBirthdayDate(birthdayDate);
         setPassword(password);
+        setAdministrator(administrator);
     }
 
     public Person(User user) {
@@ -38,7 +40,7 @@ public class Person {
         setEmail(user.getEmail());
         setBirthdayDate(user.getBirthdayDate().toString());
         setPassword(user.getPassword());
-
+        setAdministrator(user.isAdministrator());
     }
 
     public String getName() {
@@ -79,5 +81,14 @@ public class Person {
 
     public void setBirthdayDate(String fName) {
         birthdayDate.set(fName);
+    }
+
+    public String isAdministrator() {
+        return administrator.get();
+    }
+
+    public void setAdministrator(boolean fName) {
+        if (fName) administrator.set("+");
+        else administrator.set("-");
     }
 }

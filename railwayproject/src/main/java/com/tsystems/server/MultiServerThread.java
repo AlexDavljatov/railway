@@ -2,6 +2,8 @@ package com.tsystems.server;
 
 import com.tsystems.common.DataTransferObject;
 import com.tsystems.server.protocol.MyProtocol;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.persistence.EntityManager;
 import java.io.IOException;
@@ -18,6 +20,9 @@ import java.net.Socket;
  */
 
 public class MultiServerThread extends Thread {
+    private static final Logger log = LoggerFactory.getLogger(MultiServerThread.class);
+
+
     private Socket socket = null;
     private EntityManager em;
 
@@ -33,7 +38,7 @@ public class MultiServerThread extends Thread {
     }
 
     public void run() {
-        System.err.println("got connection");
+        log.debug("got connection");
         try {
             ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
             ObjectInputStream in = new ObjectInputStream(socket.getInputStream());

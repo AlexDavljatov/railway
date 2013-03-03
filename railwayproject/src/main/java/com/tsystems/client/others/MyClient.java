@@ -1,4 +1,4 @@
-package com.tsystems.client;
+package com.tsystems.client.others;
 
 import com.tsystems.server.protocol.Message.RequestMessage;
 

@@ -13,6 +13,10 @@ import java.util.UUID;
  * To change this template use File | Settings | File Templates.
  */
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "getAllShedule", query = "Select shedule From Shedule shedule"),
+        @NamedQuery(name = "getSheduleByStation", query = "Select shedule from Shedule shedule where shedule.station_id = :stationId")
+})
 public class Shedule implements Serializable {
 
     @Version

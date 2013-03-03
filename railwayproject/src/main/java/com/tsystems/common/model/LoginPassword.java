@@ -1,4 +1,4 @@
-package com.tsystems.common;
+package com.tsystems.common.model;
 
 import java.io.Serializable;
 

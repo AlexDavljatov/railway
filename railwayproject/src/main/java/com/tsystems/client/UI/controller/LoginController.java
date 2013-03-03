@@ -10,7 +10,7 @@ package com.tsystems.client.UI.controller;
 
 import com.tsystems.client.MyClientImpl;
 import com.tsystems.client.UI.App;
-import com.tsystems.common.LoginPassword;
+import com.tsystems.common.model.LoginPassword;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -21,7 +21,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.URL;
-import java.net.UnknownHostException;
 import java.util.ResourceBundle;
 
 /**
@@ -53,7 +52,8 @@ public class LoginController implements Initializable {
             errorMessage.setText("Email/password combination is invalid.");
         } else {
             log.debug("LoginController.processLogin() success");
-            App.getInstance().userLogin();
+            if (MyClientImpl.getInstance().isAdmin()) App.getInstance().adminLogin();
+            else App.getInstance().userLogin();
         }
     }
 

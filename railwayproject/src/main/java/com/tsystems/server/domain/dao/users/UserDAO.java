@@ -19,5 +19,5 @@ public interface UserDAO extends BaseDAO<Passenger> {
 //    }
 
     //public Passenger getElement(String s);
-
+    public boolean isAdmin(String email);
 }

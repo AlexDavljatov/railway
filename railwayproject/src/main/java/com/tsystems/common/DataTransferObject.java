@@ -1,7 +1,9 @@
 package com.tsystems.common;
 
-import com.tsystems.server.domain.entity.Passenger;
-import com.tsystems.server.protocol.Command.CommandType;
+import com.tsystems.common.model.CommonModel;
+import com.tsystems.common.model.LoginPassword;
+import com.tsystems.common.model.User;
+import com.tsystems.common.command.CommandType;
 
 import java.io.Serializable;
 import java.util.List;
@@ -43,8 +45,13 @@ public class DataTransferObject implements Serializable {
         data = user;
     }
 
+//    public DataTransferObject(CommandType cmd, List<Train> allElements) {
+//        this.cmd = cmd;
+//        data = allElements;
+//    }
 
-    public DataTransferObject(CommandType cmd, List<User> allElements) {
+
+    public DataTransferObject(CommandType cmd, List<CommonModel> allElements) {
         this.cmd = cmd;
         data = allElements;
     }

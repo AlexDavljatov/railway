@@ -1,8 +1,14 @@
 package com.tsystems.server.protocol.Command;
 
-import com.tsystems.common.LoginPassword;
+import com.tsystems.common.model.LoginPassword;
+import com.tsystems.server.domain.dao.shedule.impl.SingleSheduleDAOImpl;
+import com.tsystems.server.domain.dao.stations.impl.SingleStationDAOImpl;
+import com.tsystems.server.domain.dao.trains.impl.SingleTrainDAOImpl;
 import com.tsystems.server.domain.dao.users.impl.UserDAOImpl;
 import com.tsystems.server.domain.entity.Passenger;
+import com.tsystems.server.domain.entity.Shedule;
+import com.tsystems.server.domain.entity.Station;
+import com.tsystems.server.domain.entity.Train;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -59,8 +65,47 @@ public class CommandImpl {
 
     //TODO: make a transaction
     public List<Passenger> viewUsers(LoginPassword loginPassword) {
-        log.debug("CommandImpl.login() " + loginPassword.getLogin());
-        //TODO: administrators privilegies
-        return UserDAOImpl.getInstance().getAllElements();
+        log.debug("CommandImpl.viewUsers() " + loginPassword.getLogin());
+
+        //TODO:DONE administrator's privilegies
+        List<Passenger> result = null;
+        if (UserDAOImpl.getInstance().isAdmin(loginPassword.getLogin()))
+            result = UserDAOImpl.getInstance().getAllElements();
+        return result;
+    }
+
+    //TODO:DONE make a transaction
+    public List<Train> viewAddTrains(LoginPassword loginPassword) {
+        log.debug("CommandImpl.viewAddTrains() " + loginPassword.getLogin());
+
+        //TODO:DONE administrator's privilegies
+        List<Train> result = null;
+        if (UserDAOImpl.getInstance().isAdmin(loginPassword.getLogin()))
+            result = SingleTrainDAOImpl.getInstance(em).getAllElements();
+        return result;
+    }
+
+    //TODO:DONE make a transaction
+    public List<Station> viewAddStations(LoginPassword loginPassword) {
+        log.debug("CommandImpl.viewAddStations() " + loginPassword.getLogin());
+
+        //TODO:DONE administrator's privilegies
+        List<Station> result = null;
+//        log.debug("viewAddStation " + UserDAOImpl.getInstance().isAdmin(loginPassword.getLogin()));
+//        if (UserDAOImpl.getInstance().isAdmin(loginPassword.getLogin()))
+        result = SingleStationDAOImpl.getInstance(em).getAllElements();
+
+        return result;
+    }
+
+    //TODO:DONE is administrator
+    public boolean isAdmin(LoginPassword loginPassword) {
+        log.debug("CommandImpl.isAdmin() " + loginPassword.getLogin());
+        return UserDAOImpl.getInstance().isAdmin(loginPassword.getLogin());  //To change body of created methods use File | Settings | File Templates.
+    }
+
+    public List<Shedule> getSheduleByStation(String station) {
+        log.debug("getSheduleByStation()" + station);
+        return SingleSheduleDAOImpl.getInstance(em).getSheduleByStation(station);
     }
 }

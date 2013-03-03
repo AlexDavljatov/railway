@@ -1,9 +1,10 @@
 package com.tsystems.client;
 
-import com.tsystems.common.DataTransferObject;
-import com.tsystems.common.LoginPassword;
-import com.tsystems.common.User;
-import com.tsystems.server.protocol.Command.CommandType;
+import com.tsystems.common.*;
+import com.tsystems.common.model.CommonModel;
+import com.tsystems.common.model.LoginPassword;
+import com.tsystems.common.model.User;
+import com.tsystems.common.command.CommandType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -71,12 +72,12 @@ public class MyClientImpl {
             socket = new Socket(address, SERVER_PORT);
             out = new ObjectOutputStream(socket.getOutputStream());
             in = new ObjectInputStream(socket.getInputStream());
-            log.debug("MyClient.init() success");
+            log.debug("MyClient.init() success ");
         } catch (java.rmi.UnknownHostException e) {
-            log.error("MyClient.init() host exception" + e.getMessage());
+            log.error("MyClient.init() host exception " + e.getMessage());
             System.exit(1);
         } catch (IOException e) {
-            log.error("MyClient.init() I/O exception" + e.getMessage());
+            log.error("MyClient.init() I/O exception " + e.getMessage());
             System.exit(1);
         }
     }
@@ -95,9 +96,9 @@ public class MyClientImpl {
          */
         out.close();
         in.close();
-        log.debug("\nMyClient.doRegister() success"); //+ getLp().getLogin());
-        log.debug("\nMyClient.doRegister() success" + MyClientImpl.getInstance().getLp().getLogin());
-        log.debug("\nMyClient.doRegister() Received CommandType" + input.getCmd());
+        log.debug("\nMyClient.doRegister() success "); //+ getLp().getLogin());
+        log.debug("\nMyClient.doRegister() success " + MyClientImpl.getInstance().getLp().getLogin());
+        log.debug("\nMyClient.doRegister() Received CommandType " + input.getCmd());
         return input.getCmd() == CommandType.OK;
 
     }
@@ -110,22 +111,55 @@ public class MyClientImpl {
         out.close();
         in.close();
         //    return ()input.getData();
-        log.debug("\nReceived CommandType" + input.getCmd());
-        log.debug("\nMyClient.doLogin()" + getLp().getLogin());
+        log.debug("\nReceived CommandType " + input.getCmd());
+        log.debug("\nMyClient.doLogin() " + getLp().getLogin());
         return input.getCmd() == CommandType.OK;
     }
 
-    public List<User> getUsers(LoginPassword lp) throws IOException, ClassNotFoundException {
+    public List<CommonModel> getUsers(LoginPassword lp) throws IOException, ClassNotFoundException {
         init();
         out.writeObject(new DataTransferObject(CommandType.ADMIN_USERS_WATCH_EDIT, lp));
         DataTransferObject input = (DataTransferObject) in.readObject();
         out.close();
         in.close();
-        log.debug("\nMyClient.getUsers() success");
-        return (List<User>) input.getData();
+        log.debug("MyClient.getUsers() success ");
+        log.debug("MyClient.getUsers() data " + input.getData());
+        log.debug("MyClient.getUsers() data " + (List<CommonModel>) input.getData());
+        return (List<CommonModel>) input.getData();
     }
 
+    public List<CommonModel> getTrains(LoginPassword lp) throws IOException, ClassNotFoundException {
+        init();
+        out.writeObject(new DataTransferObject(CommandType.ADMIN_ADD_TRAIN, lp));
+        DataTransferObject input = (DataTransferObject) in.readObject();
+        out.close();
+        in.close();
+        log.debug("MyClient.getTrains() success ");
+        return (List<CommonModel>) input.getData();
+    }
+
+    public List<CommonModel> getStation(LoginPassword lp) throws IOException, ClassNotFoundException {
+        init();
+        out.writeObject(new DataTransferObject(CommandType.ADMIN_ADD_STATION, lp));
+        DataTransferObject input = (DataTransferObject) in.readObject();
+        out.close();
+        in.close();
+        log.debug("MyClient.getTrains() success ");
+        return (List<CommonModel>) input.getData();
+    }
+
+    //TODO: handle with data verification
     public LoginPassword getLp() {
         return lp;
+    }
+
+    public boolean isAdmin() throws IOException, ClassNotFoundException {
+        init();
+        out.writeObject(new DataTransferObject(CommandType.IS_ADMIN, getLp()));
+        DataTransferObject input = (DataTransferObject) in.readObject();
+        out.close();
+        in.close();
+        log.debug("MyClient.isAdmin() success" + lp.getLogin() + " " + input.getCmd());
+        return (input.getCmd() == CommandType.OK);
     }
 }

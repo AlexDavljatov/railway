@@ -8,7 +8,7 @@ package com.tsystems.client.UI;
  * To change this template use File | Settings | File Templates.
  */
 
-import com.tsystems.common.User;
+import com.tsystems.common.model.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
@@ -19,7 +19,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
-import java.util.List;
 
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
@@ -86,18 +85,10 @@ public class App extends Application {
         return false;
     }
 
+
     public void userRegister() {
         loggedUser = User.of("");
         gotoRegister();
-    }
-
-    public void userLogout() {
-        loggedUser = null;
-        gotoLogin();
-    }
-
-    public void userLogin() {
-        gotoProfile();
     }
 
     private void gotoRegister() {
@@ -111,6 +102,12 @@ public class App extends Application {
         }
     }
 
+
+    public void userLogout() {
+        loggedUser = null;
+        gotoLogin();
+    }
+
     private void gotoLogin() {
         try {
             replaceSceneContent("/fxml/login.fxml");
@@ -119,6 +116,11 @@ public class App extends Application {
             log.error("App.gotoLogin() exception\n" + ex.getMessage());
             //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+
+    public void userLogin() {
+        gotoProfile();
     }
 
     private void gotoProfile() {
@@ -131,6 +133,23 @@ public class App extends Application {
             debug(ex.getMessage());
         }
     }
+
+
+    public void adminLogin() {
+        gotoAdminProfile();
+    }
+
+    private void gotoAdminProfile() {
+        try {
+            replaceSceneContent("/fxml/admin/AdminViewProfile.fxml");
+            log.debug("App.gotoAdminViewProfile success\n");
+        } catch (Exception ex) {
+            //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            log.error("App.gotoAdminViewProfile() exception\n" + ex.getMessage());
+            debug(ex.getMessage());
+        }
+    }
+
 
     public void adminViewPassengers() {
         gotoViewPassengers();
@@ -147,14 +166,65 @@ public class App extends Application {
         }
     }
 
+
+    public void adminViewEditTrains() {
+        gotoViewEditTrains();
+    }
+
+    private void gotoViewEditTrains() {
+        try {
+            replaceSceneContent("/fxml/admin/viewEditTrains.fxml");
+            log.debug("App.gotoViewEditTrains() success\n");
+        } catch (Exception ex) {
+            //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            log.error("App.gotoViewEditTrains() exception\n" + ex.getMessage());
+            debug(ex.getMessage());
+        }
+    }
+
+
+    public void adminViewEditStations() {
+        gotoViewEditStations();
+    }
+
+    private void gotoViewEditStations() {
+        try {
+            replaceSceneContent("/fxml/admin/viewEditStations.fxml");
+            log.debug("App.gotoViewEditStations() success\n");
+        } catch (Exception ex) {
+            //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            log.error("App.gotoViewEditStations() exception\n" + ex.getMessage());
+            debug(ex.getMessage());
+        }
+    }
+
+
+    public void viewShedule() {
+        gotoViewShedule();
+    }
+
+    private void gotoViewShedule() {
+        try {
+            replaceSceneContent("/fxml/shedule.fxml");
+            log.debug("App.gotoViewShedule() success\n");
+        } catch (Exception ex) {
+            //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            log.error("App.gotoViewShedule() exception\n" + ex.getMessage());
+            debug(ex.getMessage());
+        }
+    }
+
+
     private Parent replaceSceneContent(String fxml) throws Exception {
         Parent page = (Parent) FXMLLoader.load(App.class.getResource(fxml), null, new JavaFXBuilderFactory());
+
         Scene scene = stage.getScene();
         if (scene == null) {
 //            scene = new Scene(page, 700, 550);
             scene = new Scene(page, 700, 550);
             scene.getStylesheets().addAll(App.class.getResource("/styles/simple_calendar.css").toExternalForm());
             scene.getStylesheets().add(App.class.getResource("/styles/style.css").toExternalForm());
+
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);
@@ -162,5 +232,6 @@ public class App extends Application {
         stage.sizeToScene();
         return page;
     }
+
 }
 

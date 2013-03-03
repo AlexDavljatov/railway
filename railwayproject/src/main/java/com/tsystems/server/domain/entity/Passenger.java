@@ -122,4 +122,5 @@ public class Passenger extends BaseEntity {
             id = UUID.randomUUID().toString();
         }
     }
+
 }
