@@ -47,8 +47,7 @@ public class MyProtocol {
             LoginPassword loginPassword = (LoginPassword) input.getData();
             List<Passenger> passengers = new CommandImpl(em).viewUsers(loginPassword);
 //            List<User> result = new LinkedList<User>();
-//            //TODO: administrators privilegies
-//            for (Passenger passenger : passengers) {
+//   //            for (Passenger passenger : passengers) {
 //                result.add(new User(passenger.getName(), passenger.getSurname(), passenger.getEmail(), passenger.getPassword(), passenger.getBirthdayDate()));
 //            }
 //            return new DataTransferObject(CommandType.OK, result);
@@ -65,7 +64,6 @@ public class MyProtocol {
             LoginPassword loginPassword = (LoginPassword) input.getData();
             List<com.tsystems.server.domain.entity.Train> trains = new CommandImpl(em).viewAddTrains(loginPassword);
 //            List<Train> result = new LinkedList<Train>();
-//            //TODO: administrators privilegies
 //            for (com.tsystems.server.domain.entity.Train train: trains) {
 //                result.add(new Train(train.getNumber(), train.getSits_number()));
 //            }
@@ -97,13 +95,47 @@ public class MyProtocol {
             return new DataTransferObject(CommandType.FAIL);
         }
         if (command == CommandType.GET_SHEDULE_BY_STATION) {
-            Station station = (Station) input.getData();
+            String station = (String) input.getData();
             List<CommonModel> result = new LinkedList<CommonModel>();
-            List<com.tsystems.server.domain.entity.Shedule> sheduleByStation = new CommandImpl(em).getSheduleByStation(station.getName());
+            List<com.tsystems.server.domain.entity.Shedule> sheduleByStation = new CommandImpl(em).getSheduleByStation(station);
+
             for (com.tsystems.server.domain.entity.Shedule shedule : sheduleByStation) {
+//                result.add(new Shedule("" + new CommandImpl(em).getTrainById(shedule.getTrain_id()).getNumber(), shedule.getStation_id(), shedule.getTime()));
                 result.add(new Shedule(shedule.getTrain_id(), shedule.getStation_id(), shedule.getTime()));
             }
             return new DataTransferObject(CommandType.OK, result);
+        }
+        if (command == CommandType.GET_SHEDULE_BY_STATION_TEST) {
+            String station = (String) input.getData();
+            List<CommonModel> result = new LinkedList<CommonModel>();
+//            List<com.tsystems.server.domain.entity.Shedule> sheduleByStation = new CommandImpl(em).getSheduleByStation(station);
+            Object[] o = new CommandImpl(em).getSheduleByStationTest(station);
+            List<com.tsystems.server.domain.entity.Shedule> sheduleByStation = (List<com.tsystems.server.domain.entity.Shedule>) o[0];
+            List<com.tsystems.server.domain.entity.Train> trainByStation = (List<com.tsystems.server.domain.entity.Train>) o[1];
+            for (com.tsystems.server.domain.entity.Shedule shedule : sheduleByStation) {
+                //                result.add(new Shedule("" + new CommandImpl(em).getTrainById(shedule.getTrain_id()).getNumber(), shedule.getStation_id(), shedule.getTime()));
+//                result.add(new Shedule(shedule.getTrain_id(), shedule.getStation_id(), shedule.getTime()));
+                for (com.tsystems.server.domain.entity.Train train : trainByStation)
+                    if (train.getId().equals(shedule.getTrain_id()))
+                        result.add(new Shedule(String.valueOf(train.getNumber()), shedule.getStation_id(), shedule.getTime()));
+            }
+            return new DataTransferObject(CommandType.OK, result);
+        }
+        if (command == CommandType.VIEW_TICKETS) {
+            LoginPassword loginPassword = (LoginPassword) input.getData();
+            List<CommonModel> result = new LinkedList<CommonModel>();
+            List<com.tsystems.server.domain.entity.Ticket> tickets = new CommandImpl(em).getTickets(loginPassword);
+
+            for (com.tsystems.server.domain.entity.Ticket ticket : tickets) {
+//                result.add(new Shedule("" + new CommandImpl(em).getTrainById(shedule.getTrain_id()).getNumber(), shedule.getStation_id(), shedule.getTime()));
+                result.add(new Ticket(ticket.getNumber(),
+                        new User((ticket.getPassenger()).getName(), (ticket.getPassenger()).getSurname(),
+                                (ticket.getPassenger()).getEmail(), (ticket.getPassenger()).getPassword(),
+                                (ticket.getPassenger()).getBirthdayDate(), (ticket.getPassenger()).isAdministrator()),
+                        new Train((ticket.getTrain()).getNumber(), (ticket.getTrain()).getSits_number())));
+            }
+            return new DataTransferObject(CommandType.OK, result);
+
         }
         return null;
     }

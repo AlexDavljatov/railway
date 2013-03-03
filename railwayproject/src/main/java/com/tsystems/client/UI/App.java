@@ -8,6 +8,7 @@ package com.tsystems.client.UI;
  * To change this template use File | Settings | File Templates.
  */
 
+import com.tsystems.client.MyClientImpl;
 import com.tsystems.common.model.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -233,5 +234,19 @@ public class App extends Application {
         return page;
     }
 
+    public void viewTickets() {
+        gotoViewTickets();
+    }
+
+    private void gotoViewTickets() {
+        try {
+            replaceSceneContent("/fxml/viewTickets.fxml");
+            log.debug("App.gotoViewTicket() success\n");
+        } catch (Exception ex) {
+            //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            log.error("App.gotoViewTicket() exception\n" + ex.getMessage());
+            debug(ex.getMessage());
+        }
+    }
 }
 

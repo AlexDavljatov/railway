@@ -25,6 +25,12 @@ public class Shedule implements Serializable {
     public Shedule() {
     }
 
+    public Shedule(String train_id, String station_id, Date time) {
+        this.train_id = train_id;
+        this.station_id = station_id;
+        this.time = time;
+    }
+
     @Id
     private String id;
 
@@ -48,7 +54,7 @@ public class Shedule implements Serializable {
     }
 
     @Column(name = "station_id")
-    private String station_id;
+    private String station_id = null;
 
     public String getStation_id() {
         return station_id;

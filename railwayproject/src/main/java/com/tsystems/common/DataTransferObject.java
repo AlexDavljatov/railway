@@ -56,6 +56,12 @@ public class DataTransferObject implements Serializable {
         data = allElements;
     }
 
+    public DataTransferObject(CommandType cmd, String s) {
+        this.cmd = cmd;
+        data = s;
+    }
+
+
     public Object getData() {
         return data;
     }

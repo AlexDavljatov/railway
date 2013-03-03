@@ -54,8 +54,8 @@ public class Station implements Serializable {
 
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name = "Shedule",
-            joinColumns = {@JoinColumn(name = "stationId")},
-            inverseJoinColumns = {@JoinColumn(name = "trainId")})
+            joinColumns = {@JoinColumn(name = "station_id")},
+            inverseJoinColumns = {@JoinColumn(name = "train_id")})
     private List<Train> trains;
 
     public List<Train> getTrains() {

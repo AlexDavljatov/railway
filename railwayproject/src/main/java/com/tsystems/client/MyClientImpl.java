@@ -1,10 +1,11 @@
 package com.tsystems.client;
 
-import com.tsystems.common.*;
+import com.tsystems.common.DataTransferObject;
+import com.tsystems.common.command.CommandType;
 import com.tsystems.common.model.CommonModel;
 import com.tsystems.common.model.LoginPassword;
+import com.tsystems.common.model.Station;
 import com.tsystems.common.model.User;
-import com.tsystems.common.command.CommandType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -161,5 +162,27 @@ public class MyClientImpl {
         in.close();
         log.debug("MyClient.isAdmin() success" + lp.getLogin() + " " + input.getCmd());
         return (input.getCmd() == CommandType.OK);
+    }
+
+    public List<CommonModel> getSheduleByStation(String station) throws IOException, ClassNotFoundException {
+        init();
+        out.writeObject(new DataTransferObject(CommandType.GET_SHEDULE_BY_STATION, station));
+//        out.writeObject(new DataTransferObject(CommandType.GET_SHEDULE_BY_STATION_TEST, station));
+        DataTransferObject input = (DataTransferObject) in.readObject();
+        out.close();
+        in.close();
+        log.debug("MyClient.getSheduleByStation()" + input.getCmd() + " " + lp.getLogin() + " " + input.getData());
+        return (List<CommonModel>) input.getData();
+    }
+
+    public List<CommonModel> getTickets() throws IOException, ClassNotFoundException {
+        init();
+        out.writeObject(new DataTransferObject(CommandType.VIEW_TICKETS, lp));
+        DataTransferObject input = (DataTransferObject) in.readObject();
+        out.close();
+        in.close();
+        log.debug("MyClient.getTickets()" + input.getCmd() + " " + lp.getLogin() + " " + input.getData());
+        return (List<CommonModel>) input.getData();
+
     }
 }

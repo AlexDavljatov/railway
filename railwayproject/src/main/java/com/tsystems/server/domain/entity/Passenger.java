@@ -16,7 +16,12 @@ import java.util.UUID;
  * To change this template use File | Settings | File Templates.
  */
 @Entity
-//@Table(name = "Passenger", schema = "", catalog = "railwaydb")
+@NamedQueries({
+        @NamedQuery(name = "getAllPassengers", query = "Select p From Passenger p"),
+        @NamedQuery(name = "getPassengerByEmail", query = "Select p from Passenger p where p.email = :email"),
+        @NamedQuery(name = "isPassengerAdministrator", query = "Select p.administrator from Passenger p where p.email = :email"),
+        @NamedQuery(name = "getPassengerTicketsByEmail", query = "Select p.tickets from Passenger p where p.email = :email")
+})
 public class Passenger extends BaseEntity {
 
     public Passenger() {

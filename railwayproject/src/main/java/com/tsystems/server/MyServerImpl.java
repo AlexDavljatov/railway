@@ -1,14 +1,18 @@
 package com.tsystems.server;
 
+import com.tsystems.server.domain.dao.passenger.SinglePassengerDAO;
+import com.tsystems.server.domain.dao.passenger.impl.SinglePassengerDAOImpl;
+import com.tsystems.server.domain.dao.shedule.SingleSheduleDAO;
+import com.tsystems.server.domain.dao.shedule.impl.SingleSheduleDAOImpl;
 import com.tsystems.server.domain.dao.stations.SingleStationDAO;
 import com.tsystems.server.domain.dao.stations.impl.SingleStationDAOImpl;
+import com.tsystems.server.domain.dao.tickets.SingleTicketDAO;
+import com.tsystems.server.domain.dao.tickets.impl.SingleTicketDAOImpl;
 import com.tsystems.server.domain.dao.trains.SingleTrainDAO;
 import com.tsystems.server.domain.dao.trains.impl.SingleTrainDAOImpl;
 import com.tsystems.server.domain.dao.users.UserDAO;
 import com.tsystems.server.domain.dao.users.impl.UserDAOImpl;
-import com.tsystems.server.domain.entity.Passenger;
-import com.tsystems.server.domain.entity.Station;
-import com.tsystems.server.domain.entity.Train;
+import com.tsystems.server.domain.entity.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,22 +47,48 @@ public class MyServerImpl {
     private UserDAO userDAO;
     private SingleTrainDAO trainDAO;
     private SingleStationDAO stationDAO;
+    private SingleSheduleDAO sheduleDAO;
+    private SingleTicketDAO ticketDAO;
+    private SinglePassengerDAO passengerDAO;
 
     //TODO: remove init method()
     private void init() {
         EntityManager em = factory.createEntityManager();
         EntityTransaction et = em.getTransaction();
         et.begin();
-        em.persist(new Train(50, 600, null, null));
-        em.persist(new Train(150, 800, null, null));
-        em.persist(new Passenger("aaaa0", "aaaa0", "aaaa0", "aaaa0", new Date(Date.parse("Sat, 12 Aug 1995 13:30:00 GMT")), false));
-        em.persist(new Passenger("s", "s", "s", "s", new Date(Date.parse("Sat, 12 Aug 1995 13:30:00 GMT")), true));
-        em.persist(new Passenger("q", "q", "q", "q", new Date(Date.parse("Sat, 12 Aug 1995 13:30:00 GMT")), true));
-        em.persist(new Train(150, 800, null, null));
-        em.persist(new Station("Saint-Petersburg", null));
-        em.persist(new Station("Berlin", null));
-        em.persist(new Station("Frankfurt", null));
-
+        Train train1 = new Train(50, 600, null, null);
+        Train train2 = new Train(150, 800, null, null);
+        Train train3 = new Train(424, 1800, null, null);
+        em.persist(train1);
+        em.persist(train2);
+        em.persist(train3);
+        Passenger p1 = new Passenger("aaaa0", "aaaa0", "aaaa0", "aaaa0", new Date(Date.parse("Sat, 12 Aug 1995 13:30:00 GMT")), false);
+        Passenger p2 = new Passenger("s", "s", "s", "s", new Date(Date.parse("Sat, 12 Aug 2013 13:30:00 GMT")), true);
+        Passenger p3 = new Passenger("q", "q", "q", "q", new Date(Date.parse("Sat, 12 Aug 1995 13:30:00 GMT")), true);
+        em.persist(p1);
+        em.persist(p2);
+        em.persist(p3);
+        Station station1 = new Station("Saint-Petersburg", null);
+        Station station2 = new Station("Berlin", null);
+        Station station3 = new Station("Frankfurt", null);
+        em.persist(station1);
+        em.persist(station2);
+        em.persist(station3);
+//        log.debug("" + train1.getId() + " " + station1.getId());
+        Shedule shedule1 = new Shedule(train1.getId(), station1.getId(), new Date(Date.parse("Sat, 12 Aug 2013 13:30:00 GMT")));
+        Shedule shedule2 = new Shedule(train2.getId(), station1.getId(), new Date(Date.parse("Sat, 12 Aug 2013 18:30:00 GMT")));
+        Shedule shedule3 = new Shedule(train2.getId(), station3.getId(), new Date(Date.parse("Sat, 12 Aug 2013 20:30:00 GMT")));
+        em.persist(shedule1);
+        em.persist(shedule2);
+        em.persist(shedule3);
+        Ticket t1 = new Ticket(1, p1, train1);
+        Ticket t2 = new Ticket(2, p2, train1);
+        Ticket t3 = new Ticket(3, p2, train2);
+        Ticket t4 = new Ticket(4, p2, train3);
+        em.persist(t1);
+        em.persist(t2);
+        em.persist(t3);
+        em.persist(t4);
         et.commit();
         em.close();
     }
@@ -68,6 +98,9 @@ public class MyServerImpl {
         userDAO = new UserDAOImpl(factory.createEntityManager());
         trainDAO = new SingleTrainDAOImpl(factory.createEntityManager());
         stationDAO = new SingleStationDAOImpl(factory.createEntityManager());
+        sheduleDAO = new SingleSheduleDAOImpl(factory.createEntityManager());
+        ticketDAO = new SingleTicketDAOImpl(factory.createEntityManager());
+        passengerDAO = new SinglePassengerDAOImpl(factory.createEntityManager());
     }
 
     public static void main(String[] args) {

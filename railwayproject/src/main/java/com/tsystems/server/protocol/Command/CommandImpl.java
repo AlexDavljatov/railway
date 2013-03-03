@@ -1,19 +1,20 @@
 package com.tsystems.server.protocol.Command;
 
+import com.google.common.collect.Iterables;
 import com.tsystems.common.model.LoginPassword;
+import com.tsystems.server.domain.dao.passenger.SinglePassengerDAO;
+import com.tsystems.server.domain.dao.passenger.impl.SinglePassengerDAOImpl;
 import com.tsystems.server.domain.dao.shedule.impl.SingleSheduleDAOImpl;
 import com.tsystems.server.domain.dao.stations.impl.SingleStationDAOImpl;
 import com.tsystems.server.domain.dao.trains.impl.SingleTrainDAOImpl;
 import com.tsystems.server.domain.dao.users.impl.UserDAOImpl;
-import com.tsystems.server.domain.entity.Passenger;
-import com.tsystems.server.domain.entity.Shedule;
-import com.tsystems.server.domain.entity.Station;
-import com.tsystems.server.domain.entity.Train;
+import com.tsystems.server.domain.entity.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Query;
 import java.util.List;
 
 /**
@@ -35,42 +36,51 @@ public class CommandImpl {
         this.em = em;
     }
 
+//    public boolean registerUser(Passenger passenger) {
+//        log.debug("CommandImpl.registerUser() " + passenger.getEmail());
+//        //EntityManager em = factory.createEntityManager();
+//        EntityTransaction trx = em.getTransaction();
+//        trx.begin();
+//        //Passenger passenger = new Passenger("Vasya", "Ivanov", false, new Date("02.02.1992"), null);
+//        //Passenger oldPassenger = new Passenger("Petya", "Ivanov", "aaa@aaa.aaa", "password", false);
+//        //Train train = new Train();
+//        em.persist(passenger);
+//        //em.persist(oldPassenger);
+//        trx.commit();
+//        em.close();
+//        UserDAOImpl.getInstance().addElement(passenger);
+//        log.debug(UserDAOImpl.getInstance().getAllElements().toString());
+//        return true;
+//    }
+
     public boolean registerUser(Passenger passenger) {
         log.debug("CommandImpl.registerUser() " + passenger.getEmail());
         //EntityManager em = factory.createEntityManager();
-        EntityTransaction trx = em.getTransaction();
-        trx.begin();
-        //Passenger passenger = new Passenger("Vasya", "Ivanov", false, new Date("02.02.1992"), null);
-        //Passenger oldPassenger = new Passenger("Petya", "Ivanov", "aaa@aaa.aaa", "password", false);
-        //Train train = new Train();
-        em.persist(passenger);
-        //em.persist(oldPassenger);
-        trx.commit();
-        em.close();
-        UserDAOImpl.getInstance().addElement(passenger);
-        log.debug(UserDAOImpl.getInstance().getAllElements().toString());
-        return true;
+        return SinglePassengerDAOImpl.getInstance(em).addElement(passenger);
     }
 
-    //TODO: make a transaction
+    //TODO:DONE make a transaction
     public boolean login(LoginPassword loginPassword) {
         log.debug("CommandImpl.login() " + loginPassword.getLogin());
-        log.debug(UserDAOImpl.getInstance().getAllElements().toString());
+//        log.debug(UserDAOImpl.getInstance().getAllElements().toString());
         //if (new UserDAOImpl().get.getUser(loginPassword.getLogin()) == null) return false;
         //new UserDAOImpl().getUser() == null;
-        Passenger user = new UserDAOImpl(em).getElement(loginPassword.getLogin());
+//        Passenger user = new UserDAOImpl(em).getElement(loginPassword.getLogin());
+        Passenger user = SinglePassengerDAOImpl.getInstance(em).getElement(loginPassword.getLogin());
         return (user != null) &&
                 (user.getPassword().equals(loginPassword.getPassword()));
     }
 
-    //TODO: make a transaction
+    //TODO:DONE make a transaction
     public List<Passenger> viewUsers(LoginPassword loginPassword) {
         log.debug("CommandImpl.viewUsers() " + loginPassword.getLogin());
 
         //TODO:DONE administrator's privilegies
         List<Passenger> result = null;
-        if (UserDAOImpl.getInstance().isAdmin(loginPassword.getLogin()))
-            result = UserDAOImpl.getInstance().getAllElements();
+//        if (UserDAOImpl.getInstance().isAdmin(loginPassword.getLogin()))
+//            result = UserDAOImpl.getInstance().getAllElements();
+        if (SinglePassengerDAOImpl.getInstance(em).isAdmin(loginPassword.getLogin()))
+            result = SinglePassengerDAOImpl.getInstance(em).getAllElements();
         return result;
     }
 
@@ -80,7 +90,8 @@ public class CommandImpl {
 
         //TODO:DONE administrator's privilegies
         List<Train> result = null;
-        if (UserDAOImpl.getInstance().isAdmin(loginPassword.getLogin()))
+//        if (UserDAOImpl.getInstance().isAdmin(loginPassword.getLogin()))
+        if (SinglePassengerDAOImpl.getInstance(em).isAdmin(loginPassword.getLogin()))
             result = SingleTrainDAOImpl.getInstance(em).getAllElements();
         return result;
     }
@@ -101,11 +112,42 @@ public class CommandImpl {
     //TODO:DONE is administrator
     public boolean isAdmin(LoginPassword loginPassword) {
         log.debug("CommandImpl.isAdmin() " + loginPassword.getLogin());
-        return UserDAOImpl.getInstance().isAdmin(loginPassword.getLogin());  //To change body of created methods use File | Settings | File Templates.
+        return SinglePassengerDAOImpl.getInstance(em).isAdmin(loginPassword.getLogin());
     }
 
     public List<Shedule> getSheduleByStation(String station) {
         log.debug("getSheduleByStation()" + station);
+//        EntityTransaction et = em.getTransaction();
+//        et.begin();
+//        //Query q = em.createQuery("select train.number station. from Train train join train.id s");
+//        Query q = em.createQuery("select shedule.station_id from Station station join station.id shedule where station.name = :station");
+//        et.commit();
         return SingleSheduleDAOImpl.getInstance(em).getSheduleByStation(station);
+    }
+
+    public Object[] getSheduleByStationTest(String station) {
+        log.debug("getSheduleByStation()" + station);
+        //        EntityTransaction et = em.getTransaction();
+        //        et.begin();
+        //        //Query q = em.createQuery("select train.number station. from Train train join train.id s");
+        //        Query q = em.createQuery("select shedule.station_id from Station station join station.id shedule where station.name = :station");
+        //        et.commit();
+        Object[] result = new Object[2];
+        List<Shedule> shedule = SingleSheduleDAOImpl.getInstance(em).getSheduleByStation(station);
+        List<Train> trains = null;
+        for (Shedule curShedule : shedule) {
+            trains.add(getTrainById(curShedule.getTrain_id()));
+        }
+        result[0] = shedule;
+        result[1] = trains;
+        return result;
+    }
+
+    public Train getTrainById(String id) {
+        return SingleTrainDAOImpl.getInstance(em).getElementById(id);
+    }
+
+    public List<Ticket> getTickets(LoginPassword loginPassword) {
+        return SinglePassengerDAOImpl.getInstance(em).getPassengerTicketsByEmail(loginPassword.getLogin());
     }
 }

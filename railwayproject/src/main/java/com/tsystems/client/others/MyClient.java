@@ -1,6 +1,6 @@
 package com.tsystems.client.others;
 
-import com.tsystems.server.protocol.Message.RequestMessage;
+//import com.tsystems.server.protocol.Message.RequestMessage;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,7 +11,7 @@ import com.tsystems.server.protocol.Message.RequestMessage;
  */
 public interface MyClient extends Runnable {
 
-    public void sendRequest(RequestMessage requestMessage);
-
-    public void receiveResponse();
+//    public void sendRequest(RequestMessage requestMessage);
+//
+//    public void receiveResponse();
 }
