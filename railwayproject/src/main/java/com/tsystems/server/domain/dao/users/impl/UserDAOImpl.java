@@ -17,7 +17,7 @@ import java.util.List;
  * Time: 2:11 AM
  * To change this template use File | Settings | File Templates.
  */
-//TODO: another UserDAOImpl
+//TODO:DONE another UserDAOImpl
 public class UserDAOImpl implements UserDAO {
 
     private static final Logger log = LoggerFactory.getLogger(UserDAOImpl.class);

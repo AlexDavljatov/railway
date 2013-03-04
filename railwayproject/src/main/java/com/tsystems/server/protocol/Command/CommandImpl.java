@@ -150,4 +150,16 @@ public class CommandImpl {
     public List<Ticket> getTickets(LoginPassword loginPassword) {
         return SinglePassengerDAOImpl.getInstance(em).getPassengerTicketsByEmail(loginPassword.getLogin());
     }
+
+    public boolean addStationDB(Station station) {
+        return SingleStationDAOImpl.getInstance(em).addElement(station);
+    }
+
+    public boolean addTrainDB(Train train) {
+        return SingleTrainDAOImpl.getInstance(em).addElement(train);
+    }
+
+    public List<Passenger> getPassengersByTrainNumber(String number) {
+        return SinglePassengerDAOImpl.getInstance(em).getPassengersByTrainNumber(number);
+    }
 }

@@ -165,7 +165,7 @@ public class ViewSheduleController implements Initializable {
     }
 
     ObservableList<SheduleViewClient> data = FXCollections.observableArrayList();
-    ObservableList<String> dataStations = FXCollections.observableArrayList("Hi", "Hello", "Okay");
+    ObservableList<String> dataStations = FXCollections.observableArrayList();
     //    ObservableList<Person> dbData;
 
     //    FXMLTableViewController() {

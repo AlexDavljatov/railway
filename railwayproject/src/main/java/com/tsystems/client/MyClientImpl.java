@@ -2,10 +2,7 @@ package com.tsystems.client;
 
 import com.tsystems.common.DataTransferObject;
 import com.tsystems.common.command.CommandType;
-import com.tsystems.common.model.CommonModel;
-import com.tsystems.common.model.LoginPassword;
-import com.tsystems.common.model.Station;
-import com.tsystems.common.model.User;
+import com.tsystems.common.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -182,7 +179,53 @@ public class MyClientImpl {
         out.close();
         in.close();
         log.debug("MyClient.getTickets()" + input.getCmd() + " " + lp.getLogin() + " " + input.getData());
+        for (CommonModel ticket : (List<CommonModel>) input.getData()) {
+            log.debug("" + ((Ticket) ticket).getTrain().getNumber());
+        }
         return (List<CommonModel>) input.getData();
 
+    }
+
+    public boolean addTrainToDB(Train train) throws IOException, ClassNotFoundException {
+        init();
+        out.writeObject(new DataTransferObject(CommandType.ADMIN_ADD_TRAIN_DB, lp, train));
+        DataTransferObject input = (DataTransferObject) in.readObject();
+        out.close();
+        in.close();
+        log.debug("MyClient.getTickets()" + input.getCmd() + " " + lp.getLogin() + " " + input.getData());
+        return input.getCmd() == CommandType.OK;
+    }
+
+    public boolean addStationDB(Station station) throws IOException, ClassNotFoundException {
+        init();
+        out.writeObject(new DataTransferObject(CommandType.ADMIN_ADD_STATION_DB, lp, station));
+        DataTransferObject input = (DataTransferObject) in.readObject();
+        out.close();
+        in.close();
+        log.debug("MyClient.getTickets()" + input.getCmd() + " " + lp.getLogin() + " " + input.getData());
+        return input.getCmd() == CommandType.OK;
+
+    }
+
+    public boolean addPassengerDB(User user) throws IOException, ClassNotFoundException {
+        init();
+        out.writeObject(new DataTransferObject(CommandType.ADMIN_USERS_WATCH_EDIT_DB, lp, user));
+        DataTransferObject input = (DataTransferObject) in.readObject();
+        out.close();
+        in.close();
+        log.debug("MyClient.getTickets()" + input.getCmd() + " " + lp.getLogin() + " " + input.getData());
+        return input.getCmd() == CommandType.OK;
+
+    }
+
+    public List<CommonModel> getPassengersByTrainNumber(String value) throws IOException, ClassNotFoundException {
+        init();
+        out.writeObject(new DataTransferObject(CommandType.ADMIN_GET_PASSENGERS_BY_TRAIN_NUMBER, value));
+        //        out.writeObject(new DataTransferObject(CommandType.GET_SHEDULE_BY_STATION_TEST, station));
+        DataTransferObject input = (DataTransferObject) in.readObject();
+        out.close();
+        in.close();
+        log.debug("MyClient. getPassengersByTrainNumber()" + input.getCmd() + " " + lp.getLogin() + " " + input.getData());
+        return (List<CommonModel>) input.getData();
     }
 }

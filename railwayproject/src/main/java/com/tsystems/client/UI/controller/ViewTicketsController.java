@@ -63,7 +63,8 @@ public class ViewTicketsController implements Initializable {
             List<CommonModel> serverResponce = MyClientImpl.getInstance().getTickets();
             log.debug("ViewTicketsController.initialize() serverResponce : " + serverResponce);
             for (CommonModel ticket : serverResponce) {
-                data.add(new TicketViewClient((Ticket) ticket));
+//                log.debug("" + ((Ticket) ticket).getTrain().getNumber());
+                data.add(new TicketViewClient("" + ((Ticket) ticket).getNumber(), "" + ((Ticket) ticket).getTrain().getNumber()));
             }
             tableView.setItems(data);
         } catch (IOException e) {

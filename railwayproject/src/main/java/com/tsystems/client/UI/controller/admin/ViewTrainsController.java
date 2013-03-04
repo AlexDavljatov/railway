@@ -10,6 +10,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import org.slf4j.Logger;
@@ -53,6 +54,9 @@ public class ViewTrainsController implements Initializable {
         else App.getInstance().userLogin();
     }
 
+    @FXML
+    private Label errorMessage;
+
     ObservableList<TrainViewClient> data = FXCollections.observableArrayList();
     //    ObservableList<Person> dbData;
 
@@ -63,10 +67,13 @@ public class ViewTrainsController implements Initializable {
     //    }
 
     @FXML
-    protected void addTrain(ActionEvent event) {
+    protected void addTrain(ActionEvent event) throws IOException, ClassNotFoundException {
         data = tableView.getItems();
-        data.add(new TrainViewClient(number.getText(), sitsNumber.getText()));
-
+        if (MyClientImpl.getInstance().addTrainToDB(new Train(Integer.valueOf(number.getText()), Integer.valueOf(sitsNumber.getText()))))
+            data.add(new TrainViewClient(number.getText(), sitsNumber.getText()));
+        else {
+            errorMessage.setText("Train number/sits number field is invalid");
+        }
         number.setText("");
         sitsNumber.setText("");
         //        emailField.setText("");

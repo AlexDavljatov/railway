@@ -56,6 +56,11 @@ public class DataTransferObject implements Serializable {
         data = allElements;
     }
 
+    public DataTransferObject(CommandType cmd, LoginPassword lp, CommonModel element) {
+        this.cmd = cmd;
+        data = new Object[]{lp, element};
+    }
+
     public DataTransferObject(CommandType cmd, String s) {
         this.cmd = cmd;
         data = s;

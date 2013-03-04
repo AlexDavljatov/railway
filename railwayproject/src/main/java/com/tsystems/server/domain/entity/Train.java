@@ -18,7 +18,7 @@ import java.util.UUID;
 @NamedQueries({
         @NamedQuery(name = "getTrainByNumber", query = "SELECT train from Train train where train.number = :trainNumber"),
         @NamedQuery(name = "getTrainById", query = "SELECT train from Train train where train.id = :trainId"),
-        @NamedQuery(name = "getTrainTicketsByNymber", query = "Select p.tickets from Train p where p.number = :number")
+        @NamedQuery(name = "getTrainTicketsByNymber", query = "Select p.tickets from Train p where p.number = :number"),
 })
 public class Train extends BaseEntity {
 

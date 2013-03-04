@@ -13,6 +13,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
@@ -56,6 +57,8 @@ public class ViewPassengersController implements Initializable {
     @FXML
     private HBox hBox = new HBox(150);
 
+    @FXML
+    private Label errorMessage;
     ObservableList<Person> data = FXCollections.observableArrayList();
 //    ObservableList<Person> dbData;
 
@@ -66,20 +69,30 @@ public class ViewPassengersController implements Initializable {
 //    }
 
     @FXML
-    protected void addPerson(ActionEvent event) {
+    protected void addPerson(ActionEvent event) throws IOException, ClassNotFoundException {
         data = tableView.getItems();
         //TODO: add passenger to database
-        data.add(new Person(name.getText(),
-                surname.getText(),
-                email.getText(),
-                password.getText(),
-                new Date(birthdayDate.getText()).toString(),
-                administrator.getText().equals("+")));
+        if (MyClientImpl.getInstance().addPassengerDB(new User(name.getText(), surname.getText(), email.getText(),
+                password.getText(), new Date(Date.parse(birthdayDate.getText())), administrator.getText().equals("+"))))
+            data.add(new Person(name.getText(),
+                    surname.getText(),
+                    email.getText(),
+                    password.getText(),
+                    new Date(birthdayDate.getText()).toString(),
+                    administrator.getText().equals("+")));
+        else {
+            errorMessage.setText("Some fields are invalid");
+        }
         //TODO: handle with input data error
-//        firstNameField.setText("");
-//        lastNameField.setText("");
-//        emailField.setText("");
+        name.setText("");
+        surname.setText("");
+        email.setText("");
+        password.setText("");
+        birthdayDate.setText("");
+        administrator.setText("");
+
     }
+
 
     @FXML
     protected void goBack() throws IOException, ClassNotFoundException {

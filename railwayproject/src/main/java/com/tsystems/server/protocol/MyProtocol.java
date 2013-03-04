@@ -2,7 +2,11 @@ package com.tsystems.server.protocol;
 
 import com.tsystems.common.*;
 import com.tsystems.common.model.*;
-import com.tsystems.server.domain.entity.Passenger;
+import com.tsystems.common.model.Shedule;
+import com.tsystems.common.model.Station;
+import com.tsystems.common.model.Ticket;
+import com.tsystems.common.model.Train;
+import com.tsystems.server.domain.entity.*;
 import com.tsystems.server.protocol.Command.CommandImpl;
 import com.tsystems.common.command.CommandType;
 import org.slf4j.Logger;
@@ -60,6 +64,16 @@ public class MyProtocol {
             return new DataTransferObject(CommandType.OK, result);
 
         }
+        if (command == CommandType.ADMIN_USERS_WATCH_EDIT_DB) {
+            Object[] inputData = (Object[]) input.getData();
+            LoginPassword loginPassword = (LoginPassword) inputData[0];
+            User user = (User) inputData[1];
+            log.debug("ADMIN_USERS_WATCH_EDIT_DB" + user + " " + loginPassword.getLogin());
+//            if (new CommandImpl(em).isAdmin(loginPassword))
+            if (new CommandImpl(em).registerUser(new Passenger(user.getName(), user.getSurName(), user.getEmail(), user.getPassword(), user.getBirthdayDate(), false)))
+                return new DataTransferObject(CommandType.OK);
+            return new DataTransferObject(CommandType.FAIL);
+        }
         if (command == CommandType.ADMIN_ADD_TRAIN) {
             LoginPassword loginPassword = (LoginPassword) input.getData();
             List<com.tsystems.server.domain.entity.Train> trains = new CommandImpl(em).viewAddTrains(loginPassword);
@@ -76,6 +90,16 @@ public class MyProtocol {
             return new DataTransferObject(CommandType.OK, result);
 
         }
+        if (command == CommandType.ADMIN_ADD_TRAIN_DB) {
+            Object[] inputData = (Object[]) input.getData();
+            LoginPassword loginPassword = (LoginPassword) inputData[0];
+            Train train = (Train) inputData[1];
+            log.debug("ADMIN_ADD_STATION_DB" + train + " " + loginPassword.getLogin());
+//            if (new CommandImpl(em).isAdmin(loginPassword))
+            if (new CommandImpl(em).addTrainDB(new com.tsystems.server.domain.entity.Train(train.getNumber(), train.getSitsNumber(), null, null)))
+                return new DataTransferObject(CommandType.OK);
+            return new DataTransferObject(CommandType.FAIL);
+        }
         if (command == CommandType.ADMIN_ADD_STATION) {
             LoginPassword loginPassword = (LoginPassword) input.getData();
             List<com.tsystems.server.domain.entity.Station> stations = new CommandImpl(em).viewAddStations(loginPassword);
@@ -86,6 +110,19 @@ public class MyProtocol {
                 result.add(new Station(station.getName()));
             }
             return new DataTransferObject(CommandType.OK, result);
+        }
+        if (command == CommandType.ADMIN_ADD_STATION_DB) {
+            Object[] inputData = (Object[]) input.getData();
+            LoginPassword loginPassword = (LoginPassword) inputData[0];
+            Station station = (Station) inputData[1];
+            log.debug("ADMIN_ADD_STATION_DB" + (em == null));
+            log.debug("ADMIN_ADD_STATION_DB" + station + " " + loginPassword.getLogin());
+//            if (new CommandImpl(em).isAdmin(loginPassword)) {
+            if (new CommandImpl(em).addStationDB(new com.tsystems.server.domain.entity.Station(station.getName(), null))) {
+                return new DataTransferObject(CommandType.OK);
+            }
+//            }
+            return new DataTransferObject(CommandType.FAIL);
         }
         if (command == CommandType.IS_ADMIN) {
             LoginPassword loginPassword = (LoginPassword) input.getData();
@@ -98,10 +135,21 @@ public class MyProtocol {
             String station = (String) input.getData();
             List<CommonModel> result = new LinkedList<CommonModel>();
             List<com.tsystems.server.domain.entity.Shedule> sheduleByStation = new CommandImpl(em).getSheduleByStation(station);
-
+            log.debug("GET_SHEDULE_BY_STATION" + sheduleByStation);
             for (com.tsystems.server.domain.entity.Shedule shedule : sheduleByStation) {
 //                result.add(new Shedule("" + new CommandImpl(em).getTrainById(shedule.getTrain_id()).getNumber(), shedule.getStation_id(), shedule.getTime()));
                 result.add(new Shedule(shedule.getTrain_id(), shedule.getStation_id(), shedule.getTime()));
+            }
+            return new DataTransferObject(CommandType.OK, result);
+        }
+        if (command == CommandType.ADMIN_GET_PASSENGERS_BY_TRAIN_NUMBER) {
+            String station = (String) input.getData();
+            List<CommonModel> result = new LinkedList<CommonModel>();
+            List<com.tsystems.server.domain.entity.Passenger> passengersByTrainNumber = new CommandImpl(em).getPassengersByTrainNumber(station);
+            log.debug("ADMIN_GET_PASSENGERS_BY_TRAIN_NUMBER" + passengersByTrainNumber);
+            for (com.tsystems.server.domain.entity.Passenger passenger : passengersByTrainNumber) {
+                //                result.add(new Shedule("" + new CommandImpl(em).getTrainById(shedule.getTrain_id()).getNumber(), shedule.getStation_id(), shedule.getTime()));
+                result.add(new User(passenger.getName(), passenger.getSurname(), passenger.getEmail(), passenger.getPassword(), passenger.getBirthdayDate(), passenger.isAdministrator()));
             }
             return new DataTransferObject(CommandType.OK, result);
         }
@@ -133,6 +181,7 @@ public class MyProtocol {
                                 (ticket.getPassenger()).getEmail(), (ticket.getPassenger()).getPassword(),
                                 (ticket.getPassenger()).getBirthdayDate(), (ticket.getPassenger()).isAdministrator()),
                         new Train((ticket.getTrain()).getNumber(), (ticket.getTrain()).getSits_number())));
+                log.debug("" + new Train((ticket.getTrain()).getNumber(), (ticket.getTrain()).getSits_number()).getNumber());
             }
             return new DataTransferObject(CommandType.OK, result);
 

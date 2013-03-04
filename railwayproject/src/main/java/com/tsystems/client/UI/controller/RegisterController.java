@@ -54,23 +54,25 @@ public class RegisterController implements Initializable {
     @FXML
     private Label success;
     @FXML
+    private Label errorMessage;
+    @FXML
     private HBox hBox = new HBox(150);
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         User loggedUser = App.getInstance().getLoggedUser();
-        name.setText(loggedUser.getId());
-        if (loggedUser.getName() != null) {
-            name.setText(loggedUser.getName());
-        }
-
-        if (loggedUser.getSurName() != null) {
-            surname.setText(loggedUser.getSurName());
-        }
-        if (loggedUser.getEmail() != null) {
-            email.setText(loggedUser.getEmail());
-        }
+//        name.setText(loggedUser.getId());
+//        if (loggedUser.getName() != null) {
+//            name.setText(loggedUser.getName());
+//        }
+//
+//        if (loggedUser.getSurName() != null) {
+//            surname.setText(loggedUser.getSurName());
+//        }
+//        if (loggedUser.getEmail() != null) {
+//            email.setText(loggedUser.getEmail());
+//        }
         /*if (loggedUser.getBirthdayDate() != null) {
             dateField.setText(loggedUser.getBirthdayDate().toString());
         }
@@ -109,15 +111,19 @@ public class RegisterController implements Initializable {
         registeredUser.setEmail(email.getText());
         registeredUser.setPassword(password.getText());
         registeredUser.setBirthdayDate(new Date(dateField.getText()));
+        Boolean b = false;
         try {
-            MyClientImpl.getInstance().doRegister(registeredUser);
+            b = MyClientImpl.getInstance().doRegister(registeredUser);
         } catch (IOException e) {
             log.debug("RegisterController.processUpdate() i/o exception" + e.getMessage());
         } catch (ClassNotFoundException e) {
             log.debug("RegisterController.processUpdate() ClassNotFound exception" + e.getMessage());
         }
-        animateMessage();
-        App.getInstance().userLogout();
+//        animateMessage();
+        if (b) App.getInstance().userLogout();
+        else {
+            errorMessage.setText("User with such email is registered already");
+        }
     }
 
     private void animateMessage() {

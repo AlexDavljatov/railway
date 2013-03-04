@@ -248,5 +248,20 @@ public class App extends Application {
             debug(ex.getMessage());
         }
     }
+
+    public void adminViewPassengersByTrainNumber() {
+        gotoViewPassengersByTrainNumber();
+    }
+
+    private void gotoViewPassengersByTrainNumber() {
+        try {
+            replaceSceneContent("/fxml/admin/viewPassengersByTrain.fxml");
+            log.debug("App.gotoViewTicket() success\n");
+        } catch (Exception ex) {
+            //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            log.error("App.gotoViewTicket() exception\n" + ex.getMessage());
+            debug(ex.getMessage());
+        }
+    }
 }
 
