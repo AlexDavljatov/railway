@@ -5,13 +5,16 @@ import com.tsystems.client.UI.App;
 import com.tsystems.common.model.CommonModel;
 import com.tsystems.common.model.Station;
 import com.tsystems.common.model.Train;
+import javafx.animation.FadeTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.util.Duration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,7 +36,8 @@ public class BuyTicketController implements Initializable {
     //    private Button button;
     @FXML
     private GridPane gp;
-
+    @FXML
+    private Label errorMessage;
     @FXML
     private final ComboBox comboTrain = new ComboBox();
     @FXML
@@ -64,9 +68,20 @@ public class BuyTicketController implements Initializable {
     //    }
 
     @FXML
+    private Label success;
+
+    @FXML
     //TODO: train number, not id!
     protected void buyTicket() throws IOException, ClassNotFoundException {
-        MyClientImpl.getInstance().buyTicket((String) comboTrain.getValue(), (String) comboStation.getValue());
+        errorMessage.setText("");
+        success.setText("");
+        if (MyClientImpl.getInstance().buyTicket((String) comboTrain.getValue(), (String) comboStation.getValue())) {
+            success.setText("The ticket was successfully bought");
+            FadeTransition ft = new FadeTransition(new Duration(3000), success);
+            ft.setFromValue(0.0);
+            ft.setToValue(1);
+            ft.play();
+        } else errorMessage.setText("No available tickets at the moment.");
         //
     }
 

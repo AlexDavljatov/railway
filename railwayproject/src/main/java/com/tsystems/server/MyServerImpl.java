@@ -62,9 +62,25 @@ public class MyServerImpl {
         Train train1 = new Train(50, 600, null, null);
         Train train2 = new Train(150, 800, null, null);
         Train train3 = new Train(424, 1800, null, null);
+        Train train4 = new Train(4, 1, null, null);
+        Train train5 = new Train(5, 1, null, null);
+        Train train6 = new Train(6, 1, null, null);
+        Train train7 = new Train(7, 1, null, null);
+        Train train8 = new Train(8, 1, null, null);
+        Train train9 = new Train(9, 1, null, null);
+        Train train10 = new Train(10, 1, null, null);
+
         em.persist(train1);
         em.persist(train2);
         em.persist(train3);
+        em.persist(train4);
+        em.persist(train5);
+        em.persist(train6);
+        em.persist(train7);
+        em.persist(train8);
+        em.persist(train9);
+        em.persist(train10);
+
         Passenger p1 = new Passenger("aaaa0", "aaaa0", "aaaa0", "aaaa0", new Date(Date.parse("Sat, 12 Aug 1995 13:30:00 GMT")), false);
         Passenger p2 = new Passenger("s", "s", "s", "s", new Date(Date.parse("Sat, 12 Aug 2013 13:30:00 GMT")), true);
         Passenger p3 = new Passenger("q", "q", "q", "q", new Date(Date.parse("Sat, 12 Aug 1995 13:30:00 GMT")), true);
@@ -78,9 +94,9 @@ public class MyServerImpl {
         em.persist(station2);
         em.persist(station3);
 //        log.debug("" + train1.getId() + " " + station1.getId());
-        Shedule shedule1 = new Shedule(train1.getId(), station1.getId(), new Date(Date.parse("Sat, 12 Aug 2013 13:30:00 GMT")));
-        Shedule shedule2 = new Shedule(train2.getId(), station1.getId(), new Date(Date.parse("Sat, 12 Aug 2013 18:30:00 GMT")));
-        Shedule shedule3 = new Shedule(train2.getId(), station3.getId(), new Date(Date.parse("Sat, 12 Aug 2013 20:30:00 GMT")));
+        Shedule shedule1 = new Shedule(train1.getId(), station1.getId(), new Date(Date.parse("Sat, 9 Apr 2013 13:30:00 GMT")));
+        Shedule shedule2 = new Shedule(train2.getId(), station1.getId(), new Date(Date.parse("Sat, 9 Apr 2013 18:30:00 GMT")));
+        Shedule shedule3 = new Shedule(train2.getId(), station3.getId(), new Date(Date.parse("Sat, 9 Apr 2013 20:30:00 GMT")));
         em.persist(shedule1);
         em.persist(shedule2);
         em.persist(shedule3);
@@ -95,14 +111,30 @@ public class MyServerImpl {
         em.persist(t4);
 
 //
-        AnotherShedule as1 = new AnotherShedule(train1, station1, new Date(Date.parse("Sat, 12 Aug 2013 13:30:00 GMT")));
-        AnotherShedule as2 = new AnotherShedule(train2, station1, new Date(Date.parse("Sat, 12 Aug 2013 18:30:00 GMT")));
-        AnotherShedule as3 = new AnotherShedule(train2, station3, new Date(Date.parse("Sat, 12 Aug 2013 12:30:00 GMT")));
+        AnotherShedule as1 = new AnotherShedule(train1, station1, new Date(Date.parse("Sat, 9 Mar 2013 13:30:00 GMT")));
+        AnotherShedule as2 = new AnotherShedule(train2, station1, new Date(Date.parse("Sat, 9 Mar 2013 18:30:00 GMT")));
+        AnotherShedule as3 = new AnotherShedule(train2, station3, new Date(Date.parse("Sat, 9 Mar 2013 12:30:00 GMT")));
         AnotherShedule as4 = new AnotherShedule(train3, station1, new Date(System.currentTimeMillis()));
+        AnotherShedule as5 = new AnotherShedule(train4, station1, new Date(Date.parse("Sat, 9 Mar 2013 12:30:00 GMT")));
+        AnotherShedule as6 = new AnotherShedule(train5, station1, new Date(Date.parse("Sat, 9 Mar 2013 13:30:00 GMT")));
+        AnotherShedule as7 = new AnotherShedule(train6, station1, new Date(Date.parse("Sat, 9 Mar 2013 14:30:00 GMT")));
+        AnotherShedule as8 = new AnotherShedule(train7, station1, new Date(Date.parse("Sat, 9 Mar 2013 15:30:00 GMT")));
+        AnotherShedule as9 = new AnotherShedule(train8, station1, new Date(Date.parse("Sat, 9 Mar 2013 16:30:00 GMT")));
+        AnotherShedule as10 = new AnotherShedule(train9, station1, new Date(Date.parse("Sat, 9 Mar 2013 17:30:00 GMT")));
+        AnotherShedule as11 = new AnotherShedule(train10, station1, new Date(Date.parse("Sat, 9 Mar 2013 18:30:00 GMT")));
+
         em.persist(as1);
         em.persist(as2);
         em.persist(as3);
         em.persist(as4);
+        em.persist(as5);
+        em.persist(as6);
+        em.persist(as7);
+        em.persist(as8);
+        em.persist(as9);
+        em.persist(as10);
+        em.persist(as11);
+
 //
         et.commit();
         em.close();

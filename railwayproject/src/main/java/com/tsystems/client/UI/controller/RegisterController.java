@@ -102,6 +102,11 @@ public class RegisterController implements Initializable {
     }
 
     @FXML
+    protected void logout() {
+        App.getInstance().userLogout();
+    }
+
+    @FXML
     protected void processUpdate() {
 
         User registeredUser = App.getInstance().getLoggedUser();

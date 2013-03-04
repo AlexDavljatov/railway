@@ -30,6 +30,8 @@
         <Hyperlink fx:id="logout" alignment="BOTTOM_LEFT" onAction="#goBack" text="Back"/>
     </HBox>
     <Label fx:id="errorMessage" GridPane.columnIndex="0" GridPane.rowIndex="4" textFill="RED"/>
+    <Label fx:id="success" layoutX="150.0" layoutY="450.0" opacity="0.0" text="Ticket was successfully bought!"
+           GridPane.columnIndex="0" GridPane.rowIndex="4"/>
     <!--<stylesheets>-->
     <!--<URL value="@style.css"/>-->
     <!--</stylesheets>-->

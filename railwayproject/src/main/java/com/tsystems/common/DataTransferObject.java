@@ -29,6 +29,11 @@ public class DataTransferObject implements Serializable {
         data = new Object[]{lp, train, station};
     }
 
+    public DataTransferObject(CommandType cmd, LoginPassword lp, String st1, String st2, long date1, long date2) {
+        this.cmd = cmd;
+        data = new Object[]{lp, st1, st2, date1, date2};
+    }
+
 
     public CommandType getCmd() {
         return cmd;

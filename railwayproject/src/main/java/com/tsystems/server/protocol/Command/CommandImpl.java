@@ -61,6 +61,7 @@ public class CommandImpl {
         return SinglePassengerDAOImpl.getInstance(em).addElement(passenger);
     }
 
+
     //TODO:DONE make a transaction
     public boolean login(LoginPassword loginPassword) {
         log.debug("CommandImpl.login() " + loginPassword.getLogin());
@@ -172,5 +173,9 @@ public class CommandImpl {
 
     public boolean buyTicket(LoginPassword loginPassword, String trainNumber, String stationName) {
         return SingleTicketDAOImpl.getInstance(em).buyTicket(loginPassword, trainNumber, stationName);
+    }
+
+    public List<AnotherShedule> findTrain(String station1, String station2, long time1, long time2) {
+        return SingleAnotherSheduleDAOImpl.getInstance(em).findTrains(station1, station2, time1, time2);
     }
 }

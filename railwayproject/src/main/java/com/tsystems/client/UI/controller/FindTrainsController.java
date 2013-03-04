@@ -5,6 +5,7 @@ import com.tsystems.client.UI.App;
 import com.tsystems.client.UI.Calendar.SimpleCalendar;
 import com.tsystems.client.UI.model.SheduleViewClient;
 import com.tsystems.common.model.CommonModel;
+import com.tsystems.common.model.Shedule;
 import com.tsystems.common.model.Station;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -98,20 +99,33 @@ public class FindTrainsController implements Initializable {
     @FXML
     protected void findTrains() throws IOException, ClassNotFoundException {
         tableView.getItems().clear();
-        log.debug("A: " + dateFieldA.getText() + String.valueOf(hoursA.getValue()) + " " + String.valueOf(minutesA.getValue()));
-        log.debug("B: " + dateFieldB.getText() + String.valueOf(hoursB.getValue()) + " " + String.valueOf(minutesB.getValue()));
+        log.debug(dateFieldA.getText());
+
+        log.debug("A: " + comboA.getValue().toString() + dateFieldA.getText() + String.valueOf(hoursA.getValue()) + " " + String.valueOf(minutesA.getValue()));
+        log.debug("B: " + comboB.getValue().toString() + dateFieldB.getText() + String.valueOf(hoursB.getValue()) + " " + String.valueOf(minutesB.getValue()));
 //        log.debug(dateFieldA.getText() + " " + String.valueOf(hoursA.getValue()) + ":" + String.valueOf(minutesA.getValue()) + ":" + "00");
-        log.debug("" + new Date(dateFieldA.getText() + " " + String.valueOf(hoursA.getValue()) + ":" + String.valueOf(minutesA.getValue()) + ":" + "00").getTime());
-        log.debug("" + new Date(dateFieldB.getText() + " " + String.valueOf(hoursB.getValue()) + ":" + String.valueOf(minutesB.getValue()) + ":" + "00").getTime());
-        MyClientImpl.getInstance().findTrains(String.valueOf(comboA.getValue()), String.valueOf(comboB.getValue()), new Date(dateFieldA.getText() + " " + String.valueOf(hoursA.getValue()) + ":" + String.valueOf(minutesA.getValue()) + ":" + "00").getTime(),
+
+        log.debug("" + new Date(dateFieldA.getText() + " " + String.valueOf(hoursA.getValue()) + ":" +
+                String.valueOf(minutesA.getValue()) + ":" + "00").toString());
+        log.debug("" + new Date(dateFieldB.getText() + " " + String.valueOf(hoursB.getValue()) + ":" +
+                String.valueOf(minutesB.getValue()) + ":" + "00").toString());
+        log.debug("" + new Date(System.currentTimeMillis()).toString());
+        log.debug("" + new Date(System.currentTimeMillis()).getTime());
+        log.debug("" + new Date(System.currentTimeMillis()).getTime());
+
+
+        List<CommonModel> serverResponce = MyClientImpl.getInstance().findTrains(String.valueOf(comboA.getValue()),
+                String.valueOf(comboB.getValue()), new Date(dateFieldA.getText() + " " + String.valueOf(hoursA.getValue()) +
+                ":" + String.valueOf(minutesA.getValue()) + ":" + "00").getTime(),
                 new Date(dateFieldB.getText() + " " + String.valueOf(hoursB.getValue()) + ":" + String.valueOf(minutesB.getValue()) + ":" + "00").getTime());
+        log.debug("" + serverResponce);
 //
 //          List<CommonModel> serverResponce = MyClientImpl.getInstance().getSheduleByStation((String) combo.getValue());
 //        List<CommonModel> serverResponce = MyClientImpl.getInstance().getAnotherSheduleByStation((String) comboA.getValue());
-//        for (CommonModel train : serverResponce) {
-//            data.add(new SheduleViewClient((Shedule) train));
-//        }
-//        tableView.setItems(data);
+        for (CommonModel train : serverResponce) {
+            data.add(new SheduleViewClient((Shedule) train));
+        }
+        tableView.setItems(data);
 
     }
 
@@ -153,7 +167,7 @@ public class FindTrainsController implements Initializable {
                 @Override
                 public void changed(ObservableValue<? extends Date> ov,
                                     Date oldDate, Date newDate) {
-                    dateFieldA.setText((new SimpleDateFormat("dd/MM/yyyy")).format(newDate));
+                    dateFieldA.setText((new SimpleDateFormat("MM/dd/yyyy")).format(newDate));
 
                 }
             });
@@ -168,7 +182,7 @@ public class FindTrainsController implements Initializable {
                 @Override
                 public void changed(ObservableValue<? extends Date> ov,
                                     Date oldDate, Date newDate) {
-                    dateFieldB.setText((new SimpleDateFormat("dd/MM/yyyy")).format(newDate));
+                    dateFieldB.setText((new SimpleDateFormat("MM/dd/yyyy")).format(newDate));
 
                 }
             });

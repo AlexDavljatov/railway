@@ -9,6 +9,8 @@
 
 <AnchorPane id="Profile" styleClass="profile" xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.tsystems.client.UI.controller.RegisterController">
+    <Hyperlink fx:id="logout" layoutX="300.0" layoutY="0.0" onAction="#logout" text="logout"
+               AnchorPane.rightAnchor="52.0"/>
     <Button fx:id="update" maxHeight="2.0" onAction="#processUpdate" text="Register" AnchorPane.bottomAnchor="15.0"
             AnchorPane.rightAnchor="168.0"/>
     <Label fx:id="message" layoutX="56.0" layoutY="77.0" text="Please review your profile data."/>

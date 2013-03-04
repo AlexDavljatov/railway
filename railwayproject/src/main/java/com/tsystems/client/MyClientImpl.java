@@ -254,16 +254,16 @@ public class MyClientImpl {
     }
 
 
-    public List<Train> findTrains(String st1, String st2, long date1, long date2) throws IOException, ClassNotFoundException {
+    public List<CommonModel> findTrains(String st1, String st2, long date1, long date2) throws IOException, ClassNotFoundException {
         init();
-//        log.debug("MyClient.findTrains() " + date1 + " " + date2 + " " + lp.getLogin());
-//        out.writeObject(new DataTransferObject(CommandType.BUY_TICKET, lp, train, station));
-//        //        out.writeObject(new DataTransferObject(CommandType.GET_SHEDULE_BY_STATION_TEST, station));
-//        DataTransferObject input = (DataTransferObject) in.readObject();
-//        out.close();
-//        in.close();
-//        log.debug("MyClient.buyTicket() " + input.getCmd() + " " + lp.getLogin() + " " + input.getData() + " " + input.getCmd());
-//        return input.getCmd() == CommandType.OK;
-        return null;
+        log.debug("MyClient.findTrains() " + date1 + " " + date2 + " " + lp.getLogin());
+        out.writeObject(new DataTransferObject(CommandType.FIND_TRAIN, lp, st1, st2, date1, date2));
+        //        out.writeObject(new DataTransferObject(CommandType.GET_SHEDULE_BY_STATION_TEST, station));
+        DataTransferObject input = (DataTransferObject) in.readObject();
+        out.close();
+        in.close();
+        log.debug("MyClient.buyTicket() " + input.getCmd() + " " + lp.getLogin() + " " + input.getData() + " " + input.getCmd());
+        return (List<CommonModel>) input.getData();
+//        return null;
     }
 }

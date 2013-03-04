@@ -70,7 +70,7 @@ public class MyProtocol {
             User user = (User) inputData[1];
             log.debug("ADMIN_USERS_WATCH_EDIT_DB" + user + " " + loginPassword.getLogin());
 //            if (new CommandImpl(em).isAdmin(loginPassword))
-            if (new CommandImpl(em).registerUser(new Passenger(user.getName(), user.getSurName(), user.getEmail(), user.getPassword(), user.getBirthdayDate(), false)))
+            if (new CommandImpl(em).registerUser(new Passenger(user.getName(), user.getSurName(), user.getEmail(), user.getPassword(), user.getBirthdayDate(), user.isAdministrator())))
                 return new DataTransferObject(CommandType.OK);
             return new DataTransferObject(CommandType.FAIL);
         }
@@ -210,6 +210,23 @@ public class MyProtocol {
                 return new DataTransferObject(CommandType.OK);
             return new DataTransferObject(CommandType.FAIL);
         }
+        if (command == CommandType.FIND_TRAIN) {
+            Object[] data = (Object[]) input.getData();
+            LoginPassword loginPassword = (LoginPassword) data[0];
+            String station1 = (String) data[1];
+            String station2 = (String) data[2];
+            long time1 = (long) data[3];
+            long time2 = (long) data[4];
+            List<CommonModel> result = new LinkedList<CommonModel>();
+            log.debug("FIND_TRAIN: " + station1 + " " + station2 + " " + time1 + " " + time2);
+            for (com.tsystems.server.domain.entity.AnotherShedule shedule : new CommandImpl(em).findTrain(station1, station2, time1, time2)) {
+                result.add(new Shedule("" + shedule.getTrain().getNumber(), shedule.getStation().getName(), shedule.getTime()));
+            }
+            log.debug("FIND_TRAIN: " + station1 + " " + station2 + " " + time1 + " " + time2 + " " + result);
+            return new DataTransferObject(CommandType.OK, result);
+
+        }
         return null;
+
     }
 }
