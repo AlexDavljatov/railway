@@ -83,7 +83,7 @@ public class ViewTrainsController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         log.debug("ViewTrainsController.initialize()");
         try {
-            List<CommonModel> serverResponce = MyClientImpl.getInstance().getTrains(MyClientImpl.getInstance().getLp());
+            List<CommonModel> serverResponce = MyClientImpl.getInstance().getTrains();
 //            log.debug("ViewTrainsController.initialize() serverResponce : " + serverResponce);
             for (CommonModel train : serverResponce) {
                 data.add(new TrainViewClient((Train) train));

@@ -142,10 +142,24 @@ public class MyProtocol {
             }
             return new DataTransferObject(CommandType.OK, result);
         }
-        if (command == CommandType.ADMIN_GET_PASSENGERS_BY_TRAIN_NUMBER) {
+
+        if (command == CommandType.GET_ANOTHER_SHEDULE_BY_STATION) {
             String station = (String) input.getData();
             List<CommonModel> result = new LinkedList<CommonModel>();
-            List<com.tsystems.server.domain.entity.Passenger> passengersByTrainNumber = new CommandImpl(em).getPassengersByTrainNumber(station);
+            List<com.tsystems.server.domain.entity.AnotherShedule> sheduleByStation =
+                    new CommandImpl(em).getAnotherSheduleByStation(station);
+            log.debug("GET_ANOTHER_SHEDULE_BY_STATION" + sheduleByStation);
+            for (com.tsystems.server.domain.entity.AnotherShedule shedule : sheduleByStation) {
+                //                result.add(new Shedule("" + new CommandImpl(em).getTrainById(shedule.getTrain_id()).getNumber(), shedule.getStation_id(), shedule.getTime()));
+                result.add(new Shedule("" + shedule.getTrain().getNumber(), shedule.getStation().getName(), shedule.getTime()));
+            }
+            return new DataTransferObject(CommandType.OK, result);
+        }
+
+        if (command == CommandType.ADMIN_GET_PASSENGERS_BY_TRAIN_NUMBER) {
+            String number = (String) input.getData();
+            List<CommonModel> result = new LinkedList<CommonModel>();
+            List<com.tsystems.server.domain.entity.Passenger> passengersByTrainNumber = new CommandImpl(em).getPassengersByTrainNumber(number);
             log.debug("ADMIN_GET_PASSENGERS_BY_TRAIN_NUMBER" + passengersByTrainNumber);
             for (com.tsystems.server.domain.entity.Passenger passenger : passengersByTrainNumber) {
                 //                result.add(new Shedule("" + new CommandImpl(em).getTrainById(shedule.getTrain_id()).getNumber(), shedule.getStation_id(), shedule.getTime()));
@@ -185,6 +199,16 @@ public class MyProtocol {
             }
             return new DataTransferObject(CommandType.OK, result);
 
+        }
+        if (command == CommandType.BUY_TICKET) {
+            Object[] result = (Object[]) input.getData();
+            LoginPassword loginPassword = (LoginPassword) result[0];
+            String trainNumber = (String) result[1];
+            String stationName = (String) result[2];
+            log.debug("BUY_TICKET: " + loginPassword.getLogin() + " " + trainNumber + " " + stationName);
+            if (new CommandImpl(em).buyTicket(loginPassword, trainNumber, stationName))
+                return new DataTransferObject(CommandType.OK);
+            return new DataTransferObject(CommandType.FAIL);
         }
         return null;
     }

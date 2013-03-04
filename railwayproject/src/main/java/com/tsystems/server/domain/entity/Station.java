@@ -1,5 +1,7 @@
 package com.tsystems.server.domain.entity;
 
+import com.tsystems.server.domain.BaseEntity;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -18,9 +20,6 @@ import java.util.UUID;
                 "select station from Station station where station.name = :stationName")
 })
 public class Station implements Serializable {
-
-    @Version
-    protected int version;
 
     public Station() {
     }
@@ -58,6 +57,19 @@ public class Station implements Serializable {
             inverseJoinColumns = {@JoinColumn(name = "train_id")})
     private List<Train> trains;
 
+    //
+    @OneToMany(mappedBy = "station")
+    private List<AnotherShedule> shedules;
+
+    public List<AnotherShedule> getShedules() {
+        return shedules;
+    }
+
+    public void setShedules(List<AnotherShedule> shedules) {
+        this.shedules = shedules;
+    }
+
+    //
     public List<Train> getTrains() {
         return trains;
     }

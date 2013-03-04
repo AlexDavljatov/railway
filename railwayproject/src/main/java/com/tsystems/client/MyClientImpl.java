@@ -126,7 +126,7 @@ public class MyClientImpl {
         return (List<CommonModel>) input.getData();
     }
 
-    public List<CommonModel> getTrains(LoginPassword lp) throws IOException, ClassNotFoundException {
+    public List<CommonModel> getTrains() throws IOException, ClassNotFoundException {
         init();
         out.writeObject(new DataTransferObject(CommandType.ADMIN_ADD_TRAIN, lp));
         DataTransferObject input = (DataTransferObject) in.readObject();
@@ -136,7 +136,7 @@ public class MyClientImpl {
         return (List<CommonModel>) input.getData();
     }
 
-    public List<CommonModel> getStation(LoginPassword lp) throws IOException, ClassNotFoundException {
+    public List<CommonModel> getStation() throws IOException, ClassNotFoundException {
         init();
         out.writeObject(new DataTransferObject(CommandType.ADMIN_ADD_STATION, lp));
         DataTransferObject input = (DataTransferObject) in.readObject();
@@ -202,7 +202,7 @@ public class MyClientImpl {
         DataTransferObject input = (DataTransferObject) in.readObject();
         out.close();
         in.close();
-        log.debug("MyClient.getTickets()" + input.getCmd() + " " + lp.getLogin() + " " + input.getData());
+        log.debug("MyClient.getTickets() " + input.getCmd() + " " + lp.getLogin() + " " + input.getData());
         return input.getCmd() == CommandType.OK;
 
     }
@@ -213,7 +213,7 @@ public class MyClientImpl {
         DataTransferObject input = (DataTransferObject) in.readObject();
         out.close();
         in.close();
-        log.debug("MyClient.getTickets()" + input.getCmd() + " " + lp.getLogin() + " " + input.getData());
+        log.debug("MyClient.getTickets() " + input.getCmd() + " " + lp.getLogin() + " " + input.getData());
         return input.getCmd() == CommandType.OK;
 
     }
@@ -225,7 +225,45 @@ public class MyClientImpl {
         DataTransferObject input = (DataTransferObject) in.readObject();
         out.close();
         in.close();
-        log.debug("MyClient. getPassengersByTrainNumber()" + input.getCmd() + " " + lp.getLogin() + " " + input.getData());
+        log.debug("MyClient. getPassengersByTrainNumber() " + input.getCmd() + " " + lp.getLogin() + " " + input.getData());
         return (List<CommonModel>) input.getData();
+    }
+
+    public List<CommonModel> getAnotherSheduleByStation(String value) throws IOException, ClassNotFoundException {
+        init();
+        out.writeObject(new DataTransferObject(CommandType.GET_ANOTHER_SHEDULE_BY_STATION, value));
+        //        out.writeObject(new DataTransferObject(CommandType.GET_SHEDULE_BY_STATION_TEST, station));
+        DataTransferObject input = (DataTransferObject) in.readObject();
+        out.close();
+        in.close();
+        log.debug("MyClient.getAnotherSheduleByStation() " + input.getCmd() + " " + lp.getLogin() + " " + input.getData());
+        return (List<CommonModel>) input.getData();
+    }
+
+    public boolean buyTicket(String train, String station) throws IOException, ClassNotFoundException {
+        init();
+        log.debug("MyClient.buyTicket() " + train + " " + station + " " + lp.getLogin());
+        out.writeObject(new DataTransferObject(CommandType.BUY_TICKET, lp, train, station));
+        //        out.writeObject(new DataTransferObject(CommandType.GET_SHEDULE_BY_STATION_TEST, station));
+        DataTransferObject input = (DataTransferObject) in.readObject();
+        out.close();
+        in.close();
+        log.debug("MyClient.buyTicket() " + input.getCmd() + " " + lp.getLogin() + " " + input.getData() + " " + input.getCmd());
+        return input.getCmd() == CommandType.OK;
+
+    }
+
+
+    public List<Train> findTrains(String st1, String st2, long date1, long date2) throws IOException, ClassNotFoundException {
+        init();
+//        log.debug("MyClient.findTrains() " + date1 + " " + date2 + " " + lp.getLogin());
+//        out.writeObject(new DataTransferObject(CommandType.BUY_TICKET, lp, train, station));
+//        //        out.writeObject(new DataTransferObject(CommandType.GET_SHEDULE_BY_STATION_TEST, station));
+//        DataTransferObject input = (DataTransferObject) in.readObject();
+//        out.close();
+//        in.close();
+//        log.debug("MyClient.buyTicket() " + input.getCmd() + " " + lp.getLogin() + " " + input.getData() + " " + input.getCmd());
+//        return input.getCmd() == CommandType.OK;
+        return null;
     }
 }

@@ -8,7 +8,6 @@ package com.tsystems.client.UI;
  * To change this template use File | Settings | File Templates.
  */
 
-import com.tsystems.client.MyClientImpl;
 import com.tsystems.common.model.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +19,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
+import java.util.Date;
 
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
@@ -57,6 +57,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        log.debug("" + new Date("21/12/2013 00:00:00").getTime());
+        log.debug("" + new Date("21/12/2013 00:00:01").getTime());
         try {
             stage = primaryStage;
             gotoLogin();
@@ -260,6 +262,36 @@ public class App extends Application {
         } catch (Exception ex) {
             //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
             log.error("App.gotoViewTicket() exception\n" + ex.getMessage());
+            debug(ex.getMessage());
+        }
+    }
+
+    public void findTrain() {
+        gotoFindTrain();
+    }
+
+    private void gotoFindTrain() {
+        try {
+            replaceSceneContent("/fxml/findTrains.fxml");
+            log.debug("App.findTrain() success\n");
+        } catch (Exception ex) {
+            //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            log.error("App.findTrain() exception\n" + ex.getMessage());
+            debug(ex.getMessage());
+        }
+    }
+
+    public void buyTicket() {
+        gotoBuyTicket();
+    }
+
+    private void gotoBuyTicket() {
+        try {
+            replaceSceneContent("/fxml/buyTicket.fxml");
+            log.debug("App.buyTicket() success\n");
+        } catch (Exception ex) {
+            //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            log.error("App.buyTicket() exception\n" + ex.getMessage());
             debug(ex.getMessage());
         }
     }

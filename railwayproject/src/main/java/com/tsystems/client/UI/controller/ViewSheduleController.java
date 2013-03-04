@@ -116,12 +116,10 @@ import com.tsystems.common.model.Shedule;
 import com.tsystems.common.model.Station;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -178,7 +176,8 @@ public class ViewSheduleController implements Initializable {
     //TODO: train number, not id!
     protected void findTrains() throws IOException, ClassNotFoundException {
         tableView.getItems().clear();
-        List<CommonModel> serverResponce = MyClientImpl.getInstance().getSheduleByStation((String) combo.getValue());
+//        List<CommonModel> serverResponce = MyClientImpl.getInstance().getSheduleByStation((String) combo.getValue());
+        List<CommonModel> serverResponce = MyClientImpl.getInstance().getAnotherSheduleByStation((String) combo.getValue());
         for (CommonModel train : serverResponce) {
             //                data.add(new SheduleViewClient("" + ((Train) train).getNumber(), ""+ ((Train) train).getSitsNumber()));
             data.add(new SheduleViewClient((Shedule) train));
@@ -194,7 +193,7 @@ public class ViewSheduleController implements Initializable {
 
         log.debug("ViewTrainsController.initialize()");
         try {
-            List<CommonModel> serverResponce = MyClientImpl.getInstance().getStation(MyClientImpl.getInstance().getLp());
+            List<CommonModel> serverResponce = MyClientImpl.getInstance().getStation();
 //            log.debug("ViewTrainsController.initialize() serverResponce : " + serverResponce);
             for (CommonModel train : serverResponce) {
 //                data.add(new SheduleViewClient("" + ((Train) train).getNumber(), ""+ ((Train) train).getSitsNumber()));

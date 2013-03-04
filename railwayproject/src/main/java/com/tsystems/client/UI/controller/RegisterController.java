@@ -88,7 +88,6 @@ public class RegisterController implements Initializable {
             public void changed(ObservableValue<? extends Date> ov,
                                 Date oldDate, Date newDate) {
                 dateField.setText((new SimpleDateFormat("dd/MM/yyyy")).format(newDate));
-
             }
         });
         hBox.getChildren().addAll(dateField, simpleCalender);

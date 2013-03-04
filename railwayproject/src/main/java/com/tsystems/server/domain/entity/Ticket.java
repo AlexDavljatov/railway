@@ -17,7 +17,10 @@ import java.util.UUID;
         @NamedQuery(name = "getAllTickets", query = "SELECT ticket FROM Ticket ticket"),
         @NamedQuery(name = "getPassengerTicketOwner",
                 query = "SELECT ticket FROM Ticket ticket WHERE ticket.passenger = :passenger"),
-        @NamedQuery(name = "getTrainTicketOwner", query = "SELECT ticket FROM Ticket ticket WHERE ticket.train = :train")
+        @NamedQuery(name = "getTrainTicketOwner",
+                query = "SELECT ticket FROM Ticket ticket WHERE ticket.train = :train"),
+        @NamedQuery(name = "getTicketsByTrainNumber",
+                query = "Select ticket from Ticket ticket where ticket.train.number = :trainNumber")
 })
 public class Ticket implements Serializable {
     public Ticket() {
@@ -28,9 +31,6 @@ public class Ticket implements Serializable {
         this.passenger = passenger;
         this.train = train;
     }
-
-    @Version
-    protected int version;
 
     @Id
     private String id;

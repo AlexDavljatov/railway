@@ -4,6 +4,7 @@ import com.tsystems.server.domain.BaseEntity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
@@ -98,5 +99,17 @@ public class Train extends BaseEntity {
         if (id == null) {
             id = UUID.randomUUID().toString();
         }
+    }
+
+    //
+    @OneToMany(mappedBy = "train")
+    private List<AnotherShedule> shedules;
+
+    public List<AnotherShedule> getShedules() {
+        return shedules;
+    }
+
+    public void setShedules(List<AnotherShedule> shedules) {
+        this.shedules = shedules;
     }
 }

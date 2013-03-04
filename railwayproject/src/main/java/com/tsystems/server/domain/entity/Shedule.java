@@ -19,8 +19,6 @@ import java.util.UUID;
 })
 public class Shedule implements Serializable {
 
-    @Version
-    protected int version;
 
     public Shedule() {
     }

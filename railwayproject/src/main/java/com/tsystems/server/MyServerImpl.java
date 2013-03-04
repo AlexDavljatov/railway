@@ -2,7 +2,9 @@ package com.tsystems.server;
 
 import com.tsystems.server.domain.dao.passenger.SinglePassengerDAO;
 import com.tsystems.server.domain.dao.passenger.impl.SinglePassengerDAOImpl;
+import com.tsystems.server.domain.dao.shedule.SingleAnotherSheduleDAO;
 import com.tsystems.server.domain.dao.shedule.SingleSheduleDAO;
+import com.tsystems.server.domain.dao.shedule.impl.SingleAnotherSheduleDAOImpl;
 import com.tsystems.server.domain.dao.shedule.impl.SingleSheduleDAOImpl;
 import com.tsystems.server.domain.dao.stations.SingleStationDAO;
 import com.tsystems.server.domain.dao.stations.impl.SingleStationDAOImpl;
@@ -50,6 +52,7 @@ public class MyServerImpl {
     private SingleSheduleDAO sheduleDAO;
     private SingleTicketDAO ticketDAO;
     private SinglePassengerDAO passengerDAO;
+    private SingleAnotherSheduleDAO anotherSheduleDAO;
 
     //TODO: remove init method()
     private void init() {
@@ -85,13 +88,33 @@ public class MyServerImpl {
         Ticket t2 = new Ticket(2, p2, train1);
         Ticket t3 = new Ticket(3, p2, train2);
         Ticket t4 = new Ticket(4, p2, train3);
+
         em.persist(t1);
         em.persist(t2);
         em.persist(t3);
         em.persist(t4);
+
+//
+        AnotherShedule as1 = new AnotherShedule(train1, station1, new Date(Date.parse("Sat, 12 Aug 2013 13:30:00 GMT")));
+        AnotherShedule as2 = new AnotherShedule(train2, station1, new Date(Date.parse("Sat, 12 Aug 2013 18:30:00 GMT")));
+        AnotherShedule as3 = new AnotherShedule(train2, station3, new Date(Date.parse("Sat, 12 Aug 2013 12:30:00 GMT")));
+        AnotherShedule as4 = new AnotherShedule(train3, station1, new Date(System.currentTimeMillis()));
+        em.persist(as1);
+        em.persist(as2);
+        em.persist(as3);
+        em.persist(as4);
+//
         et.commit();
         em.close();
     }
+
+//    AnotherShedule as1 = new AnotherShedule(train1, station1, new Date(Date.parse("Sat, 12 Aug 2013 13:30:00 GMT")));
+//            AnotherShedule as2 = new AnotherShedule(train2, station1, new Date(Date.parse("Sat, 12 Aug 2013 18:30:00 GMT")));
+//            AnotherShedule as3 = new AnotherShedule(train3, station3, new Date(Date.parse("Sat, 12 Aug 2013 20:30:00 GMT")));
+//            em.persist(as1);
+//            em.persist(as2);
+//            em.persist(as3);
+
 
     public MyServerImpl() {
         init();
@@ -101,6 +124,7 @@ public class MyServerImpl {
         sheduleDAO = new SingleSheduleDAOImpl(factory.createEntityManager());
         ticketDAO = new SingleTicketDAOImpl(factory.createEntityManager());
         passengerDAO = new SinglePassengerDAOImpl(factory.createEntityManager());
+        anotherSheduleDAO = new SingleAnotherSheduleDAOImpl(factory.createEntityManager());
     }
 
     public static void main(String[] args) {

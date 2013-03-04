@@ -128,4 +128,8 @@ public class Passenger extends BaseEntity {
         }
     }
 
+    public boolean equals(Passenger p) {
+        return (this.getName().equals(p.getName()) && this.getSurname().equals(p.getSurname()) && this.getBirthdayDate().equals(p.getBirthdayDate()));
+    }
+
 }

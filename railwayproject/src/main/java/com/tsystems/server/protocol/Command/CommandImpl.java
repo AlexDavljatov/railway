@@ -4,8 +4,10 @@ import com.google.common.collect.Iterables;
 import com.tsystems.common.model.LoginPassword;
 import com.tsystems.server.domain.dao.passenger.SinglePassengerDAO;
 import com.tsystems.server.domain.dao.passenger.impl.SinglePassengerDAOImpl;
+import com.tsystems.server.domain.dao.shedule.impl.SingleAnotherSheduleDAOImpl;
 import com.tsystems.server.domain.dao.shedule.impl.SingleSheduleDAOImpl;
 import com.tsystems.server.domain.dao.stations.impl.SingleStationDAOImpl;
+import com.tsystems.server.domain.dao.tickets.impl.SingleTicketDAOImpl;
 import com.tsystems.server.domain.dao.trains.impl.SingleTrainDAOImpl;
 import com.tsystems.server.domain.dao.users.impl.UserDAOImpl;
 import com.tsystems.server.domain.entity.*;
@@ -91,8 +93,9 @@ public class CommandImpl {
         //TODO:DONE administrator's privilegies
         List<Train> result = null;
 //        if (UserDAOImpl.getInstance().isAdmin(loginPassword.getLogin()))
-        if (SinglePassengerDAOImpl.getInstance(em).isAdmin(loginPassword.getLogin()))
-            result = SingleTrainDAOImpl.getInstance(em).getAllElements();
+
+//        if (SinglePassengerDAOImpl.getInstance(em).isAdmin(loginPassword.getLogin()))
+        result = SingleTrainDAOImpl.getInstance(em).getAllElements();
         return result;
     }
 
@@ -161,5 +164,13 @@ public class CommandImpl {
 
     public List<Passenger> getPassengersByTrainNumber(String number) {
         return SinglePassengerDAOImpl.getInstance(em).getPassengersByTrainNumber(number);
+    }
+
+    public List<AnotherShedule> getAnotherSheduleByStation(String station) {
+        return SingleAnotherSheduleDAOImpl.getInstance(em).getSheduleByStationName(station);
+    }
+
+    public boolean buyTicket(LoginPassword loginPassword, String trainNumber, String stationName) {
+        return SingleTicketDAOImpl.getInstance(em).buyTicket(loginPassword, trainNumber, stationName);
     }
 }
