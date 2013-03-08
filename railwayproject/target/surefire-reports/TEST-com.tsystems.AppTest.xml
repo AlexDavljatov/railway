@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.169" errors="0" skipped="0" tests="1" name="com.tsystems.AppTest">
+<testsuite failures="0" time="0.073" errors="0" skipped="0" tests="1" name="com.tsystems.AppTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/java/jdk1.7.0_13/jre/lib/i386"/>
@@ -19,7 +19,7 @@
     <property name="basedir" value="/home/alex/Desktop/Project/railway/railwayproject"/>
     <property name="java.endorsed.dirs" value="/usr/java/jdk1.7.0_13/jre/lib/endorsed"/>
     <property name="os.arch" value="i386"/>
-    <property name="surefire.real.class.path" value="/home/alex/Desktop/Project/railway/railwayproject/target/surefire/surefirebooter7276049908359907157.jar"/>
+    <property name="surefire.real.class.path" value="/home/alex/Desktop/Project/railway/railwayproject/target/surefire/surefirebooter6110751223985093691.jar"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="line.separator" value="
 "/>
@@ -42,7 +42,7 @@
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="32"/>
     <property name="java.home" value="/usr/java/jdk1.7.0_13/jre"/>
-    <property name="sun.java.command" value="/home/alex/Desktop/Project/railway/railwayproject/target/surefire/surefirebooter7276049908359907157.jar /home/alex/Desktop/Project/railway/railwayproject/target/surefire/surefire2921726666789921773tmp /home/alex/Desktop/Project/railway/railwayproject/target/surefire/surefire8264903174493900039tmp"/>
+    <property name="sun.java.command" value="/home/alex/Desktop/Project/railway/railwayproject/target/surefire/surefirebooter6110751223985093691.jar /home/alex/Desktop/Project/railway/railwayproject/target/surefire/surefire7180866100420730209tmp /home/alex/Desktop/Project/railway/railwayproject/target/surefire/surefire3062446097019356720tmp"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>

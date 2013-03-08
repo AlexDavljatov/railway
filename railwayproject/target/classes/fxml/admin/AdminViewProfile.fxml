@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="Profile" styleClass="profile" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.tsystems.client.UI.controller.admin.AdminViewProfileController">
+
+    <!-- Prevent AnchorPane so that it's max = pref. This causes it to center in StackPane -->
+    <Label layoutX="150.0" layoutY="50.0" text="Hi! You are successfully logged in"/>
+    <Button fx:id="viewPassengersByTrainNymber" defaultButton="true" layoutX="265.0" layoutY="100.0"
+            onAction="#viewPassengersByTrainNumber"
+            maxWidth="2.0" minHeight="30.0" minWidth="200.0"
+            prefHeight="30.0" prefWidth="150.0"
+            text="Passengers by train"/>
+    <Button fx:id="viewTickets" defaultButton="true" layoutX="265.0" layoutY="150.0" onAction="#viewTickets"
+            maxWidth="2.0" minHeight="30.0" minWidth="200.0"
+            prefHeight="30.0" prefWidth="150.0"
+            text="View tickets"/>
+    <Button fx:id="viewShedule" defaultButton="true" layoutX="265.0" layoutY="200.0" onAction="#viewShedule"
+            maxWidth="2.0" minHeight="30.0" minWidth="200.0"
+            prefHeight="30.0" prefWidth="150.0"
+            text="View shedule"/>
+    <Button fx:id="findTrain" defaultButton="true" layoutX="265.0" layoutY="250.0" onAction="#findTrain"
+            maxWidth="2.0" minHeight="30.0" minWidth="200.0"
+            prefHeight="30.0" prefWidth="150.0"
+            text=" Find train "/>
+    <Button fx:id="buyTicket" defaultButton="true" layoutX="265.0" layoutY="300.0" onAction="#buyTicket"
+            maxWidth="2.0" minHeight="30.0" minWidth="200.0"
+            prefHeight="30.0" prefWidth="150.0"
+            text="Buy Ticket"/>
+
+    <Button fx:id="viewUsers" defaultButton="true" layoutX="265.0" layoutY="350.0" onAction="#viewUsers"
+            maxWidth="2.0" minHeight="30.0" minWidth="200.0"
+            prefHeight="30.0" prefWidth="150.0"
+            text="View users "/>
+    <Button fx:id="viewEditTrains" defaultButton="true" layoutX="265.0" layoutY="400.0" onAction="#viewEditTrains"
+            maxWidth="2.0" minHeight="30.0" minWidth="200.0"
+            prefHeight="30.0" prefWidth="200.0"
+            text="View/add trains "/>
+
+    <Button fx:id="viewEditStations" defaultButton="true" layoutX="265.0" layoutY="450.0" onAction="#viewEditStations"
+            maxWidth="2.0" minHeight="30.0" minWidth="200.0"
+            prefHeight="30.0" prefWidth="200.0"
+            text="View/add stations "/>
+
+    <Button fx:id="addRoutePoint" defaultButton="true" layoutX="265.0" layoutY="450.0" onAction="#addRoutePoint"
+                maxWidth="2.0" minHeight="30.0" minWidth="200.0"
+                prefHeight="30.0" prefWidth="200.0"
+                text="Add new route point"/>
+
+    <Hyperlink fx:id="logout" layoutX="300.0" layoutY="0.0" onAction="#logout" text="logout"
+               AnchorPane.rightAnchor="52.0"/>
+    <Label fx:id="success" layoutX="0.0" layoutY="0.0" opacity="0.0" text="Log in successful!"
+           AnchorPane.leftAnchor="52.0"/>
+    <stylesheets>
+    <URL value="@style.css"/>
+    </stylesheets>
+</AnchorPane>
+        <!--
+        <StackPane id="Login" styleClass="login" xmlns:fx="http://javafx.com/fxml"
+                   fx:controller="com.tsystems.client.UI.controller.ViewProfileController">
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity">
+                 Prevent AnchorPane so that it's max = pref. This causes it to center in StackPane -->
+        <!--        <Label layoutX="150.0" layoutY="50.0" text="Hi! You are successfully logged in"/>
+                <Button fx:id="editProfile" defaultButton="true" layoutX="150.0" layoutY="100.0" onAction="#editProfile"
+                        text="editProfile"/>
+                <Button fx:id="viewTickets" defaultButton="true" layoutX="150.0" layoutY="150.0" onAction="#viewTickets"
+                        text="viewTickets"/>
+                <Button fx:id="viewShedule" defaultButton="true" layoutX="150.0" layoutY="200.0" onAction="#viewShedule"
+                        text="viewShedule"/>
+                <Button fx:id="findTrain" defaultButton="true" layoutX="150.0" layoutY="250.0" onAction="#findTrain"
+                        text="findTrain"/>
+            </AnchorPane>
+            <Hyperlink fx:id="logout" layoutX="300.0" layoutY="0.0" onAction="#logout" text="logout" AnchorPane.rightAnchor="52.0"/>
+            <stylesheets>
+                <URL value="@style.css"/>
+            </stylesheets>
+        </StackPane>
+        -->

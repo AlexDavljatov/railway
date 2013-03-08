@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="Profile" styleClass="profile" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.tsystems.client.UI.controller.RegisterController">
+    <Hyperlink fx:id="logout" layoutX="300.0" layoutY="0.0" onAction="#logout" text="logout"
+               AnchorPane.rightAnchor="52.0"/>
+    <Button fx:id="update" maxHeight="2.0" onAction="#processUpdate" text="Register" AnchorPane.bottomAnchor="15.0"
+            AnchorPane.rightAnchor="168.0"/>
+    <Label fx:id="message" layoutX="56.0" layoutY="77.0" text="Please review your profile data."/>
+    <Label layoutX="56.0" layoutY="123.0" text="Name:"/>
+    <Label layoutX="56.0" layoutY="173.0" text="Surname:"/>
+    <Label layoutX="56.0" layoutY="224.0" text="Email:"/>
+    <Label layoutX="56.0" layoutY="275.0" text="Password:"/>
+    <Label layoutX="56.0" layoutY="326.0" text="Date:"/>
+
+    <TextField fx:id="name" layoutX="149.0" layoutY="120.0" maxWidth="2.0" minHeight="30.0"
+               minWidth="215.0" prefHeight="30.0" prefWidth="215.0"/>
+    <TextField fx:id="surname" layoutX="149.0" layoutY="171.0" maxWidth="2.0" minHeight="30.0" minWidth="215.0"
+               prefHeight="30.0" prefWidth="215.0"/>
+    <TextField fx:id="email" layoutX="149.0" layoutY="224.0" maxWidth="2.0" minHeight="30.0" minWidth="215.0"
+               prefHeight="30.0" prefWidth="215.0"/>
+    <TextField fx:id="dateField" layoutX="149.0" layoutY="275.0" maxWidth="2.0" minHeight="30.0" minWidth="215.0"
+               prefHeight="30.0" prefWidth="215.0"/>
+    <PasswordField fx:id="password" layoutX="149.0" layoutY="273.0" prefWidth="126.0"/>
+
+    <HBox fx:id="hBox" layoutX="149.0" layoutY="324.0"/>
+    <CheckBox fx:id="subscribed" layoutX="402.0" layoutY="120.0" text="Subscribed to NewsLetter"/>
+    <Separator layoutX="380.0" layoutY="110.0" orientation="VERTICAL" prefHeight="155.0"/>
+
+    <!--
+        <Button fx:id="Button" defaultButton="true" disable="true" maxHeight="2.0" maxWidth="100.0" minWidth="100.0"
+                onAction="#processLogout" prefWidth="100.0" text="Continue" AnchorPane.bottomAnchor="15.0"
+                AnchorPane.rightAnchor="52.0"/>
+     -->
+    <Label fx:id="success" layoutX="150.0" layoutY="450.0" opacity="0.0" text="You are successfully registered!"/>
+
+    <Label fx:id="errorMessage" layoutX="80.0" layoutY="490.0" textFill="RED"/>
+
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+</AnchorPane>
+        <!-- editable="false" -->
+

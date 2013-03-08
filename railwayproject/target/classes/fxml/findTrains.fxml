@@ -1,0 +1,73 @@
+<?import com.tsystems.client.UI.controller.*?>
+<?import com.tsystems.client.UI.model.*?>
+<?import com.tsystems.*?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+
+<GridPane fx:id="gp" alignment="CENTER" hgap="10.0" vgap="10.0"
+          fx:controller="com.tsystems.client.UI.controller.FindTrainsController"
+          xmlns:fx="http://javafx.com/fxml">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+    </padding>
+    <Label style="-fx-font: NORMAL 20 Tahoma;" text="Find train" GridPane.columnIndex="0"
+           GridPane.rowIndex="0"/>
+    <!---->
+    <!--<ComboBox fx:id="comboBox" minWidth="100.0" GridPane.columnIndex="0" GridPane.rowIndex="1"/>-->
+    <HBox alignment="BOTTOM_RIGHT" spacing="10.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <TextField fx:id="dateFieldA" minWidth="90.0" promptText="Date from"/>
+        <HBox fx:id="hBoxA" minWidth="190.0" spacing="10.0"/>
+    </HBox>
+
+    <HBox alignment="BOTTOM_RIGHT" spacing="10.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+        <TextField fx:id="dateFieldB" minWidth="90.0" promptText="Date there"/>
+        <HBox fx:id="hBoxB" minWidth="190.0" spacing="10.0"/>
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
+        <Button fx:id="findTrains" defaultButton="true" onAction="#findTrains"
+                text="View shedule"/>
+    </HBox>
+
+
+    <!---->
+    <TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.rowIndex="4">
+        <columns>
+            <TableColumn minWidth="300.0" text="Train number" fx:id="firstNameColumn">
+                <cellFactory>
+                    <FormattedTableCellFactory alignment="CENTER"/>
+                </cellFactory>
+                <cellValueFactory>
+                    <PropertyValueFactory property="trainNumber"/>
+                </cellValueFactory>
+            </TableColumn>
+            <!--<TableColumn prefWidth="150.0" text="Time">-->
+                <!--<cellValueFactory>-->
+                    <!--<PropertyValueFactory property="time"/>-->
+                <!--</cellValueFactory>-->
+            <!--</TableColumn>-->
+        </columns>
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+            </FXCollections>
+        </items>
+        <sortOrder>
+            <fx:reference source="firstNameColumn"/>
+        </sortOrder>
+    </TableView>
+    <HBox alignment="BOTTOM_RIGHT" spacing="10.0" GridPane.columnIndex="0" GridPane.rowIndex="5">
+        <Hyperlink fx:id="logout" alignment="BOTTOM_LEFT" onAction="#goBack" text="Back"/>
+    </HBox>
+    <Label fx:id="errorMessage" GridPane.columnIndex="0" GridPane.rowIndex="6" textFill="RED"/>
+    <!--<stylesheets>-->
+    <!--<URL value="@style.css"/>-->
+    <!--</stylesheets>-->
+
+</GridPane>
