@@ -178,4 +178,8 @@ public class CommandImpl {
     public List<AnotherShedule> findTrain(String station1, String station2, long time1, long time2) {
         return SingleAnotherSheduleDAOImpl.getInstance(em).findTrains(station1, station2, time1, time2);
     }
+
+    public boolean addRoutePoint(LoginPassword loginPassword, String station, String trainNumber, long time) {
+        return SingleAnotherSheduleDAOImpl.getInstance(em).addElement(station, trainNumber, time);
+    }
 }

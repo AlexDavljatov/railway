@@ -21,7 +21,7 @@ import java.util.UUID;
         @NamedQuery(name = "getTrainById", query = "SELECT train from Train train where train.id = :trainId"),
         @NamedQuery(name = "getTrainTicketsByNymber", query = "Select p.tickets from Train p where p.number = :number"),
 })
-public class Train extends BaseEntity {
+public class Train extends BaseEntity implements Comparable<Train> {
 
 //    @Version
 //    protected int version;
@@ -111,5 +111,10 @@ public class Train extends BaseEntity {
 
     public void setShedules(List<AnotherShedule> shedules) {
         this.shedules = shedules;
+    }
+
+    @Override
+    public int compareTo(Train o) {
+        return (this.getNumber() - o.getNumber());
     }
 }

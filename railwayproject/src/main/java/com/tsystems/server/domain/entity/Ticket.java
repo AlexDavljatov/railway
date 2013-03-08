@@ -83,4 +83,8 @@ public class Ticket implements Serializable {
             id = UUID.randomUUID().toString();
         }
     }
+
+    public boolean equals(Train t) {
+        return this.getId().equals(t.getId());
+    }
 }

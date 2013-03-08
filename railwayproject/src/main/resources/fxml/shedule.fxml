@@ -115,7 +115,7 @@
                 </cellValueFactory>
             </TableColumn>
 
-            <TableColumn prefWidth="150.0" text="Time">
+            <TableColumn prefWidth="200.0" text="Time">
                 <cellValueFactory>
                     <PropertyValueFactory property="time"/>
                 </cellValueFactory>

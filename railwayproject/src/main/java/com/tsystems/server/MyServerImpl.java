@@ -82,7 +82,7 @@ public class MyServerImpl {
         em.persist(train10);
 
         Passenger p1 = new Passenger("aaaa0", "aaaa0", "aaaa0", "aaaa0", new Date(Date.parse("Sat, 12 Aug 1995 13:30:00 GMT")), false);
-        Passenger p2 = new Passenger("s", "s", "s", "s", new Date(Date.parse("Sat, 12 Aug 2013 13:30:00 GMT")), true);
+        Passenger p2 = new Passenger("sudo", "sudo", "sudo@sudo.sudo", "sudo", new Date(Date.parse("Sat, 12 Aug 2003 13:30:00 GMT")), true);
         Passenger p3 = new Passenger("q", "q", "q", "q", new Date(Date.parse("Sat, 12 Aug 1995 13:30:00 GMT")), true);
         em.persist(p1);
         em.persist(p2);
@@ -111,17 +111,17 @@ public class MyServerImpl {
         em.persist(t4);
 
 //
-        AnotherShedule as1 = new AnotherShedule(train1, station1, new Date(Date.parse("Sat, 9 Mar 2013 13:30:00 GMT")));
-        AnotherShedule as2 = new AnotherShedule(train2, station1, new Date(Date.parse("Sat, 9 Mar 2013 18:30:00 GMT")));
-        AnotherShedule as3 = new AnotherShedule(train2, station3, new Date(Date.parse("Sat, 9 Mar 2013 12:30:00 GMT")));
+        AnotherShedule as1 = new AnotherShedule(train1, station1, new Date(Date.parse("Sat, 9 Mar 2013 13:00:00 GMT")));
+        AnotherShedule as2 = new AnotherShedule(train2, station1, new Date(Date.parse("Sat, 9 Mar 2013 18:00:00 GMT")));
+        AnotherShedule as3 = new AnotherShedule(train2, station3, new Date(Date.parse("Sat, 9 Mar 2013 12:00:00 GMT")));
         AnotherShedule as4 = new AnotherShedule(train3, station1, new Date(System.currentTimeMillis()));
-        AnotherShedule as5 = new AnotherShedule(train4, station1, new Date(Date.parse("Sat, 9 Mar 2013 12:30:00 GMT")));
-        AnotherShedule as6 = new AnotherShedule(train5, station1, new Date(Date.parse("Sat, 9 Mar 2013 13:30:00 GMT")));
-        AnotherShedule as7 = new AnotherShedule(train6, station1, new Date(Date.parse("Sat, 9 Mar 2013 14:30:00 GMT")));
-        AnotherShedule as8 = new AnotherShedule(train7, station1, new Date(Date.parse("Sat, 9 Mar 2013 15:30:00 GMT")));
-        AnotherShedule as9 = new AnotherShedule(train8, station1, new Date(Date.parse("Sat, 9 Mar 2013 16:30:00 GMT")));
-        AnotherShedule as10 = new AnotherShedule(train9, station1, new Date(Date.parse("Sat, 9 Mar 2013 17:30:00 GMT")));
-        AnotherShedule as11 = new AnotherShedule(train10, station1, new Date(Date.parse("Sat, 9 Mar 2013 18:30:00 GMT")));
+        AnotherShedule as5 = new AnotherShedule(train4, station1, new Date(Date.parse("Sat, 9 Mar 2013 12:00:00 GMT")));
+        AnotherShedule as6 = new AnotherShedule(train5, station1, new Date(Date.parse("Sat, 9 Mar 2013 13:00:00 GMT")));
+        AnotherShedule as7 = new AnotherShedule(train6, station1, new Date(Date.parse("Sat, 9 Mar 2013 14:00:00 GMT")));
+        AnotherShedule as8 = new AnotherShedule(train7, station1, new Date(Date.parse("Sat, 9 Mar 2013 15:00:00 GMT")));
+        AnotherShedule as9 = new AnotherShedule(train8, station1, new Date(Date.parse("Sat, 9 Mar 2013 16:00:00 GMT")));
+        AnotherShedule as10 = new AnotherShedule(train9, station1, new Date(Date.parse("Sat, 9 Mar 2013 17:00:00 GMT")));
+        AnotherShedule as11 = new AnotherShedule(train10, station1, new Date(Date.parse("Sat, 9 Mar 2013 18:00:00 GMT")));
 
         em.persist(as1);
         em.persist(as2);

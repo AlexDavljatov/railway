@@ -226,6 +226,19 @@ public class MyProtocol {
             return new DataTransferObject(CommandType.OK, result);
 
         }
+
+        if (command == CommandType.ADD_ROUTE_POINT) {
+            Object[] data = (Object[]) input.getData();
+            LoginPassword loginPassword = (LoginPassword) data[0];
+            String station = (String) data[1];
+            String trainNumber = (String) data[2];
+            long time = (long) data[3];
+            log.debug("ADD_ROUTE_POINT: " + station + " " + trainNumber + " " + time);
+            if (new CommandImpl(em).addRoutePoint(loginPassword, station, trainNumber, time))
+                return new DataTransferObject(CommandType.OK);
+            return new DataTransferObject(CommandType.FAIL);
+
+        }
         return null;
 
     }

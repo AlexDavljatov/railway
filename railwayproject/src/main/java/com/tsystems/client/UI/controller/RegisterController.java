@@ -31,11 +31,19 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Java FX FXML Controller.
  */
 public class RegisterController implements Initializable {
+
+    private Pattern pattern;
+    private Matcher matcher;
+    private static final String EMAIL_PATTERN =
+            "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                    + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
     private static final Logger log = LoggerFactory.getLogger(MyClientImpl.class);
 
@@ -60,7 +68,8 @@ public class RegisterController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        pattern = Pattern.compile(EMAIL_PATTERN);
+        matcher = pattern.matcher(email.getText());
         User loggedUser = App.getInstance().getLoggedUser();
 //        name.setText(loggedUser.getId());
 //        if (loggedUser.getName() != null) {
@@ -108,25 +117,35 @@ public class RegisterController implements Initializable {
 
     @FXML
     protected void processUpdate() {
-
-        User registeredUser = App.getInstance().getLoggedUser();
-        registeredUser.setName(name.getText());
-        registeredUser.setSurName(surname.getText());
-        registeredUser.setEmail(email.getText());
-        registeredUser.setPassword(password.getText());
-        registeredUser.setBirthdayDate(new Date(dateField.getText()));
-        Boolean b = false;
-        try {
-            b = MyClientImpl.getInstance().doRegister(registeredUser);
-        } catch (IOException e) {
-            log.debug("RegisterController.processUpdate() i/o exception" + e.getMessage());
-        } catch (ClassNotFoundException e) {
-            log.debug("RegisterController.processUpdate() ClassNotFound exception" + e.getMessage());
-        }
+        if (name.getText().equals("") || surname.getText().equals("") ||
+                email.getText().equals("") || password.getText().equals("") ||
+                dateField.getText().equals("")
+//                || !matcher.matches()
+                ) {
+            errorMessage.setText("Some fields are invalid");
+        } else {
+            User registeredUser = App.getInstance().getLoggedUser();
+            registeredUser.setName(name.getText());
+            registeredUser.setSurName(surname.getText());
+            registeredUser.setEmail(email.getText());
+            registeredUser.setPassword(password.getText());
+            registeredUser.setBirthdayDate(new Date(dateField.getText()));
+            Boolean b = false;
+            try {
+                b = MyClientImpl.getInstance().doRegister(registeredUser);
+            } catch (IOException e) {
+                log.debug("RegisterController.processUpdate() i/o exception" + e.getMessage());
+            } catch (ClassNotFoundException e) {
+                log.debug("RegisterController.processUpdate() ClassNotFound exception" + e.getMessage());
+            }
 //        animateMessage();
-        if (b) App.getInstance().userLogout();
-        else {
-            errorMessage.setText("User with such email is registered already");
+            if (b) {
+                animateMessage();
+                App.getInstance().userLogout();
+
+            } else {
+                errorMessage.setText("User with such email is registered already");
+            }
         }
     }
 

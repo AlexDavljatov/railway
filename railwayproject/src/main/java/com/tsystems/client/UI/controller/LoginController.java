@@ -22,11 +22,20 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Login Controller.
  */
 public class LoginController implements Initializable {
+
+    private Pattern pattern;
+    private Matcher matcher;
+    private static final String EMAIL_PATTERN =
+            "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                    + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})";
+
 
     private static final Logger log = LoggerFactory.getLogger(MyClientImpl.class);
 
@@ -39,6 +48,7 @@ public class LoginController implements Initializable {
 
     @FXML
     protected void processLogin() throws IOException, ClassNotFoundException {
+
         log.debug("LoginController.processLogin()");
         /*if (!App.getInstance().userLogging(email.getText(), password.getText())) {
             errorMessage.setText("Email/password combination is invalid.");
@@ -46,8 +56,9 @@ public class LoginController implements Initializable {
 
         }
         */
-
-        if (!MyClientImpl.getInstance().doLogin(new LoginPassword(email.getText(), password.getText()))) {
+        if (
+//         (!matcher.matches() ||
+                !MyClientImpl.getInstance().doLogin(new LoginPassword(email.getText(), password.getText()))) {
             log.debug("LoginController.processLogin() incorrect login/password");
             errorMessage.setText("Email/password combination is invalid.");
         } else {
@@ -66,6 +77,8 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        pattern = Pattern.compile(EMAIL_PATTERN);
+        matcher = pattern.matcher(email.getText());
         email.setPromptText("");
         password.setPromptText("");
     }

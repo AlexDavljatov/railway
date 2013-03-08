@@ -57,8 +57,6 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        log.debug("" + new Date("21/12/2013 00:00:00").getTime());
-        log.debug("" + new Date("21/12/2013 00:00:01").getTime());
         try {
             stage = primaryStage;
             gotoLogin();
@@ -292,6 +290,21 @@ public class App extends Application {
         } catch (Exception ex) {
             //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
             log.error("App.buyTicket() exception\n" + ex.getMessage());
+            debug(ex.getMessage());
+        }
+    }
+
+    public void adminAddRoutePoint() {
+        gotoAddRoutePoint();
+    }
+
+    private void gotoAddRoutePoint() {
+        try {
+            replaceSceneContent("/fxml/admin/addRoutePoint.fxml");
+            log.debug("App.addRoutePoint() success\n");
+        } catch (Exception ex) {
+            //Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            log.error("App.addRoutePoint() exception\n" + ex.getMessage());
             debug(ex.getMessage());
         }
     }

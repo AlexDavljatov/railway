@@ -51,8 +51,8 @@ public class UserDAOImpl implements UserDAO {
         trx.begin();
         Query query = em.createQuery("Select pass from Passenger pass");
         getInstance().users = (List<Passenger>) query.getResultList();
-        log.debug("" + getElement("s").isAdministrator());
-        log.debug("" + getElement("q").isAdministrator());
+//        log.debug("" + getElement("s").isAdministrator());
+//        log.debug("" + getElement("q").isAdministrator());
         trx.commit();
         em.close();
 //        this.users = users;

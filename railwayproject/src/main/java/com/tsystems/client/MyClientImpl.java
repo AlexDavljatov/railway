@@ -266,4 +266,16 @@ public class MyClientImpl {
         return (List<CommonModel>) input.getData();
 //        return null;
     }
+
+    public boolean addRoutePoint(String station, String train, long time) throws IOException, ClassNotFoundException {
+        init();
+        log.debug("MyClient.addPoint() " + station + " " + train + " " + lp.getLogin());
+        out.writeObject(new DataTransferObject(CommandType.ADD_ROUTE_POINT, lp, station, train, time));
+        //        out.writeObject(new DataTransferObject(CommandType.GET_SHEDULE_BY_STATION_TEST, station));
+        DataTransferObject input = (DataTransferObject) in.readObject();
+        out.close();
+        in.close();
+        log.debug("MyClient.addPoint() " + input.getCmd() + " " + lp.getLogin() + " " + input.getData() + " " + input.getCmd());
+        return input.getCmd() == CommandType.OK;
+    }
 }

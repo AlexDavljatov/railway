@@ -40,7 +40,7 @@
     <!---->
     <TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.rowIndex="4">
         <columns>
-            <TableColumn prefWidth="100.0" text="Train number" fx:id="firstNameColumn">
+            <TableColumn minWidth="300.0" text="Train number" fx:id="firstNameColumn">
                 <cellFactory>
                     <FormattedTableCellFactory alignment="CENTER"/>
                 </cellFactory>
@@ -48,11 +48,11 @@
                     <PropertyValueFactory property="trainNumber"/>
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="150.0" text="Time">
-                <cellValueFactory>
-                    <PropertyValueFactory property="time"/>
-                </cellValueFactory>
-            </TableColumn>
+            <!--<TableColumn prefWidth="150.0" text="Time">-->
+            <!--<cellValueFactory>-->
+            <!--<PropertyValueFactory property="time"/>-->
+            <!--</cellValueFactory>-->
+            <!--</TableColumn>-->
         </columns>
         <items>
             <FXCollections fx:factory="observableArrayList">

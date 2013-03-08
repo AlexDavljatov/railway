@@ -26,11 +26,6 @@ public class MultiServerThread extends Thread {
     private Socket socket = null;
     private EntityManager em;
 
-    public MultiServerThread(Socket socket) {
-        super("MultiServerThread");
-        this.socket = socket;
-    }
-
     public MultiServerThread(Socket socket, EntityManager em) {
         super("MultiServerThread");
         this.socket = socket;
